@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>رحلة الدراسات</title>
+<meta name='theme-color' content='#9a5b13'>
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<meta name='mobile-web-app-capable' content='yes'>
+<meta name='apple-mobile-web-app-title' content='الدراسات'>
+
+<style>
+:root{--bg:#f3efe4;--card:#fffdf7;--ink:#2a2418;--mut:#6d6450;--acc:#9a5b13;--acc2:#1f7a8c;--ok:#1b8a4b;--bad:#c0392b;--line:#dcd2b8;--sea:#cfe6ee;--land:#ecdfb8;--lake:#8ec5dc;--river:#2b86b0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1812;--card:#26221a;--ink:#f1ead8;--mut:#b5ab92;--acc:#e0a24a;--acc2:#5cc0d4;--ok:#4cc68a;--bad:#ff7b6b;--line:#41392a;--sea:#17323c;--land:#4a4028;--lake:#2a6f8c;--river:#5cc0e8}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,"Segoe UI",sans-serif;line-height:1.75}
+main{max-width:620px;margin:0 auto;padding:16px}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px}
+h1{font-size:1.5rem;font-weight:900;margin:0}
+h2.tm{font-size:1.25rem;margin:26px 0 4px;padding:6px 12px;border-radius:12px;background:var(--acc);color:#fff}h2.un{font-size:1.05rem;margin:20px 0 8px;color:var(--acc)}
+h2.lt{margin:0 0 8px;font-size:1.3rem}
+.pill{background:var(--card);border:2px solid var(--line);border-radius:999px;padding:2px 14px;font-weight:700;white-space:nowrap;font:inherit;color:var(--ink)}
+button.pill{cursor:pointer}
+.sub{color:var(--mut);margin:0 0 12px}
+.lv{display:flex;align-items:center;gap:12px;width:100%;text-align:right;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:18px;padding:12px;margin-bottom:10px;font:inherit;cursor:pointer}
+.lv[disabled]{opacity:.5;cursor:not-allowed}
+.lv:focus-visible,.ch:focus-visible,.btn:focus-visible,.pin:focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
+.lv b{display:block;font-size:1.05rem}.lv small{color:var(--mut)}
+.badge{flex:none;width:44px;height:44px;border-radius:14px 14px 14px 4px;background:var(--acc);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.2rem}
+.stars{margin-inline-start:auto;color:#e8a317;letter-spacing:2px;white-space:nowrap}
+.bar{display:block;height:8px;background:var(--line);border-radius:6px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:var(--acc2);transition:width .3s}
+.q{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:16px;margin-bottom:12px}
+.q p{margin:0 0 8px}.q .ip{color:var(--ink)}
+.eq{font-size:1.35rem;font-weight:700;text-align:center;line-height:1.8}
+.chs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ch{background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:14px;padding:12px 8px;font:inherit;font-size:1.05rem;font-weight:700;cursor:pointer}
+.ch.ok{background:var(--ok);border-color:var(--ok);color:#fff}.ch.no{background:var(--bad);border-color:var(--bad);color:#fff}
+.fb{border-radius:16px;padding:12px 14px;margin:12px 0;border:2px solid var(--line);background:var(--card)}
+.fb.ok{border-color:var(--ok)}.fb.no{border-color:var(--bad)}.fb h3,.info h3{margin:0 0 6px;font-size:1.1rem}.fb p,.info p{margin:4px 0}
+.info{background:var(--card);border:2px solid var(--acc2);border-radius:16px;padding:12px 14px;margin:10px 0 4px;min-height:64px}
+.btn{display:block;width:100%;background:var(--acc);color:#fff;border:0;border-radius:14px;padding:13px;font:inherit;font-size:1.05rem;font-weight:700;cursor:pointer;margin-top:8px}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.end{text-align:center}.end .big{font-size:3rem;color:#e8a317;letter-spacing:6px}
+.mapbox{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:6px;margin-bottom:8px}
+svg.map{display:block;width:100%;height:auto;max-height:78vh;margin:0 auto;border-radius:12px}
+.sea{fill:var(--sea)}.land{fill:var(--land);stroke:#9b8a5b;stroke-width:1.2}
+.lake{fill:var(--lake);stroke:var(--river);stroke-width:.8}
+.river{fill:none;stroke:var(--river);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.rg{fill-opacity:.55;stroke:#fff;stroke-opacity:.8;stroke-width:1.4;cursor:pointer;transition:fill-opacity .2s}
+.rg:hover,.rg.on{fill-opacity:.85}.rg.right{stroke:var(--ok);stroke-width:4;fill-opacity:.9}.rg.wrong{stroke:var(--bad);stroke-width:4}
+text{font-family:Cairo,Tahoma,sans-serif;text-anchor:middle;paint-order:stroke;stroke-linejoin:round;pointer-events:none}
+.sl{font-size:13px;fill:var(--mut);font-style:italic}
+.rl{font-size:13px;font-weight:700;fill:#222;stroke:#fff;stroke-width:3px}
+.pl{font-size:13px;font-weight:700;fill:var(--ink);stroke:var(--land);stroke-width:3.5px}
+.pin{cursor:pointer}.pin .hit{fill:transparent}.pin .dot{fill:var(--bad);stroke:#fff;stroke-width:2.5px}
+.pin.seen .dot{fill:var(--ok)}.pin.on .dot{r:9;stroke:var(--acc2);stroke-width:3px}
+.pin.right .dot{fill:var(--ok);r:10}.pin.wrong .dot{fill:#555}
+.credit{text-align:center;color:var(--mut);font-size:.95rem;margin:22px 0 8px;padding-top:12px;border-top:1px solid var(--line)}
+.credit b{color:var(--ink)}.credit p{margin:6px 0 0}.credit .me{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--acc);display:block;margin:0 auto}
+details{border-top:1px solid var(--line);padding:6px 0}summary{cursor:pointer;font-weight:700;padding:4px 0;color:var(--acc)}details p{margin:4px 0 8px;line-height:1.9}
+.ex h3{margin:12px 0 6px;font-size:1.1rem}.kt{margin:0;padding-inline-start:20px}.kt li{margin:3px 0}.rem{background:var(--bg);border:2px dashed var(--acc2);border-radius:12px;padding:10px 12px;margin-top:12px}
+[hidden]{display:none!important}
+.lvbox{display:flex;justify-content:space-between;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:8px 14px;margin-bottom:10px;font-weight:700}
+.fun{border-color:#e8a317;background:linear-gradient(135deg,var(--card),rgba(232,163,23,.12))}.fun h3{margin:0 0 4px}
+.card{display:block;width:100%;min-height:150px;background:var(--bg);border:3px dashed var(--acc2);border-radius:18px;padding:18px;font:inherit;color:var(--ink);cursor:pointer;text-align:center}
+.card b{font-size:1.5rem}.card small{display:block;color:var(--mut);margin-bottom:8px}.card span{font-size:1.05rem;line-height:1.9}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:700;z-index:50}
+.conf{position:fixed;top:-10px;width:9px;height:14px;border-radius:2px;z-index:40;animation:cf 2.5s linear forwards;pointer-events:none}
+@keyframes cf{to{transform:translateY(105vh) rotate(720deg)}}
+@media (prefers-reduced-motion:reduce){.conf{display:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><h1>رحلة الدراسات</h1><span class="pill">⭐ <span id="pts">0</span> نقطة</span><button class="pill" id="snd" aria-label="الصوت">🔊</button></div>
+  <section id="home"></section>
+  <section id="quiz" hidden>
+    <div class="top"><span class="pill" id="lvname"></span><span class="pill" id="streak"></span></div>
+    <div class="bar"><i id="prog"></i></div>
+    <div class="q"><p id="ask" class="sub"></p><div class="eq" id="eq"></div></div>
+    <div class="chs" id="chs"></div>
+    <div class="mapbox" id="qmap" hidden></div>
+    <div id="fb" hidden></div>
+    <button class="btn" id="next" hidden></button>
+    <button class="btn alt" id="back">رجوع للدروس</button>
+  </section>
+  <section id="lesson" hidden></section>
+  <div class="credit"><img class="me" alt="ابراهيم عماره" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACgAKADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7LooooAKKKKACiiigAooooAKKKMj1FABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUV5H8cfjpoHw3Y6bFbnVtaKbjbRyBUhz08xuSCfQDOPSmlcD1yvKPi78efBfw6uU0+6Nxqmpsu9rSzA3Rr2Z2bAGew618leOPjv8TfFd5I0muy6RaEYFnprGJVHuwO4n3JrzC48y5uGmuJXkdzlixyT+NWodx2Pp/X/ANsmZrfboXghI5t337283rtx/dQDn8a4GH9qL4pLrp1Jr3TWtiMfYGswIQM56g7s++a8ZezRnQKwG7rk4xUcscazCGJgzfxZ44q+VEs+mLb9sLxIrf6T4S0eQc/6qeVT7dc16d8Kv2n/AAh4naDT/EkZ8PapLIETeS1vJx97zDjZ9G/M18LzRLHwGDk84A6UyJwz7SAc+tHIgP1gsL+yv4jLY3lvdRq20tDKrgH0yD1qzX5ofCn4l+Kfh5qj33h67CRykCe1lXdDOB/eHr7jBFfYHwH/AGg9G+IV3/YusW0Oia3hfKjM2Y7onOfLyMg9PlPrwTWcoNajPb6KKKgAooooAKKKKACiiigAooqlr2pW+jaJfatdki3sreS4lx12opY/yoA8q/aS+MVv8OdGSw0qS3n8RXeDFC4DrBHnmRxnv0Udz7Cvg+/ub3xBrt3qWoX8r3Fw7TyyuckseTVjxT4h1Pxj4q1DWr+aW5vL6cyEM2doJO1R7AEAD0Fdt4b+Hkk1vE84ZXyGOeh+tOU401qa0qMqjsjidE00XE7oqsEPJ9zj1qcaVLNetCoCgAYJ/hHvXtOl+BoYZAlumxe+O341pQfDZRK88f3m+9g9RXM8WrncsDKx4Re+G5o7gRyFWCj525IWq2meHZp7yXaqhET7zHua+i7HwEblArgg8/w9ce1SRfDtYnf7NbqGc5c5wBR9aH9SZ833enJAzebKVCngbDg/jWX5Vuqs0asH6jINfWQ+GdhLCFuE3juMfLn8qjk+E/hwvvmtFYDkKOB+lNYyK3H/AGbN6pnypJ5iEZj4bpxTLSWW1uY7iKSWOWJtyujlWUjoQRyCK+lPEvwy0K4tGhii+zSD7rqPumvNde+F1/YWrzw3SXQAOQq4I/xrSnjIT0ZhVwNWHQ9a+Av7Sa6fbaF4M8W2V3dM8wtV1hrnecM2EMgbnjOCcnjFfXNflR5d3p16FZWSaFwyMR0IOR+tfeX7K/xQ1L4j+GdRj1tYf7S0qWON3jUjzI2T5WP+0Sr5recVa6OJpp2Z7LRRRWYgooooAKKKKACvMP2ptQuNN+BPiee2nihd7dYSXOCVdwrBf9og8V6fXz3+3lNLH8IrCFCRHNq8QkHY4RyM/iKa3A+ZPgtpEFxqE17LEH8sYUenvXttrGqgKqgewryv4GsWs7iTGM44r1zTlDvzXm4yV5n0OAilTNzQrU4GRk56V1Vraogyv5Vg6ThG4yMHjFdHbzhV5GTXIkd5MkIUAhQPwqWOCMtuKgmoluN5xj9KmSQY6VWo7Eu0YwAMe1VbmFDztFStOQcdPwqF3ZgTgn8KTFZoxNXtEYEkYzXL6hbbSVI4NdneZkU5Rhjsaw7623oeOe1SO10eC/GLw+iypqUMYVjwwHGfeuh/Ygv7q2+Ltzpyag0FrdafI0lv2uHQgr+Kgk5+ta3xOsWn8M3Tr9+NSwyM/UV5P8CNSl0v40+FLqJ9p/tGOJ/m25WT5CCfo1exhZOUD53MIctU/SCigcDFFanAFFFFABRRRQAV8w/8FBLx4/CXhixywimvpZW44ykeBz/wM8V9PV8rf8FDXb+wfCEWPkN3cuTu7hEA4/E8/wCNNbgeN/AqdWtbqMfwnr7V7VoS7lHGSa8R+AkDta304PyiQIPyzXsFpqf2J1ihAMv+0vQV52JV5s+gwUrU0dpYwsuCRjJrcto/MHHWvP28V/YwPtuTnoVU4rc8PeNNPuJQjsY3B43DFYKJ3qZ10VpJnO04qX7M2MYNNh1OKbBUgqe4qdblWPApWKuRpaEnoal+zAKQcjilkvEgjLyYAHvXHeKfHdvZt5cJyw6+9UrEOTN+7jjQks2CayL1oHTMcqFu4zzXP6Xqmta0S/2Xy4eoaRyufcCn6hY6hDMJUUZHQrwD/jUuJKkZvjG0M+h3sSj78TDpmvlnQpZbPxRYT7vLlgvom64KlZAa+uA5u4GWWMowGGWvk3xpanSPGt7CFOLa5yme4zkV6GCdro8nMVdJn6hKQyhh0PNLVXSJzdaVaXJQIZoEk2g5xlQcfrVqujqeSFFFFABRRRQAV8s/8FDrFG8KeFdS8vMkV/LBvz0Dx7sY+qfpX1NXzj+2Fp8niSSw8NszKgt2urcg8LOCQCR6Ece2amUlHVmtGjKrLlieI/AKMHwxdsB/y9EZ/wCAivQ9HgjivJrrUMBM5+dsAD61xfwBtJLfRL60uoyksd8ySKezBQCK9L8QaGuq2rRx5CnGVDYOR3BriryXO2e1hk1TRS1z4h+ELG2ezj0261Rywi8q1tN6s56LuOBu9s5rk9KvYdbSXUdL0DVbCGNFmKz8hUYkBhjOFyrDPTiung8Hg+GjoM9uv2IyeYF28hu7BuuT3qbw/wCHx4U06e00d5bSOcBJBu3M6gnC85wOTxxUe5bU6OSpzJrYn8L+IZRdxQSK3zd8+lejWt6rRgqRzzzXk1lDHDd+YiMoU4UMc89zXb6c8jQKwbGKwe52whzFnxfet9iKoTuzjg8Vw2l+H7/W9ZjsYZYIpPvM7MAq9+vJY+w/Oup1JTcOY3bOR6dKzrfTC8ohmWJCpJBRAGcH3pRdpXZNSndWPM7Xxf4yt/EM+mWt/AjxyrELc2j93ZcbiecbVzz/ABD0Nd/a+KdTXVpNE1m1XzUYAXEJzHJ6spHUDuOCPet+20C08zzfLXzT1JQHP41oW+hWquXaFXOMYKgVpKaeqRzQpuG7uVBaIVN0nIbhsdPrXy98aoCfiLeqF2hmj6DnkCvrdo4ooDGqALjpXjGt+Cl8QfF83FxkWsVulw4/vlTgL7ZOM+1b4eoou7OTFUnUSij7I0NI4tGsoopPMRLeNVfOdwCgA1drivg1fNeeDoopH3S2rtE3PQZ4FdrXbGSkro8avSdGo4PoFFFFUZBRRRQAV4F8cVll+JVqGztSzXYSOnJzXvteQfH2xMOo6XrCLnfG9u2B3HzD+v5VhiI3gejlc1HEJPqeIeFJhH4r8SBUKg3iyc9yUGTXp+mRIbdGJOTzkGvKtMZx4v1FmjeMTRxNhhg55B/lXp2jSFoliGcgZzXHUd0j2aMUpNM0ZGiRWVFQt6Hmsm+jmljZVyueuB/WunsdL85CxChj1OKg1iJLOzmdAGYKccYrFpnUrHngQG+WMjGG5rsdOhk8pQEO0jqBXIQH98txIcszZ54/CvSNIjt/sSOWP3AfpxVxKUuU528Xy7vBPGKvWdktxCxTnnjnoar6g1rJcGNZY1fP3SwyfoKs+HWlSWWMfMg569KiSBk8dvdxNkMePatWFVKDcSGq3EIZlDdKZcRqhIHpQRJJmNqeBnB5PauT0ww/8J3LHKqky2X3j1yrf/XrptU4lHNcamn3174lku7PbmG32ZY8csM/yq+hzv40j1X4Ob7bXdYs937p1WZR+OP616fXlnwfjlPiG9kZtyx2gjJ/2t4P9K9T4r0MOvcR4ua/7y/l+QUUUVsecFFFFABXO/EPQj4g8LXVlHj7QuJYCezryB+PI/GuipCMjBpNXVioScJKS6HyNqBX+0LSYJtLAq2evHOK63w04GATzim/Fnwld+GpILkBZLGS6IhkB+YZBO1vQ/zxWfok2SjI1ebVi4qx9NRrRm3KLPQ7e4KQbQceprH1y9iEf7wk89qkeby7FpSfurn61y920ty+9yQD7cVjc6JSsYur2v2qceTwobO1k3AH1FdXoOnXi2KCfUZAmPuhe3tVWxgj3DzCoGeSxxXQ+bGYgsTIVUdQ64x+daJDSnI5W/0NXvxOlxICrZ5xk/j1rodHmjtFCYC5Ayae5s2x5k1uG/66Ln+dI0EBQtG6t7g5pMHzrc2bWdQ++NsqeoqxcSA7iPSuet5DbzKc8cA+9atxLiJ2OAccc1ncnmuZWoyZkYkYArK0V3RLl0Qtvk25Hb/Oas3058tjkEkZOa6n4ceEG1LQVv575ooLiVmEax5JAOM5Prj0reFNzVkc1SvClJSmdZ8LtM+xeHhdv/rbxvMbjoo4A/r+NddiorSCO2toreFdscaBFHsKlr0Yx5VY+drVHUm5vqFFFFUZhRRRQAUmDS0UAcd8ZdNOpfDvVEVN8luguYxjuhyf0zXz3od0Nsbr0GPyr6yuIkmheGRQyOpVge4Iwa+QLiKTQPFGoaLdD57Sd4gfUZ+U/iMH8a5q8bo9HAVFFuJ6PayC7014gfmKYrH8R2c8+lCO2lNvKnO4DP4fSm+HL4LhSenT3FasrGcMD0PFefJWZ7kGmeb+HUuYZdmso95KrtuNs3l5H8Iwc4Oepyf1rtbdfDQjUPb6ospYBszHaoJ69Ow9qSbRk372Ugk53AfzrQiWCOMLLFE3vyK0VRdjoUYv7bXzKN03h5LeVbWyvpJGicJ5jswEmTtPbKnjuP1rBjtLu9vLaOyNxp22MfahHL5gZu5UsPlHt1967RIradMLHGAf4hnNT2djHDuMa4B6n1qZz6C5IQTtJv5hYW3+jxQsS5UAFj1OKfrcwCeWponuFt3wM5rK1W7Vm3bSM+/Ss4as55uyKmsziOAIo5xgDua988H2H9meGNNsTndFbqGz/eIyf1Jr580JY9X8XabaSk+U91GrZ54zn+mK+mF447V6OHVrnh4+d2kLR3oorqPPCiiigAooooAKKKKAA9K+VvjvblfiVqskS7WzGxx3+QV9TyMqqWZgoAySTgAV8+fGnTIrrWofEljOtxY6mmFlQ5XcmV4PoQMj8axrfDc68G/3ljz7RNU8pQxb7vUV2GjahHM6t5oIz8wrzuVDbXJDLgfSrNjeS2F0suS0DEZI/h/+tXDKKlqezGo0eyKsTKGySpqvcWNu7ZDP9KwtI1dZ4NokGB0OeK3kmXytzMMetRyWZ1RnGRY0+CCBCOc+4q1IUCZyAMVnfaU6hgBVDVdWiihKeaAe+e9JxuxSqJEOp3qLJucjrgAd652/vWcMRxuOB9Kqz3M15IZWYpHu+Udz7+1LaxCeYFuUH5VXLY53Pm0NTwm09lqkOpxWsly9nuumiU4LLGCzD8hX0d4e1ex17RbPWNMnWezvIVmhkXurDI/HsR61554E0BNM8MXupajEBLeQvHGGGNsRHJ/H+VeE/smfFi08L67f+DtfvxDolzcO1jNM2EtpMkbcnorfkCPevQoQahd9TxcZUUqll0PsqimxOksayRurowBVlOQR6g06tjkCiiigD//Z"><p>إعداد: <b>ابراهيم عماره</b></p></div>
+</main>
+<script>
+// خرائط مبسطة (إحداثيات تقريبية: [خط الطول، دائرة العرض])
+const MAPS={
+ egypt:{lon0:24.4,lon1:37.2,lat0:32.2,lat1:21.6,c:0.88},
+ delta:{lon0:28.9,lon1:33.2,lat0:31.9,lat1:29.6,c:0.88},
+ world:{lon0:-170,lon1:180,lat0:80,lat1:-58,c:0.55,lab:[['المحيط الأطلسي',-35,30],['المحيط الهادئ',-140,0],['المحيط الهندي',80,-25],['المحيط المتجمد الشمالي',60,80]]},
+ afr:{lon0:-20,lon1:52,lat0:38,lat1:-36,c:0.85,lab:[['البحر المتوسط',15,35.5],['المحيط الأطلسي',-12,0],['المحيط الهندي',46,-22],['البحر الأحمر',40.5,20]]},
+ arab:{lon0:-18,lon1:62,lat0:38,lat1:-2,c:0.85,lab:[['البحر المتوسط',16,34.3],['المحيط الأطلسي',-14,20],['المحيط الهندي',55,8],['الخليج العربي',51.5,27.3],['البحر الأحمر',40.5,20]]},
+ asia:{lon0:25,lon1:150,lat0:62,lat1:-10,c:0.75,lab:[['المحيط الهادئ',140,25],['المحيط الهندي',80,-5],['المحيط المتجمد الشمالي',90,68]]},
+ eur:{lon0:-12,lon1:45,lat0:72,lat1:34,c:0.6,lab:[['المحيط الأطلسي',-9,50],['البحر المتوسط',15,36.3],['البحر الأسود',34,43.5],['بحر الشمال',3,56]]},
+ na:{lon0:-170,lon1:-50,lat0:73,lat1:5,c:0.55},
+ sa:{lon0:-85,lon1:-33,lat0:13,lat1:-57,c:0.9},
+ am:{lon0:-128,lon1:-32,lat0:52,lat1:-57,c:0.8},
+ all:{lon0:-170,lon1:-32,lat0:73,lat1:-57,c:0.62}
+};
+const EGY=[[25,31.6],[27.2,31.35],[29,30.9],[29.9,31.2],[30.5,31.55],[31.0,31.6],[31.8,31.5],[32.3,31.27],[33.0,31.1],[34.25,31.25],[34.9,29.5],[34.65,28.95],[34.45,28.2],[34.25,27.75],[33.7,28.3],[33.2,28.9],[32.7,29.6],[32.58,29.97],[32.35,29.7],[32.65,29.1],[33.1,28.35],[33.8,27.25],[33.95,26.75],[34.9,25.07],[35.5,23.9],[36.9,22.0],[25,22.0]];
+const NA=[[-168,65.5],[-163,67],[-166,68.5],[-156,71.3],[-141,69.7],[-128,70],[-115,68.5],[-105,68],[-95,68.5],[-88,68.2],[-83,66.5],[-72,64.5],[-78,62.5],[-70,61],[-64,60],[-61,56],[-56,52.5],[-59,48],[-64,47.5],[-66,45],[-70,43.5],[-70.5,41.8],[-74,40.5],[-75.5,38],[-76,35],[-78,33.8],[-81,31.5],[-80,27],[-80.3,25.2],[-81.7,25.8],[-82.8,28],[-84,30],[-86.5,30.3],[-89,30.2],[-90,29.1],[-94,29.5],[-97,27.8],[-97.5,25],[-97.8,22],[-96,19],[-94.5,18.2],[-91,18.7],[-90.5,21],[-87,21.5],[-87.5,18],[-88.5,16],[-88,15.8],[-84,15.5],[-83.3,12],[-83.7,10.9],[-81.5,9],[-79.5,9.5],[-77.5,8.6],[-78,7.2],[-80,7.3],[-82.8,8.3],[-85.7,10],[-87,12.5],[-91,13.8],[-94,16],[-96.5,15.7],[-101,17.3],[-105.5,20.5],[-106.5,23.5],[-109.5,26.5],[-112.5,29.5],[-114.7,31.7],[-114.1,28.5],[-112.2,25.5],[-110,23],[-112,25],[-114,28],[-116.5,31],[-117.2,32.6],[-118.5,34],[-121,35],[-122.5,37.7],[-124.2,40.3],[-124.5,43],[-124,46.2],[-124.7,48.4],[-123,49],[-127,51],[-130,54.5],[-133,57],[-137,58.8],[-141,60],[-146,60.7],[-151,59.2],[-154,57.5],[-158,56],[-162,55],[-164.5,54.5],[-160,58.5],[-162,60],[-166,61.5],[-165,63.5]];
+const SA=[[-77.3,8.6],[-75.5,10.5],[-72,12],[-71.3,12.4],[-68,10.5],[-64,10.6],[-61.5,10.5],[-60,8.5],[-57,6],[-52,5],[-50,1.8],[-50,-0.2],[-48,-1],[-44.5,-2.5],[-41,-2.9],[-38,-4],[-35,-5.5],[-34.8,-8],[-37,-11],[-39,-13.8],[-39,-17.5],[-40.5,-22],[-43,-23],[-45,-23.8],[-48.5,-26],[-48.7,-28.5],[-50.5,-31],[-53,-34],[-55,-35],[-57,-34.5],[-58,-34.9],[-57,-36.5],[-58,-38.5],[-62,-39],[-62,-41],[-65,-41],[-64.5,-42.5],[-65.5,-45],[-67.5,-46.5],[-66,-48],[-68.5,-50.5],[-69,-52.3],[-68.5,-54],[-68,-55],[-72,-54],[-75,-50.5],[-75.5,-46],[-73.5,-42.5],[-73.5,-38],[-71.7,-33],[-71.5,-30],[-70.3,-26],[-70.3,-18.5],[-75.5,-15.5],[-78,-11.5],[-80.5,-7],[-81.2,-5],[-80,-3],[-80.5,-1],[-80,1],[-78.8,1.8],[-77.5,4],[-77.3,6.5]];
+const CUBA=[[-84.9,21.9],[-81,23.1],[-78,22.4],[-74.2,20.2],[-76,19.9],[-78.5,21.5],[-82,22.2]];
+const HUDSON=[[-94,59],[-93,56],[-88,56],[-82,53],[-79,51.5],[-78,55],[-77,60],[-72,62],[-78,64],[-87,64],[-90,62],[-94,60]];
+const NILE=[[32.9,22.0],[32.9,23.9],[32.9,24.1],[32.87,24.98],[32.65,25.7],[32.72,26.16],[31.7,26.55],[31.18,27.18],[30.75,28.1],[31.1,29.07],[31.25,30.05],[31.2,30.2]];
+const ROSETTA=[[31.2,30.2],[30.9,30.9],[30.42,31.4]];
+const DAMIETTA=[[31.2,30.2],[31.5,30.9],[31.82,31.42]];
+const CANAL=[[32.3,31.26],[32.3,30.9],[32.27,30.6],[32.4,30.3],[32.55,29.97]];
+const MAMOUDIYA=[[29.92,31.2],[30.3,30.95],[30.6,30.9]];
+const AMAZON=[[-73,-4],[-68,-3.5],[-62,-3.2],[-55,-2.3],[-50,-1.5]];
+const MISSISSIPPI=[[-95,47],[-93,44],[-91,40],[-90,36],[-91,31],[-89.5,29.2]];
+const STLAW=[[-79,43.3],[-74,45.5],[-70,47.2],[-64,49]];
+const PARANA=[[-55,-25],[-58,-28],[-58,-33],[-57,-35]];
+const ORINOCO=[[-70,5],[-66,6.5],[-63,8.2],[-60.5,8.7]];
+const GLAKES=[[[-92,47],[-88,48.5],[-84.5,46.5],[-87,46.5]],[[-88,46],[-87,45.8],[-87.5,42],[-87,43]],[[-84.5,46],[-80,45.5],[-80.8,44],[-83.5,44.5]],[[-83.2,42.2],[-79,42.8],[-79.8,42],[-82.8,41.5]],[[-79.8,43.5],[-76.2,43.6],[-76.5,44.2],[-79.4,43.8]]];
+const TEXC=[[-99.2,19.5],[-99,19.45],[-99,19.3],[-99.2,19.3]];
+const LTIT=[[-69.9,-15.3],[-69.3,-15.8],[-69.2,-16.4],[-69.9,-16.1]];
+const LNASSER=[[32.7,22.0],[32.8,22.8],[32.95,23.7],[33.05,23.7],[33.1,22.8],[33.2,22.0]];
+const QARUN=[[30.4,29.5],[30.7,29.5],[30.7,29.4],[30.4,29.42]];
+const MANZALA=[[31.85,31.3],[32.2,31.3],[32.2,31.05],[31.9,31.05]];
+const BURULLUS=[[30.6,31.5],[31.1,31.5],[31.1,31.4],[30.6,31.42]];
+const AFRICA=[[-17.5,14.7],[-16.5,19.5],[-13,27.5],[-9.8,30],[-6.8,34],[-5.9,35.8],[-2,35.1],[3,36.8],[10.2,37.3],[11,35],[10.1,33.8],[15,32.4],[20,32.2],[20,30.5],[25,31.6],[29,30.9],[32.3,31.27],[32.6,29.97],[33.8,27.25],[35.5,23.9],[37.2,21],[38.5,18],[39.5,15.5],[42.5,12.5],[43.2,11.8],[51.2,11.8],[50.8,10.4],[48,5],[44,1.5],[41,-1.7],[39.2,-4.7],[39.3,-7.8],[40.5,-10.5],[40.6,-15],[40.5,-17],[35.3,-19],[34.8,-20.5],[35.3,-24],[32.9,-26],[32.6,-28.5],[31,-29.8],[27,-33.5],[25.5,-34],[20,-34.8],[18.4,-34.2],[17.8,-32],[16.5,-28.6],[14.5,-22.5],[11.8,-17],[13.5,-12],[13.8,-9],[12.2,-6],[9,-1],[9.5,3.5],[6.5,4.3],[4.5,6.3],[1,6],[-2.5,4.8],[-4.5,5.2],[-7.5,4.4],[-10.5,6.5],[-13,8.5],[-15,10.8],[-16.7,12.5]];
+const MADAG=[[44,-25],[47,-25],[50,-15.5],[49.3,-12],[47.5,-14],[44.5,-17],[43.5,-22]];
+const EURASIA=[[-5.4,36.1],[-9,38.7],[-9.5,43],[-1.5,43.4],[-4.7,48.4],[-1.2,49.7],[2,51],[4.5,52.5],[8.5,54],[8.2,56.5],[10.5,57.7],[12,56],[14,55.3],[19,54.4],[21,56.5],[24,57.5],[23.5,59.5],[30,60],[23.5,60.5],[21.5,63],[25,65.5],[21.5,65.7],[18,62.5],[16,58],[13,55.6],[11,58],[5.5,58.5],[5,61],[10,64],[15,68],[21,70],[30,70.5],[41,67],[44,66],[44,68.5],[60,69.5],[70,73],[80,73.5],[100,78],[115,74],[140,72.5],[160,70],[180,69],[180,65],[172,64],[163,59.5],[156,57],[156,51],[143,59],[137,54],[141,49],[135,43],[129,42],[128,39],[129,35],[126,35],[126,38],[125,40],[121,40.5],[122,37],[119,35],[121,32],[122,30],[120,26],[117,23],[110,21],[108,21.5],[106,18],[109,12],[105,9],[103,10],[100,13],[100,8],[103,1.5],[100,3.5],[98,8],[98,16],[94,17],[92,21],[90,22],[87,21.5],[85,19.5],[80,15],[80,10],[77.5,8],[75,12],[73,17],[72.5,21],[70,21],[67,24.5],[62,25.2],[57,25.5],[56.5,27],[54,26.7],[50.5,29.5],[48.5,30],[48,29.5],[50,26],[51.5,24.5],[54,24.2],[56,26],[56.4,24.9],[59.8,22.5],[58.5,20.5],[55,17.2],[52,16],[48,14],[45,12.8],[43.2,13],[42.7,15.5],[41,19.5],[39,21.7],[37,25.5],[35.2,28],[34.9,29.5],[34.3,31.3],[35,33],[36,36.5],[32,36.2],[30,36.5],[27.5,37],[26.5,39.5],[26.2,40.7],[24,40.2],[23.5,38.2],[23.1,36.5],[22,36.5],[21.2,37.9],[20.2,39.5],[19.5,41.5],[19.3,42.2],[15.5,44.5],[13.6,45.6],[12.4,44.9],[13.5,43.6],[16,41.9],[18.5,40.2],[16.5,38],[15.7,38],[16.2,39.5],[15,41],[12.5,42],[11,42.5],[10.2,44],[8.5,44.3],[6.5,43.2],[3.5,43.3],[3,42],[0.8,41],[-0.5,38.8],[-2,36.8]];
+const UK=[[-5.7,50],[1.5,51.2],[1.7,52.7],[-0.5,54.5],[-2,57.5],[-3,58.6],[-5.5,58.5],[-6,56.5],[-3.5,54.8],[-4.5,53.3],[-5,51.7]];
+const AUS=[[114,-22],[122,-18],[130,-12],[136,-12],[142,-11],[146,-19],[153,-26],[150,-37],[141,-38],[135,-35],[129,-32],[115,-34],[113,-26]];
+const P=(lon,lat,n,t,o)=>Object.assign({lon,lat,n,t},o||{});
+const RG={
+ // مصر
+ delta:{n:'الدلتا',c:'#3aa05a',poly:[[31.2,30.15],[30.2,30.7],[29.95,31.35],[30.5,31.6],[31.8,31.7],[32.4,31.4],[32.3,30.7],[31.6,30.3]],lp:[31.2,30.95],t:'الدلتا مثلث خصب يبدأ شمال القاهرة، ويتفرع فيه النيل إلى فرعي رشيد ودمياط. تربتها طمي خصب ومناخها معتدل، ولذلك تكثر فيها الزراعة والسكان (أكثر من نصف سكان مصر).'},
+ west:{n:'الصحراء الغربية',c:'#e0b24a',poly:[[24.9,31.8],[29.6,31.8],[30.2,30.7],[30.8,29.9],[30.8,29.0],[30.6,28.1],[31.0,27.2],[31.6,26.5],[32.5,26.1],[32.6,25.7],[32.8,24.9],[32.85,24.0],[32.7,22.0],[24.9,22.0]],lp:[28.3,26.3],t:'الصحراء الغربية تشغل نحو ثلثي مساحة مصر. أرضها هضبة منبسطة تتخللها منخفضات وواحات مثل سيوة والبحرية والفرافرة والداخلة والخارجة، وأهمها منخفض القطارة (133 م تحت سطح البحر).'},
+ east:{n:'الصحراء الشرقية',c:'#c9743a',poly:[[31.3,30.1],[32.6,30.0],[32.35,29.6],[32.65,29.1],[33.1,28.35],[33.8,27.25],[33.95,26.75],[34.9,25.07],[35.5,23.9],[36.9,22.0],[38,22.0],[38,21],[33.1,21],[33.1,22.0],[32.95,24.1],[32.9,25.0],[32.7,25.7],[32.7,26.2],[31.75,26.6],[31.2,27.2],[30.9,28.1],[31.15,29.1]],lp:[33.0,26.0],t:'الصحراء الشرقية تقع بين وادي النيل والبحر الأحمر. تتميز بسلاسل جبال البحر الأحمر الغنية بالمعادن (الذهب والفوسفات)، وتنتهي بسهل ساحلي ضيق على البحر الأحمر.'},
+ sinai:{n:'شبه جزيرة سيناء',c:'#a87a4d',poly:[[32.3,32],[36,32],[36,27],[34.25,27.2],[34.25,27.73],[33.7,28.3],[33.2,28.9],[32.7,29.6],[32.58,29.97],[32.35,30.6]],lp:[33.9,29.7],t:'سيناء شبه جزيرة مثلثة تفصلها قناة السويس وخليج السويس عن باقي مصر. جنوبها جبلي (جبل كاترين أعلى قمة في مصر 2629 م) وشمالها سهول ساحلية على البحر المتوسط. تربط بين آسيا وأفريقيا.'},
+ // أمريكا الشمالية
+ cord:{n:'الجبال الغربية (روكي)',c:'#8a6d4b',poly:[[-150,66],[-128,66],[-114,58],[-108,50],[-104,43],[-104,36],[-103,31],[-106,26],[-103,22],[-99,19],[-105,19],[-108,24],[-114,30],[-119,35],[-123,42],[-128,50],[-138,59],[-150,62]],lp:[-116,47],t:'سلاسل الجبال الغربية (الروكي والسييرا نيفادا والكاسكيد) جبال التوائية حديثة عالية تمتد من ألاسكا حتى المكسيك على الساحل الغربي، وفيها أعلى قمم القارة.'},
+ app:{n:'جبال الأبلاش',c:'#7d9a5a',poly:[[-84,36],[-82,40],[-78,44],[-70,46],[-68,45],[-73,41],[-77,38],[-80,34],[-85,34]],lp:[-77,41],t:'جبال الأبلاش قديمة منخفضة نسبيًا (أعلى من 2000 م قليلًا) تمتد في شرق الولايات المتحدة بموازاة الساحل الأطلسي.'},
+ plains:{n:'السهول الوسطى',c:'#b9c65a',poly:[[-112,58],[-96,56],[-90,48],[-86,42],[-85,36],[-90,30],[-97,28],[-104,31],[-104,43],[-108,50]],lp:[-97,42],t:'السهول الوسطى (السهول العظمى) سهل واسع منبسط بين الروكي والأبلاش يخترقه نهر الميسيسيبي. أرضها خصبة وفيها حزام القمح والذرة.'},
+ shield:{n:'الدرع الكندي',c:'#7aa7b8',poly:[[-112,64],[-95,68],[-82,64],[-75,62],[-64,59],[-62,54],[-70,48],[-80,46],[-88,48],[-92,52],[-102,56],[-110,60]],lp:[-90,56],t:'الدرع الكندي هضبة قديمة صلبة تحيط بخليج هدسون، غنية بالمعادن والبحيرات، وتغطيها الغابات الصنوبرية.'},
+ mexpl:{n:'هضبة المكسيك',c:'#d08a52',poly:[[-111,30],[-103,30],[-100,24],[-101,20],[-106,20],[-108,24]],lp:[-104,25],t:'هضبة المكسيك تقع بين سلسلتي سييرا مادري الغربية والشرقية، وعليها العاصمة مكسيكو سيتي (على ارتفاع نحو 2240 م).'},
+ camer:{n:'أمريكا الوسطى والكاريبي',c:'#2f9e6e',poly:[[-93,17.5],[-86,18],[-83,15],[-80,9],[-77,8],[-82,8],[-88,12],[-93,15]],lp:[-86,14],t:'أمريكا الوسطى برزخ ضيق جبلي بركاني يربط الشمال بالجنوب، وتحيط به جزر الكاريبي (مثل كوبا). مناخها حار رطب.'},
+ // أمريكا الجنوبية
+ andes:{n:'جبال الأنديز',c:'#8a6d4b',poly:[[-72,11],[-72,5],[-76,0],[-72,-5],[-68,-12],[-65,-18],[-66,-25],[-68,-30],[-70,-37],[-70,-45],[-71,-52],[-75,-50],[-72,-40],[-71,-30],[-70,-20],[-77,-10],[-80,-2],[-78,5],[-74,10]],lp:[-74,-42],t:'الأنديز أطول سلسلة جبلية فوق اليابسة (نحو 7000 كم) على الساحل الغربي لأمريكا الجنوبية، أعلى قممها أكونكاجوا (6961 م).'},
+ amaz:{n:'حوض الأمازون',c:'#2f9e6e',poly:[[-72,3],[-60,4],[-52,1],[-50,-3],[-52,-8],[-58,-12],[-64,-13],[-69,-12],[-73,-8],[-75,-3]],lp:[-62,-5],t:'حوض الأمازون أكبر حوض نهري في العالم، سهل واسع منخفض تغطيه الغابات المطيرة، ويصب النهر في المحيط الأطلسي.'},
+ bhl:{n:'هضبة البرازيل',c:'#c9a04a',poly:[[-52,-8],[-42,-5],[-38,-10],[-40,-20],[-46,-24],[-52,-26],[-55,-20],[-56,-12]],lp:[-47,-15],t:'هضبة البرازيل هضبة قديمة في شرق القارة، أقل ارتفاعًا من الأنديز، وتغطيها الحشائش (الكامبوس) والغابات.'},
+ guiana:{n:'هضبة جويانا',c:'#6aa05a',poly:[[-67,6],[-60,8],[-56,6],[-58,3],[-64,2],[-67,3]],lp:[-62,5],t:'هضبة جويانا في شمال القارة، تتساقط عليها المياه من أعلى شلال في العالم: شلال أنجل (979 م) في فنزويلا.'},
+ llanos:{n:'سهول الأورينوكو (اليانوس)',c:'#d6c34a',poly:[[-73,8],[-67,9],[-62,8.5],[-66,5],[-72,4]],lp:[-68,7],t:'اليانوس سهول حشائش مدارية (سافانا) حول نهر الأورينوكو في فنزويلا وكولومبيا، تُستغل في رعي الماشية.'},
+ pampas:{n:'سهول البامبا',c:'#a6c755',poly:[[-64,-30],[-58,-31],[-56,-35],[-60,-38],[-65,-37]],lp:[-62,-31.5],t:'البامبا سهول حشائش معتدلة خصبة في الأرجنتين وأوروجواي، أشهر مناطق تربية الأبقار وزراعة القمح.'},
+ pata:{n:'هضبة باتاجونيا',c:'#c8b58a',poly:[[-72,-39],[-64,-39],[-63,-46],[-66,-52],[-72,-52],[-72,-45]],lp:[-68,-45],t:'باتاجونيا هضبة باردة جافة جنوب الأرجنتين، تقع في ظل المطر شرق الأنديز، ولذلك قلّ فيها المطر.'},
+ atac:{n:'صحراء أتاكاما',c:'#e0b24a',poly:[[-71,-18],[-69,-18],[-68,-27],[-70,-30],[-71,-25]],lp:[-69.5,-23],t:'أتاكاما في شمال تشيلي من أجف صحارى العالم، لأن تيار همبولت البارد وجبال الأنديز يمنعان المطر.'},
+ // نظم بيئية
+ rain:{n:'الغابات المطيرة',c:'#1f9d55',poly:[[-72,3],[-60,4],[-52,1],[-50,-3],[-52,-8],[-58,-12],[-64,-13],[-69,-12],[-73,-8],[-75,-3],[-93,17.5],[-86,18],[-83,15],[-80,9],[-77,8],[-79,5]],lp:[-62,-5],t:'الغابات المطيرة (الاستوائية) في حوض الأمازون وأمريكا الوسطى: حارة مطيرة طوال العام، أشجارها عريضة الأوراق دائمة الخضرة في طبقات كثيفة، وأغنى بيئات الأرض بالأنواع.'},
+ taiga:{n:'الغابات الصنوبرية (التايجا)',c:'#2e7d5b',poly:[[-165,66],[-140,68],[-110,62],[-90,58],[-70,56],[-60,52],[-65,48],[-78,48],[-95,50],[-115,53],[-135,58],[-150,61]],lp:[-110,57],t:'الغابات الصنوبرية (التايجا) حزام واسع في شمال كندا وألاسكا، مناخها بارد طويل الشتاء، وأشجارها إبرية مخروطية دائمة الخضرة (الصنوبر والتنوب).'},
+ decid:{n:'الغابات المتساقطة الأوراق',c:'#7cb342',poly:[[-95,40],[-84,45],[-70,45],[-75,38],[-82,34],[-90,34]],lp:[-82,40],t:'الغابات المتساقطة الأوراق في شرق الولايات المتحدة، مناخها معتدل دافئ مطير، وتُسقط أشجارها أوراقها في الخريف (البلوط والزان والقيقب).'},
+ tundra:{n:'التندرا',c:'#a9c4d6',poly:[[-165,69],[-140,70],[-110,69],[-95,70],[-80,66],[-62,60],[-78,60],[-95,62],[-115,66],[-140,66]],lp:[-120,68],t:'التندرا أقصى شمال القارة: باردة جدًا، أرضها متجمدة معظم العام، لا تنمو فيها أشجار، بل طحالب وأعشاب قصيرة.'},
+ prairie:{n:'البراري',c:'#c5d65a',poly:[[-112,54],[-98,54],[-97,40],[-98,30],[-104,31],[-104,43],[-110,48]],lp:[-103,43],t:'البراري حشائش معتدلة في وسط أمريكا الشمالية، عشبها متوسط الطول، تُزرع اليوم بالقمح والذرة، وكانت موطنًا لقطعان البيسون.'},
+ pam2:{n:'البامبا',c:'#a6c755',poly:[[-64,-30],[-58,-31],[-56,-35],[-60,-38],[-65,-37]],lp:[-61,-34],t:'البامبا حشائش معتدلة خصبة في الأرجنتين وأوروجواي لتربية الأبقار وزراعة القمح.'},
+ llanos2:{n:'اليانوس',c:'#d6c34a',poly:[[-73,8],[-67,9],[-62,8.5],[-66,5],[-72,4]],lp:[-68,7],t:'اليانوس سافانا مدارية حول نهر الأورينوكو: حشائش طويلة وأشجار متفرقة، حارة مع موسم مطير وموسم جاف.'},
+ cerrado:{n:'الكامبوس (سافانا البرازيل)',c:'#d9b45a',poly:[[-56,-8],[-45,-6],[-43,-15],[-47,-20],[-55,-20]],lp:[-49,-14],t:'الكامبوس حشائش مدارية مع أشجار متناثرة على هضبة البرازيل، تُرعى فيها الماشية وتُزرع فيها فول الصويا والبن.'},
+ desN:{n:'صحارى أمريكا الشمالية',c:'#e0b24a',poly:[[-118,36],[-108,34],[-104,28],[-108,27],[-114,31]],lp:[-110,32],t:'صحارى جنوب غرب أمريكا الشمالية (سونورا وموهافي وتشيواوا) حارة جافة تنمو فيها الصبّار والشجيرات الشوكية.'},
+ atac2:{n:'أتاكاما',c:'#e0b24a',poly:[[-71,-18],[-69,-18],[-68,-27],[-70,-30],[-71,-25]],lp:[-69.5,-23],t:'أتاكاما من أجف صحارى العالم لأن تيار همبولت البارد وجبال الأنديز يمنعان المطر.'},
+ pata2:{n:'باتاجونيا',c:'#c8b58a',poly:[[-72,-39],[-64,-39],[-63,-46],[-66,-52],[-72,-52],[-72,-45]],lp:[-68,-45],t:'باتاجونيا صحراء باردة في ظل المطر شرق الأنديز جنوب الأرجنتين.'}
+};
+const LS=[
+{id:'e0',u:0,t:'تضاريس مصر وأقاليمها',d:'الدلتا والصحاري وسيناء',map:'egypt',regs:['delta','west','east','sinai'],lines:['NILE','ROSETTA','DAMIETTA','CANAL'],lakes:['LNASSER','QARUN'],
+ intro:['مصر في شمال شرق أفريقيا، ومساحتها نحو مليون كم². تُطل على البحر المتوسط شمالًا والبحر الأحمر شرقًا.','تنقسم إلى أربعة أقاليم: الدلتا ووادي النيل، والصحراء الغربية، والصحراء الشرقية، وسيناء.','اضغط على كل إقليم وكل علامة على الخريطة لتقرأ الشرح.'],
+ pins:[P(31.24,30.04,'القاهرة','عاصمة مصر وأكبر مدنها، تقع عند رأس الدلتا حيث يبدأ النيل في التفرع.',{dx:14,dy:10,noloc:1}),P(29.92,31.2,'الإسكندرية','ثاني أكبر مدن مصر وأكبر موانيها على البحر المتوسط.'),P(32.88,23.97,'السد العالي','بُني جنوب أسوان (1960–1970) وخلفه بحيرة ناصر. يحمي مصر من الفيضان ويخزّن المياه ويولّد الكهرباء.',{dx:-16,dy:10}),P(25.52,29.2,'واحة سيوة','أبعد واحات مصر غربًا قرب الحدود الليبية، تشتهر بالنخيل والزيتون.'),P(27.5,29.8,'منخفض القطارة','يبلغ عمقه نحو 133 م تحت سطح البحر، ومياهه مالحة غير صالحة للزراعة.',{dy:-12}),P(33.95,28.51,'جبل كاترين','أعلى قمة في مصر (2629 م) في جنوب سيناء.'),P(33.8,27.26,'الغردقة','مدينة سياحية على ساحل البحر الأحمر، مشهورة بالشعاب المرجانية.'),P(32.3,31.26,'بورسعيد','مدينة عند المدخل الشمالي لقناة السويس على المتوسط.',{dx:-4}),P(30.84,29.31,'الفيوم','منخفض خصب غرب النيل فيه بحيرة قارون.',{dx:-8,dy:6}),P(32.9,24.09,'أسوان','أقصى مدن الصعيد جنوبًا وعندها خزان أسوان والسد العالي.',{dx:16,dy:-6})],
+ qs:[['أكبر أقاليم مصر مساحةً هو؟','الصحراء الغربية','الصحراء الشرقية','سيناء','الدلتا','الصحراء الغربية تشغل نحو ثلثي مساحة مصر.'],['أعلى قمة جبلية في مصر؟','جبل كاترين','جبل شايب البنات','جبل عويناط','جبل الجلالة','جبل كاترين في جنوب سيناء ارتفاعه 2629 م.'],['منخفض القطارة يقع في؟','الصحراء الغربية','الصحراء الشرقية','الدلتا','سيناء','القطارة منخفض في الصحراء الغربية عمقه نحو 133 م تحت سطح البحر.'],['بحيرة ناصر تقع خلف؟','السد العالي','خزان أسوان','القناطر الخيرية','قناطر إسنا','بحيرة ناصر هي بحيرة السد العالي جنوب أسوان.'],['أبعد واحة في الغرب قرب الحدود الليبية؟','سيوة','الخارجة','الداخلة','الفرافرة','سيوة أبعد واحات مصر غربًا.'],['يتفرع النيل شمال القاهرة إلى فرعي؟','رشيد ودمياط','الإسماعيلية والسويس','القاهرة والجيزة','أسوان والأقصر','فرعا رشيد ودمياط هما فرعا النيل في الدلتا.']]},
+{id:'a1',u:1,t:'الكشوف الجغرافية المهمة',d:'كولومبوس وماجلان وكورتيز',map:'am',regs:[],
+ intro:['في القرنين 15 و16 انطلقت سفن إسبانيا والبرتغال تبحث عن طريق بحري جديد إلى الهند والتوابل، بعد أن تعطّلت الطرق التقليدية عقب سقوط القسطنطينية (1453).','من أسباب الكشوف أيضًا: الذهب والثروة ونشر المسيحية وتقدّم أدوات الملاحة كالبوصلة والسفن الشراعية السريعة.','اضغط على العلامات لتعرف من وصل إلى أين.'],
+ pins:[P(-75.5,24.2,'جزر البهاما (1492)','وصل إليها كريستوفر كولومبوس بسفن إسبانية ظانًا أنه وصل إلى الهند، فسُمّيت «الهند الغربية».'),P(-39.1,-16.4,'ساحل البرازيل (1500)','وصل إليه البرتغالي بدرو كابرال، فصارت البرازيل مستعمرة برتغالية.'),P(-78.4,8.9,'برزخ بنما (1513)','عبره الإسباني بالبوا وكان أول أوروبي يرى المحيط الهادئ من الأمريكتين.'),P(-70.5,-53.5,'مضيق ماجلان (1520)','عبرته بعثة ماجلان التي أتمت أول رحلة حول العالم (1519–1522).'),P(-96.1,19.2,'فيراكروز (1519)','نزل عندها الإسباني هيرنان كورتيز وبدأ منها غزو المكسيك وإسقاط الأزتك.'),P(-80.5,-3.6,'تومبيس (1532)','انطلق منها الإسباني بيزارو لغزو إمبراطورية الإنكا في بيرو.'),P(-64.5,49,'خليج سانت لورانس (1534)','دخله الفرنسي جاك كارتييه، فكانت بداية الوجود الفرنسي في كندا.')],
+ qs:[['من وصل إلى جزر البهاما عام 1492 ظانًّا أنها الهند؟','كريستوفر كولومبوس','ماجلان','كورتيز','بيزارو','وصل كولومبوس بسفن إسبانية إلى جزر البهاما سنة 1492.'],['سُمّيت القارة «أمريكا» نسبةً إلى؟','أميريجو فسبوتشي','كولومبوس','ماجلان','كابرال','أطلق الاسم على الأرض الجديدة نسبة إلى الرحّالة أميريجو فسبوتشي.'],['من أول أوروبي رأى المحيط الهادئ من الأمريكتين (1513)؟','بالبوا','كابرال','كارتييه','كورتيز','عبر بالبوا برزخ بنما ورأى المحيط الهادئ.'],['المضيق جنوب أمريكا الجنوبية الذي يحمل اسم مكتشفه؟','مضيق ماجلان','مضيق هرمز','مضيق جبل طارق','مضيق باب المندب','عبر ماجلان المضيق الذي سُمّي باسمه عام 1520.'],['من أسباب الكشوف الجغرافية الأوروبية؟','البحث عن طريق بحري جديد للتوابل والذهب','حفر قناة بين الأطلسي والهادئ','الهروب من الثورة الصناعية','التوسع شرقًا لضم مصر','أرادت أوروبا الوصول إلى الهند والتوابل بطريق جديد بعد تعطّل الطرق القديمة.'],['الدولة التي ينتمي إليها كابرال الذي وصل البرازيل؟','البرتغال','إسبانيا','فرنسا','إنجلترا','كابرال برتغالي، ولذلك تتكلم البرازيل البرتغالية.']]},
+{id:'a2',u:1,t:'مظاهر السطح في أمريكا الشمالية',d:'الجبال والسهول والبحيرات',map:'na',regs:['cord','app','plains','shield','mexpl','camer'],lines:['MISSISSIPPI','STLAW'],lakes:['GLAKES'],
+ intro:['تتكوّن أمريكا الشمالية من ثلاثة أقسام رئيسية: جبال غربية عالية، وسهول وسطى منبسطة، وجبال منخفضة في الشرق.','في الشمال الدرع الكندي حول خليج هدسون، وفي الجنوب هضبة المكسيك ثم أمريكا الوسطى.','اضغط على كل مظهر من مظاهر السطح لتقرأ عنه.'],
+ pins:[P(-151,63.1,'جبل دينالي','أعلى قمة في أمريكا الشمالية (6190 م) في ألاسكا، ويُعرف أيضًا باسم ماكينلي.'),P(-84,45.5,'البحيرات العظمى','خمس بحيرات عذبة كبيرة بين الولايات المتحدة وكندا: سوبريور وميشيجان وهيورون وإيري وأونتاريو.'),P(-91.5,34,'نهر الميسيسيبي','أكبر أنهار الولايات المتحدة، يخترق السهول الوسطى ويصب في خليج المكسيك.'),P(-85,60,'خليج هدسون','خليج كبير في شمال كندا تحيط به هضبة الدرع الكندي.',{noloc:1}),P(-99.1,19.4,'مكسيكو سيتي','عاصمة المكسيك على هضبة مرتفعة، بُنيت فوق موقع عاصمة الأزتك القديمة.',{dx:10,dy:-6}),P(-79.7,9.1,'قناة بنما','قناة افتُتحت عام 1914 تربط المحيط الأطلسي بالمحيط الهادئ عبر أمريكا الوسطى.')],
+ qs:[['أعلى قمة في أمريكا الشمالية؟','دينالي (ماكينلي)','أكونكاجوا','إفرست','كليمنجارو','دينالي في ألاسكا ارتفاعه 6190 م.'],['الجبال التي تمتد في غرب أمريكا الشمالية؟','الروكي','الأبلاش','الأنديز','الألب','الروكي سلسلة التوائية حديثة عالية في الغرب.'],['نهر الميسيسيبي يصب في؟','خليج المكسيك','المحيط الهادئ','خليج هدسون','البحر الأبيض','يصب الميسيسيبي في خليج المكسيك جنوب الولايات المتحدة.'],['البحيرات العظمى تقع بين؟','الولايات المتحدة وكندا','المكسيك وأمريكا','كندا وألاسكا','كوبا وفلوريدا','تقع على الحدود بين الولايات المتحدة وكندا.'],['الدرع الكندي هضبة تحيط بـ؟','خليج هدسون','خليج المكسيك','البحيرات العظمى','نهر سانت لورانس','هضبة قديمة تحيط بخليج هدسون.'],['السهول الوسطى تقع بين؟','الروكي والأبلاش','الأنديز والأمازون','كندا والمكسيك','الأطلسي والهادئ','تمتد بين جبال الروكي غربًا والأبلاش شرقًا.']]},
+{id:'a3',u:1,t:'مظاهر السطح في أمريكا الجنوبية',d:'الأنديز والأمازون والهضاب',map:'sa',regs:['andes','amaz','bhl','guiana','llanos','pampas','pata','atac'],lines:['AMAZON','ORINOCO','PARANA'],lakes:['LTIT'],
+ intro:['أمريكا الجنوبية يحدها من الغرب سلسلة الأنديز العالية، ويليها شرقًا سهول منخفضة كحوض الأمازون، ثم هضاب قديمة كهضبة البرازيل وهضبة جويانا.','في الجنوب سهول البامبا وهضبة باتاجونيا.','اضغط على كل إقليم وكل علامة.'],
+ pins:[P(-70,-32.65,'جبل أكونكاجوا','أعلى قمة في أمريكا الجنوبية (6961 م) في الأرجنتين، وأعلى قمة خارج آسيا.'),P(-60,-3.2,'نهر الأمازون','أكبر نهر في العالم من حيث كمية المياه، ويصب في المحيط الأطلسي.',{dy:-8}),P(-62.5,5.97,'شلال أنجل','أعلى شلال في العالم (979 م) في فنزويلا على هضبة جويانا.'),P(-69.4,-15.8,'بحيرة تيتيكاكا','أعلى بحيرة صالحة للملاحة في العالم على حدود بيرو وبوليفيا في الأنديز.'),P(-57.5,-34.8,'نهر البلاتا','مصب كبير بين الأرجنتين وأوروجواي تقع عليه بوينس آيرس.',{dx:16,dy:12}),P(-67.3,-55.9,'رأس هورن','أقصى جنوب القارة في تشيلي، منطقة عواصف شديدة.',{noloc:1})],
+ qs:[['أطول سلسلة جبلية فوق اليابسة في العالم؟','الأنديز','الروكي','الهيمالايا','الأبلاش','الأنديز تمتد نحو 7000 كم على الساحل الغربي.'],['أعلى قمة في أمريكا الجنوبية؟','أكونكاجوا','دينالي','فنسون','كليمنجارو','أكونكاجوا (6961 م) في الأرجنتين.'],['أكبر نهر في العالم من حيث كمية المياه؟','الأمازون','النيل','الميسيسيبي','الأورينوكو','الأمازون أكبر الأنهار تصريفًا.'],['سهول الأورينوكو الحشائشية تسمّى؟','اليانوس','البامبا','البراري','الاستبس','اليانوس سافانا مدارية حول نهر الأورينوكو.'],['سهول الحشائش المعتدلة في الأرجنتين؟','البامبا','اليانوس','البراري','الكامبوس','البامبا خصبة لتربية الأبقار وزراعة القمح.'],['أعلى شلال في العالم يقع في هضبة؟','جويانا','البرازيل','باتاجونيا','الأنديز','شلال أنجل على هضبة جويانا في فنزويلا.']]},
+{id:'a4',u:1,t:'الحضارات القديمة: الإنكا والمايا والأزتك',d:'حضارات الأمريكتين',map:'am',regs:[],
+ intro:['قبل وصول الأوروبيين قامت في الأمريكتين حضارات كبيرة: الإنكا في جبال الأنديز، والمايا في أمريكا الوسطى، والأزتك في هضبة المكسيك.','سقطت الأزتك على يد كورتيز (1521) والإنكا على يد بيزارو (1532–1533).','اضغط على العلامات لتتعرف على كل حضارة.'],
+ pins:[P(-72,-13.5,'كوزكو (الإنكا)','عاصمة إمبراطورية الإنكا في جبال بيرو، وبالقرب منها مدينة ماتشو بيتشو الشهيرة. بنى الإنكا الطرق والمدرجات الزراعية واستخدموا «الكيبو» (عقد الخيوط) للتسجيل والحساب.'),P(-78.5,-7.2,'كاخاماركا','أسر عندها بيزارو الإمبراطور أتاهوالبا عام 1532 فبدأ سقوط الإنكا.',{dx:-6}),P(-89.6,17.2,'تيكال (المايا)','من أكبر مدن المايا، فيها أهرامات عالية. اشتهر المايا بتقويم دقيق وبعلم الفلك والكتابة الرمزية.'),P(-88.6,20.7,'تشيتشن إيتزا','مدينة مايا شهيرة في شبه جزيرة يوكاتان، فيها هرم كوكولكان.',{dx:12,dy:-4}),P(-99.1,19.4,'تينوختيتلان (الأزتك)','عاصمة الأزتك المبنية على جزيرة في بحيرة تيكسكوكو، وهي اليوم مكسيكو سيتي. زرع الأزتك «الجزر العائمة» (الشيناميباس).',{dx:2,dy:12})],
+ qs:[['عاصمة إمبراطورية الإنكا؟','كوزكو','تيكال','تينوختيتلان','ليما','كانت كوزكو عاصمة الإنكا في جبال بيرو.'],['أشهر مدينة أثرية للإنكا؟','ماتشو بيتشو','تيكال','تشيتشن إيتزا','تينوختيتلان','ماتشو بيتشو في جبال الأنديز.'],['حضارة المايا ازدهرت في؟','أمريكا الوسطى (يوكاتان وجواتيمالا)','جبال الأنديز','البرازيل','شمال كندا','المايا في شبه جزيرة يوكاتان وجواتيمالا.'],['عاصمة الأزتك؟','تينوختيتلان','كوزكو','تيكال','كاخاماركا','تينوختيتلان هي مكسيكو سيتي الحالية.'],['القائد الإسباني الذي أسقط الأزتك (1521)؟','كورتيز','بيزارو','كولومبوس','ماجلان','هيرنان كورتيز غزا المكسيك.'],['القائد الذي أسقط الإنكا؟','بيزارو','كورتيز','بالبوا','كابرال','بيزارو أسر أتاهوالبا وأسقط الإنكا.'],['«الكيبو» عند الإنكا كان وسيلة لـ؟','التسجيل والحساب','الزراعة','الحرب','الملاحة','عقد الخيوط كانت تُسجل بها الأعداد والبيانات.']]},
+{id:'b1',u:2,t:'محمد علي ومؤسسات الدولة الحديثة',d:'الجيش والتعليم والزراعة والصناعة',map:'delta',regs:[],lines:['NILE','ROSETTA','DAMIETTA','MAMOUDIYA'],lakes:['MANZALA','BURULLUS'],
+ intro:['تولى محمد علي حكم مصر عام 1805 باختيار العلماء والشعب بزعامة عمر مكرم، وتخلص من المماليك في مذبحة القلعة (1811).','بنى جيشًا حديثًا من المصريين وأسطولًا في الإسكندرية، وأرسل البعثات إلى أوروبا وأنشأ المدارس والمطبعة والمصانع.','اهتم بالزراعة: حفر الترع وأنشأ القناطر الخيرية وأدخل القطن طويل التيلة. وصار الحكم وراثيًا في أسرته بفرمان 1841.'],
+ pins:[P(31.24,30.04,'القاهرة','في القلعة وقعت مذبحة المماليك (1811). وأنشأ محمد علي مدرسة الطب (1827) بإشراف كلوت بك، ومطبعة بولاق، ومدارس الألسن والهندسة والمصانع.',{dx:14,dy:10}),P(29.92,31.2,'الإسكندرية','أنشأ بها ترسانة السفن والأسطول، وحفر ترعة المحمودية (1820) التي تنقل مياه النيل للإسكندرية.'),P(31.13,30.19,'القناطر الخيرية','بدأ إنشاؤها 1833 عند رأس الدلتا على فرعي رشيد ودمياط لتنظيم الري طوال العام.',{dx:-14,dy:-14}),P(30.42,31.4,'رشيد','هُزمت فيها حملة فريزر الإنجليزية عام 1807 على يد أهالي رشيد.')],
+ qs:[['تولى محمد علي حكم مصر عام؟','1805','1798','1849','1882','اختاره العلماء والشعب سنة 1805.'],['العالم الذي تزعّم اختيار محمد علي واليًا؟','عمر مكرم','رفاعة الطهطاوي','محمد عبده','سعد زغلول','عمر مكرم نقيب الأشراف قاد اختيار محمد علي.'],['هدف مذبحة القلعة (1811)؟','التخلص من المماليك','الإطاحة بالعثمانيين','طرد الفرنسيين','إنشاء الجيش','تخلص محمد علي من زعماء المماليك.'],['الطبيب الفرنسي الذي أشرف على مدرسة الطب؟','كلوت بك','ديليسبس','نابليون','جومار','كلوت بك أسس مدرسة الطب 1827.'],['إمام أول بعثة تعليمية إلى فرنسا؟','رفاعة الطهطاوي','عمر مكرم','علي مبارك','أحمد لطفي','رفاعة الطهطاوي كان إمام بعثة 1826.'],['القناطر الخيرية أُنشئت عند؟','رأس الدلتا','أسوان','السويس','الإسكندرية','تقع عند تفرع النيل إلى فرعي رشيد ودمياط.'],['المحصول الذي أدخله محمد علي وزاد عائد مصر؟','القطن طويل التيلة','الأرز','الشعير','الفول','القطن أصبح أهم المحاصيل النقدية.']]},
+{id:'b2',u:2,t:'خلفاء محمد علي والنهضة والمشروعات',d:'السكة الحديد وقناة السويس',map:'delta',regs:[],lines:['NILE','ROSETTA','DAMIETTA','CANAL'],lakes:[],
+ intro:['خلف محمد علي أبناؤه وأحفاده: إبراهيم ثم عباس الأول ثم سعيد ثم إسماعيل ثم توفيق.','شهد عصرهم مشروعات كبرى: أول سكة حديد (القاهرة–الإسكندرية)، وقناة السويس (افتُتحت 1869)، ومجلس شورى النواب (1866)، ودار الأوبرا.','لكن ديون إسماعيل الكبيرة فتحت الباب للتدخل الأجنبي.'],
+ pins:[P(29.92,31.2,'الإسكندرية','بدأ إنشاء أول سكة حديد في أفريقيا (الإسكندرية–القاهرة) في عهد عباس الأول (1851).'),P(31.24,30.04,'القاهرة','أنشأ إسماعيل أحياء حديثة ودار الأوبرا (1869) ومجلس شورى النواب (1866).',{dx:14,dy:10}),P(32.3,31.26,'بورسعيد','عند المدخل الشمالي للقناة، بدأ الحفر عندها 1859 وسُميت باسم سعيد.',{dx:-4}),P(32.27,30.6,'الإسماعيلية','مدينة أسسها إسماعيل على القناة وفيها مقر شركة القناة.'),P(32.55,29.97,'السويس','المدخل الجنوبي لقناة السويس على البحر الأحمر.')],
+ qs:[['أول سكة حديد في مصر وأفريقيا بين؟','الإسكندرية والقاهرة','القاهرة وأسوان','بورسعيد والسويس','طنطا والمنصورة','بدأ إنشاؤها في عهد عباس الأول.'],['الخديوي الذي منح امتياز حفر قناة السويس لديليسبس (1854)؟','سعيد','إسماعيل','عباس الأول','توفيق','أعطى سعيد الامتياز لديليسبس.'],['افتُتحت قناة السويس عام؟','1869','1859','1882','1914','افتُتحت في عهد إسماعيل سنة 1869.'],['قناة السويس تربط بين؟','المتوسط والبحر الأحمر','الأطلسي والهادئ','النيل والبحر الأحمر','المتوسط والأطلسي','القناة تربط البحرين الأبيض والأحمر.'],['الخديوي الذي أنشأ مجلس شورى النواب 1866؟','إسماعيل','سعيد','عباس الأول','توفيق','إسماعيل أنشأ أول مجلس نيابي.'],['تفاقم ديون إسماعيل أدى إلى؟','تدخل أجنبي ثم عزله عام 1879','زيادة قوة الجيش','انتهاء الحكم الوراثي','حرب مع فرنسا','تدخلت بريطانيا وفرنسا وعُزل إسماعيل 1879.']]},
+{id:'c1',u:3,t:'الغابات الكثيفة',d:'المطيرة والصنوبرية والمتساقطة',map:'all',regs:['rain','taiga','decid'],
+ intro:['الغابات الكثيفة تنتشر حيث يزيد المطر: في المناطق الحارة (الاستوائية) وفي الشمال البارد (الصنوبرية) وفي الشرق المعتدل (المتساقطة الأوراق).','لكل نوع مناخ ونبات وحيوان يناسبه.','اضغط على كل نوع من الغابات.'],
+ pins:[P(-124,47,'غابات الساحل الغربي','غابات مطيرة معتدلة على المحيط الهادئ أشجارها شديدة الارتفاع (مثل السكويا).',{noloc:1})],
+ qs:[['أكبر غابة مطيرة في العالم؟','الأمازون','الكونغو','التايجا','البراري','غابات الأمازون في أمريكا الجنوبية.'],['مناخ الغابات المطيرة؟','حار مطير طوال العام','بارد ثلجي','حار جاف','معتدل جاف صيفًا','الأمطار والحرارة طوال العام.'],['الغابات الصنوبرية (التايجا) تنتشر في؟','شمال كندا وألاسكا','حوض الأمازون','أمريكا الوسطى','جنوب الأرجنتين','حزام شمالي بارد.'],['أشجار التايجا؟','إبرية مخروطية دائمة الخضرة','عريضة الأوراق متساقطة','نخيل','أشجار شوكية','أوراقها إبرية تتحمل البرد.'],['الغابات المتساقطة الأوراق في؟','شرق الولايات المتحدة','الأمازون','الأنديز','المكسيك','مناخها معتدل دافئ مطير.'],['أشجار الغابات المتساقطة تُسقط أوراقها في؟','الخريف','الربيع','الصيف','طوال العام','تسقط أوراقها في الخريف.']]},
+{id:'c2',u:3,t:'نظم الحشائش والصحاري',d:'البراري والبامبا والأتاكاما',map:'all',regs:['prairie','pam2','llanos2','cerrado','desN','atac2','pata2'],
+ intro:['الحشائش تنمو حيث المطر متوسط، والصحاري حيث المطر قليل جدًا.','الحشائش المعتدلة: البراري والبامبا. والحشائش المدارية (السافانا): اليانوس والكامبوس.','الصحاري: سونورا وموهافي في الشمال، وأتاكاما وباتاجونيا في الجنوب.'],
+ pins:[],
+ qs:[['البراري تقع في؟','وسط أمريكا الشمالية','الأرجنتين','فنزويلا','البرازيل','براري الولايات المتحدة وكندا.'],['البامبا في؟','الأرجنتين وأوروجواي','فنزويلا','كندا','المكسيك','حشائش معتدلة خصبة.'],['اليانوس سافانا مدارية حول نهر؟','الأورينوكو','الأمازون','الميسيسيبي','البلاتا','اليانوس في فنزويلا وكولومبيا.'],['أكثر الصحارى جفافًا؟','أتاكاما','سونورا','باتاجونيا','تشيواوا','أتاكاما في شمال تشيلي.'],['صحراء باتاجونيا قليلة المطر بسبب؟','وقوعها في ظل المطر شرق الأنديز','كثرة الأنهار','قربها من خط الاستواء','الغابات الكثيفة','الأنديز تحجب الرياح الممطرة.'],['صحراء سونورا في؟','جنوب غرب الولايات المتحدة وشمال المكسيك','جنوب الأرجنتين','الأمازون','أمريكا الوسطى','حارة جافة فيها الصبّار.'],['الحشائش المعتدلة تصلح لزراعة؟','القمح والذرة','الموز','البن','المطاط','البراري حزام القمح.']]},
+{id:'c3',u:3,t:'النظم البيئية المائية',d:'المحيطات والأنهار والبحيرات والشعاب',map:'all',regs:[],lines:['MISSISSIPPI','STLAW','AMAZON','ORINOCO','PARANA'],lakes:['GLAKES','LTIT'],
+ intro:['النظم المائية في الأمريكتين متنوعة: محيطات وأنهار كبرى وبحيرات ومستنقعات وشعاب مرجانية.','تحيط بالأمريكتين المحيطات: الأطلسي شرقًا والهادئ غربًا والمتجمد الشمالي.','تهددها مخاطر كالتلوث والصيد الجائر.'],
+ pins:[P(-84,45.5,'البحيرات العظمى','خمس بحيرات عذبة، من أكبر مخازن المياه العذبة في العالم.'),P(-91.5,34,'نهر الميسيسيبي','من أكبر أنهار العالم، يصب في خليج المكسيك.',{dx:8}),P(-62,-4,'نهر الأمازون','أكبر نهر في العالم تصريفًا.',{dx:6,dy:-4}),P(-57,-17,'البانتانال','أكبر منطقة مستنقعات استوائية في العالم، في البرازيل، غنية بالأحياء.'),P(-80,17,'البحر الكاريبي','تنمو فيه شعاب مرجانية ضخمة وهو غني بالأسماك.',{dx:6}),P(-90,25,'خليج المكسيك','يصب فيه الميسيسيبي ويحتوي على ثروات بحرية وبترول.',{dx:-8}),P(-70,47,'نهر سانت لورانس','يصل البحيرات العظمى بالمحيط الأطلسي.')],
+ qs:[['عدد البحيرات العظمى؟','خمس','ثلاث','ست','سبع','سوبريور وميشيجان وهيورون وإيري وأونتاريو.'],['نهر سانت لورانس يصل البحيرات العظمى بـ؟','المحيط الأطلسي','المحيط الهادئ','خليج المكسيك','البحر الكاريبي','يصب في الأطلسي.'],['أكبر منطقة مستنقعات استوائية في العالم؟','البانتانال','الإيفرجليدز','الدلتا','الأورينوكو','البانتانال في البرازيل.'],['الشعاب المرجانية تكثر في؟','البحر الكاريبي','المحيط المتجمد','نهر الأمازون','البحيرات العظمى','المياه الدافئة الضحلة.'],['من مخاطر النظم المائية؟','التلوث والصيد الجائر','قلة الأسماك','زيادة الغابات','المطر','تهدد التوازن البيئي.'],['المحيط الذي يطل على غرب الأمريكتين؟','الهادئ','الأطلسي','الهندي','المتجمد الجنوبي','الهادئ غربًا والأطلسي شرقًا.']]},
+{id:'d1',u:4,t:'الحركة الوطنية والثورة العرابية',d:'عرابي والتل الكبير 1882',map:'delta',regs:[],lines:['NILE','ROSETTA','DAMIETTA','CANAL'],lakes:[],
+ intro:['بعد ديون إسماعيل تدخلت بريطانيا وفرنسا (الرقابة الثنائية)، وغضب الجيش والشعب.','في 9 سبتمبر 1881 تظاهر الجيش بقيادة أحمد عرابي أمام قصر عابدين مطالبًا بدستور ومجلس نواب وزيادة الجيش.','في يوليو 1882 ضرب الأسطول البريطاني الإسكندرية، وهُزم عرابي في التل الكبير (13 سبتمبر 1882) وبدأ الاحتلال البريطاني.'],
+ pins:[P(31.24,30.04,'القاهرة (عابدين)','وقعت مظاهرة عابدين 1881، ودخلت القوات البريطانية القاهرة بعد التل الكبير.',{dx:14,dy:10}),P(29.92,31.2,'الإسكندرية','ضرب الأسطول البريطاني الإسكندرية في 11 يوليو 1882.'),P(31.77,30.54,'التل الكبير','المعركة الحاسمة 13 سبتمبر 1882 وهُزم فيها عرابي.',{dx:-8,dy:16}),P(32.27,30.6,'الإسماعيلية','انطلقت منها القوات البريطانية بعد نزولها عند قناة السويس.',{dx:12,dy:-4}),P(32.3,31.26,'بورسعيد','احتلتها بريطانيا لتأمين قناة السويس.',{dx:-4}),P(30.13,31.13,'كفر الدوار','خط دفاع عرابي ضد القوات المتقدمة من الإسكندرية.',{dx:6,dy:16})],
+ qs:[['قائد الثورة العرابية؟','أحمد عرابي','مصطفى كامل','سعد زغلول','محمد فريد','قاد عرابي الجيش.'],['الخديوي في عهد الثورة؟','توفيق','إسماعيل','سعيد','عباس','حكم توفيق 1879–1892.'],['مظاهرة عابدين كانت عام؟','1881','1919','1805','1952','9 سبتمبر 1881.'],['الأسطول البريطاني ضرب الإسكندرية عام؟','1882','1881','1914','1919','ضُربت في 11 يوليو 1882.'],['المعركة الحاسمة في الثورة؟','التل الكبير','رشيد','الإسكندرية','السويس','هزمت فيها بريطانيا الجيش المصري.'],['نتيجة هزيمة عرابي؟','الاحتلال البريطاني لمصر','استقلال مصر','إنهاء الحكم الوراثي','إلغاء القناة','بدأ الاحتلال 1882.'],['المنفى الذي نُفي إليه عرابي؟','سيلان (سريلانكا)','مالطة','سيشل','الهند','نُفي إلى جزيرة سيلان.']]},
+{id:'d2',u:4,t:'الكفاح الوطني ضد الاحتلال',d:'مصطفى كامل ودنشواي',map:'delta',regs:[],lines:['NILE','ROSETTA','DAMIETTA','CANAL'],lakes:[],
+ intro:['بعد الاحتلال حكم مصر فعليًا المعتمد البريطاني اللورد كرومر (1883–1907).','قاد مصطفى كامل الحركة الوطنية: أصدر جريدة اللواء (1900) وأسس الحزب الوطني (1907).','حادثة دنشواي (1906) فجّرت غضب المصريين ضد الاحتلال. وفي الحرب العالمية الأولى أعلنت بريطانيا الحماية على مصر (1914).'],
+ pins:[P(31.24,30.04,'القاهرة','مقر الحزب الوطني وجريدة اللواء، وفيها بدأت الحركة الوطنية.',{dx:14,dy:10}),P(30.9,30.5,'دنشواي','قرية بالمنوفية، حُكم فيها بقسوة على الفلاحين 1906 بعد حادثة مع ضباط إنجليز، فزاد الغضب الوطني.',{dx:-14,dy:-6}),P(32.3,31.26,'بورسعيد','عبر قناتها السويس تتحكم بريطانيا في الطريق إلى الهند.',{dx:-4}),P(29.92,31.2,'الإسكندرية','ميناء رئيسي ومقر أحداث وطنية متعددة.')],
+ qs:[['زعيم الحزب الوطني الذي أسسه 1907؟','مصطفى كامل','سعد زغلول','أحمد عرابي','محمد فريد','أسس مصطفى كامل الحزب الوطني.'],['الجريدة التي أصدرها مصطفى كامل؟','اللواء','الأهرام','المقطم','الوفد','صدرت 1900.'],['حادثة دنشواي كانت عام؟','1906','1882','1919','1936','وقعت 1906 في المنوفية.'],['المعتمد البريطاني الذي حكم فعليًا حتى 1907؟','كرومر','كتشنر','ونجت','ميلنر','اللورد كرومر 1883–1907.'],['أعلنت بريطانيا الحماية على مصر عام؟','1914','1882','1919','1922','أثناء الحرب العالمية الأولى.'],['خلف مصطفى كامل في رئاسة الحزب؟','محمد فريد','سعد زغلول','عرابي','مصطفى النحاس','تولى محمد فريد.']]},
+{id:'d3',u:4,t:'مصر بين الحربين وطريق الاستقلال',d:'ثورة 1919 ومعاهدة 1936',map:'egypt',regs:[],lines:['NILE','ROSETTA','DAMIETTA','CANAL'],lakes:[],
+ intro:['بعد الحرب العالمية الأولى طلب سعد زغلول ورفاقه تكوين «الوفد» للسفر إلى مؤتمر الصلح، فنفتهم بريطانيا إلى مالطة (مارس 1919) فاندلعت ثورة 1919 في كل مصر، وشاركت فيها المرأة.','صدر تصريح 28 فبراير 1922 باستقلال مصر مع تحفظات، ثم دستور 1923.','عُقدت معاهدة 1936 (النحاس)، وألغت اتفاقية مونترو (1937) الامتيازات الأجنبية. وأسس طلعت حرب بنك مصر (1920) لدعم الاقتصاد الوطني.'],
+ pins:[P(31.24,30.04,'القاهرة','مركز الثورة والوفد، وفيها مظاهرات المرأة بقيادة هدى شعراوي، ومقر بنك مصر الذي أسسه طلعت حرب 1920.',{dx:14,dy:10}),P(31.0,30.79,'طنطا','من مدن الدلتا التي اشتعلت فيها ثورة 1919.',{dx:-10,dy:-8}),P(31.18,27.18,'أسيوط','امتدت الثورة إلى الصعيد (وأحداث ديروط بأسيوط).',{dx:10}),P(32.27,30.6,'الإسماعيلية','منطقة القناة التي حصرت المعاهدة وجود القوات البريطانية فيها (1936).',{dx:-10,dy:8}),P(29.92,31.2,'الإسكندرية','ميناء كبير شهد إضرابات ومظاهرات في ثورة 1919.',{dx:0})],
+ qs:[['زعيم الوفد المصري عام 1918؟','سعد زغلول','مصطفى النحاس','أحمد عرابي','محمد فريد','قاد سعد زغلول الوفد.'],['المنفى الذي نُفي إليه سعد زغلول 1919؟','مالطة','سيلان','سيشل','قبرص','نُفي إلى مالطة.'],['اندلعت ثورة 1919 بعد؟','نفي سعد زغلول','حرب فلسطين','افتتاح القناة','دنشواي','نفي الزعماء أشعل الثورة.'],['تصريح 28 فبراير 1922 أعلن؟','استقلال مصر بتحفظات','انتهاء الاحتلال تمامًا','الحماية البريطانية','الجمهورية','استقلال ناقص بتحفظات.'],['صدر دستور مصر الأول بعد الثورة عام؟','1923','1882','1936','1952','دستور 1923.'],['مؤسس بنك مصر 1920؟','طلعت حرب','سعد زغلول','مصطفى كامل','النحاس','أسس طلعت حرب بنك مصر.'],['وقّع معاهدة 1936 من الجانب المصري؟','مصطفى النحاس','سعد زغلول','محمد فريد','إسماعيل صدقي','وقّعها النحاس زعيم الوفد.'],['اتفاقية مونترو 1937 ألغت؟','الامتيازات الأجنبية','معاهدة 1936','قناة السويس','الدستور','أنهت الامتيازات الأجنبية.']]}
+];
+const UNITS=['استكشف مصر','الوحدة الأولى: الجغرافيا الطبيعية للأمريكتين وحضاراتها','الوحدة الثانية: بناء الدولة الحديثة في مصر','الوحدة الثالثة: النظم البيئية في الأمريكتين','الوحدة الرابعة: مصر من الاحتلال إلى الاستقلال'];
+const EX={
+e0:{s:[
+['الموقع والمساحة','تقع مصر في شمال شرق قارة أفريقيا، وتمتد بين دائرتي عرض 22° و31°35′ شمالًا وخطي طول 25° و36°55′ شرقًا تقريبًا. مساحتها نحو مليون كم². وتتصل بآسيا عن طريق شبه جزيرة سيناء، ولذلك يقال إنها تتوسط قارات العالم القديم. يحدها من الشمال البحر المتوسط، ومن الشرق البحر الأحمر وفلسطين، ومن الجنوب السودان، ومن الغرب ليبيا.'],
+['وادي النيل والدلتا','النيل شريان الحياة في مصر. يدخلها من الجنوب عند حدود السودان ثم يصب في بحيرة ناصر خلف السد العالي، وبعد أسوان يجري في وادٍ ضيق يتسع شمالًا حتى القاهرة، ثم يتفرع إلى فرعي رشيد ودمياط ويكوّن الدلتا. أرض الوادي والدلتا طميية خصبة، ولذلك يعيش فيها نحو 95% من السكان على نحو 5% فقط من مساحة مصر. وهذا يفسر ازدحام السكان في هذا الإقليم.'],
+['الصحراء الغربية','تشغل نحو ثلثي مساحة مصر، وهي هضبة منبسطة قليلة الارتفاع تتخللها منخفضات وواحات. أهم الواحات: سيوة والبحرية والفرافرة والداخلة والخارجة. وأعمق منخفضاتها منخفض القطارة (نحو 133 م تحت سطح البحر). من ثرواتها البترول والغاز والحديد، وتقوم في الواحات زراعة النخيل والزيتون والحبوب اعتمادًا على المياه الجوفية.'],
+['الصحراء الشرقية','تمتد بين وادي النيل والبحر الأحمر، وتعلوها سلاسل جبال البحر الأحمر التي تزيد قممها على 2000 م، تقطعها أودية جافة (وديان) تجري فيها السيول بعد المطر. وتنتشر فيها الثروات المعدنية كالذهب والفوسفات والرخام والجرانيت، وتطل على ساحل غني بالشعاب المرجانية وبمدن سياحية مثل الغردقة ومرسى علم.'],
+['شبه جزيرة سيناء','مساحتها نحو 6% من مساحة مصر، على شكل مثلث رأسه في الجنوب بين خليجي السويس والعقبة. جنوبها جبلي وفيه جبل كاترين (2629 م) أعلى قمة في مصر وجبل موسى ودير سانت كاترين، وشمالها سهل ساحلي رملي على البحر المتوسط. تفصلها قناة السويس عن باقي مصر. من ثرواتها البترول والمنجنيز والفيروز، وتشتهر بالسياحة في شرم الشيخ ودهب.'],
+['السواحل والبحيرات','لمصر ساحلان: ساحل البحر المتوسط شمالًا وساحل البحر الأحمر وخليجي السويس والعقبة شرقًا. وفي شمال الدلتا بحيرات ساحلية مثل المنزلة والبرلس وإدكو ومريوط، وفي الفيوم بحيرة قارون، وجنوبًا بحيرة ناصر وهي أكبر بحيرة صناعية في مصر.']],
+k:[['الدلتا','سهل مثلثي طميي يتكون من رواسب فرعي النيل'],['الواحة','منطقة منخفضة في الصحراء تتوافر فيها المياه الجوفية فتقوم عليها الزراعة'],['المنخفض','أرض أقل ارتفاعًا مما حولها وقد تقع تحت مستوى سطح البحر'],['الوادي (الجاف)','مجرى قديم لا تجري فيه المياه إلا بعد المطر']],
+r:'مصر أربعة أقاليم: الدلتا والوادي (السكان والزراعة)، الصحراء الغربية (الأكبر)، الصحراء الشرقية (المعادن)، وسيناء (الجبال والسياحة).'},
+a1:{s:[
+['لماذا خرجت أوروبا تبحث عن طرق جديدة؟','بعد سقوط القسطنطينية في يد العثمانيين سنة 1453 صعب على التجار الأوروبيين المرور بالطرق التقليدية إلى الهند والشرق، حيث التوابل والحرير. فبحث الأوروبيون عن طريق بحري جديد. وشجّع ذلك الرغبة في الذهب والثروة، ونشر المسيحية، وحب الاستكشاف، ثم تقدم أدوات الملاحة كالبوصلة والإسطرلاب والسفن الشراعية الأقوى (الكارافيل).'],
+['رحلة كولومبوس (1492)','كريستوفر كولومبوس بحّار من جنوة أقنع ملكي إسبانيا (إيزابيلا وفرديناند) بتمويل رحلة غربًا للوصول إلى الهند. أبحر في أغسطس 1492 بثلاث سفن (سانتا ماريا والبينتا والنينيا)، ووصل في 12 أكتوبر 1492 إلى جزر البهاما، وظن أنه وصل إلى الهند فسمّى السكان «الهنود الحمر» وسُميت المنطقة «الهند الغربية». قام بثلاث رحلات أخرى ومات وهو يعتقد أنها آسيا.'],
+['تسمية القارة','الرحّالة أميريجو فسبوتشي (إيطالي) استكشف السواحل وأدرك أنها «عالم جديد» وليست آسيا، فأطلق الجغرافي فالدزيمولر اسم «أمريكا» على هذه الأرض نسبةً إليه (1507).'],
+['كابرال وبالبوا وماجلان','البرتغالي بدرو كابرال وصل ساحل البرازيل عام 1500 فصارت مستعمرة برتغالية. الإسباني بالبوا عبر برزخ بنما عام 1513 ورأى المحيط الهادئ. وبعثة ماجلان (1519–1522) عبرت المضيق الذي يحمل اسمه جنوب القارة ثم عبرت المحيط الهادئ، وقُتل ماجلان في الفلبين لكن بقية رجاله أتموا أول رحلة حول العالم وأثبتوا كروية الأرض.'],
+['كورتيز وبيزارو وكارتييه','هيرنان كورتيز غزا المكسيك (1519–1521) وأسقط الأزتك. وفرانسيسكو بيزارو أسقط إمبراطورية الإنكا في بيرو (1532–1533). وفي الشمال استكشف الفرنسي جاك كارتييه نهر سانت لورانس (1534) فكانت بداية الوجود الفرنسي في كندا.'],
+['نتائج الكشوف','أقامت أوروبا مستعمرات في الأمريكتين ونهبت الذهب والفضة، وانتقلت محاصيل جديدة (البطاطس والذرة والطماطم) إلى العالم القديم ونقلت أوروبا القمح والخيول. لكن السكان الأصليين عانوا من الحروب والأمراض الجديدة، ونشطت تجارة الرقيق عبر الأطلسي.']],
+k:[['الكشوف الجغرافية','رحلات بحرية للتعرف على أراضٍ وطرق جديدة'],['المستعمرة','أرض تسيطر عليها دولة أخرى'],['الإسطرلاب','أداة قديمة لتحديد الموقع في البحر بقياس ارتفاع النجوم'],['البرزخ','شريط ضيق من اليابسة يصل بين يابستين']],
+r:'كولومبوس (1492 البهاما) – كابرال (1500 البرازيل) – بالبوا (1513 المحيط الهادئ) – ماجلان (1519 حول العالم) – كورتيز (المكسيك) – بيزارو (بيرو).'},
+a2:{s:[
+['الموقع والمساحة','تقع أمريكا الشمالية في نصف الكرة الغربي، تمتد من المحيط المتجمد الشمالي شمالًا حتى برزخ بنما جنوبًا. مساحتها نحو 24 مليون كم² وهي ثالث قارات العالم مساحة. يحدها المحيط الأطلسي شرقًا والمحيط الهادئ غربًا.'],
+['الجبال الغربية','سلسلة جبال التوائية حديثة عالية تمتد على الساحل الغربي من ألاسكا حتى المكسيك، وتشمل الروكي والسييرا نيفادا والكاسكيد. أعلى قممها دينالي في ألاسكا (6190 م). وهي نشطة في البراكين والزلازل، وتتخللها هضاب وأحواض مثل هضبة كولورادو.'],
+['السهول الوسطى','سهل واسع منبسط بين الروكي غربًا والأبلاش شرقًا، يخترقه نهر الميسيسيبي ومساعداته. تربتها خصبة فهي سلة غذاء القارة (القمح والذرة).'],
+['جبال الأبلاش','جبال قديمة مستديرة القمم منخفضة نسبيًا (أعلى قمة جبل ميتشل نحو 2037 م) في شرق الولايات المتحدة بموازاة الأطلسي، وفيها الفحم.'],
+['الدرع الكندي والأنهار والبحيرات','في الشمال هضبة قديمة صلبة تحيط بخليج هدسون وهي غنية بالمعادن والبحيرات. وتُعد البحيرات العظمى الخمس من أكبر مجموعات المياه العذبة في العالم، ويصل بينها وبين الأطلسي نهر سانت لورانس.'],
+['هضبة المكسيك وأمريكا الوسطى','هضبة المكسيك بين سلسلتي سييرا مادري ويقع عليها العاصمة مكسيكو سيتي. وجنوبًا أمريكا الوسطى برزخ ضيق جبلي بركاني حار رطب، وتتصل المحيطات فيه عبر قناة بنما (1914). وإلى الشرق جزر الكاريبي.']],
+k:[['الجبال الالتوائية','جبال تكونت بطي الصخور وتتميز بالارتفاع الشاهق'],['الدرع','كتلة صخرية قديمة صلبة'],['البرزخ','شريط يابس ضيق يصل بين يابستين'],['الرافد','نهر صغير يصب في نهر أكبر']],
+r:'غرب: جبال عالية (الروكي)، وسط: سهول خصبة، شرق: الأبلاش، شمال: الدرع الكندي، جنوب: هضبة المكسيك وأمريكا الوسطى.'},
+a3:{s:[
+['الموقع والمساحة','تقع أمريكا الجنوبية جنوب برزخ بنما، يحدها الأطلسي شرقًا والهادئ غربًا، ومساحتها نحو 17.8 مليون كم² (رابع القارات). يمر بها خط الاستواء في الشمال، ويمتد جنوبها حتى قرب القطب.'],
+['جبال الأنديز','أطول سلسلة جبلية فوق اليابسة (نحو 7000 كم) على الساحل الغربي، وهي حديثة التكوين فيها براكين وزلازل. أعلى قممها أكونكاجوا (6961 م) في الأرجنتين وهي أعلى قمة في العالم خارج آسيا. وبين سلاسلها هضاب مرتفعة تقع فيها بحيرة تيتيكاكا.'],
+['حوض الأمازون','سهل منخفض واسع تقريبًا 7 ملايين كم² يجري فيه نهر الأمازون (نحو 6400 كم) وهو أكبر نهر في العالم من حيث كمية المياه. المناخ حار مطير فتغطيه أكبر غابات مطيرة في العالم.'],
+['الهضاب القديمة','هضبة جويانا في الشمال وفيها شلال أنجل (979 م) أعلى شلال في العالم. وهضبة البرازيل في الشرق وهي أوسع الهضاب وأقل ارتفاعًا من الأنديز.'],
+['السهول','سهول الأورينوكو (اليانوس) في الشمال، وسهول البامبا الخصبة في الأرجنتين وأوروجواي، ثم هضبة باتاجونيا الباردة الجافة في أقصى الجنوب.'],
+['الصحراء الساحلية','صحراء أتاكاما في شمال تشيلي من أجف مناطق العالم لأن تيار همبولت البارد يقلل التبخر والمطر، وغنية بالنحاس.']],
+k:[['حوض النهر','المنطقة التي تجمع مياه النهر وروافده'],['الظل المطري','منطقة قليلة المطر لأن جبالًا تحجب الرياح الممطرة'],['الشلال','سقوط مياه النهر من مكان مرتفع'],['السافانا','حشائش مدارية مع أشجار متفرقة']],
+r:'الأنديز غربًا – سهول الأمازون والأورينوكو وسط – هضاب جويانا والبرازيل شرقًا – البامبا وباتاجونيا جنوبًا.'},
+a4:{s:[
+['لماذا هذه الحضارات مهمة؟','قبل وصول الأوروبيين أقام السكان الأصليون للأمريكتين حضارات متقدمة في الزراعة والعمارة والفلك. أشهرها المايا والأزتك في أمريكا الوسطى والإنكا في جبال الأنديز.'],
+['حضارة المايا','ازدهرت في جنوب المكسيك (يوكاتان) وجواتيمالا وهندوراس نحو القرنين 3–9 للميلاد. أقامت دول مدن مستقلة مثل تيكال وتشيتشن إيتزا، وبنت أهرامات ومعابد ضخمة. اشتهرت بالكتابة الرمزية وبتقويم دقيق وعلم الفلك وبنظام عددي عرف مفهوم الصفر. زرعت الذرة والكاكاو.'],
+['حضارة الأزتك','أقامت إمبراطورية في هضبة المكسيك، وأسست عاصمتها تينوختيتلان نحو 1325 على جزيرة في بحيرة تيكسكوكو، ثم صارت أكبر مدن العالم وقتها. بنت الأزتك الجسور وزرعت على «الجزر العائمة» (الشيناميباس) وكان لها جيش قوي. وسقطت على يد كورتيز عام 1521، وبُنيت مكسيكو سيتي فوق أنقاضها.'],
+['حضارة الإنكا','أقامت أكبر إمبراطورية في أمريكا الجنوبية على طول الأنديز في بيرو وما حولها، وعاصمتها كوزكو. شقت شبكة طرق طويلة وبنت جسورًا معلّقة، وزرعت المدرجات الجبلية (البطاطس والذرة)، واستخدمت «الكيبو» (حبال معقودة) في التسجيل والحساب. من أشهر آثارها مدينة ماتشو بيتشو. أسقطها بيزارو بعد أسر الإمبراطور أتاهوالبا (1532).'],
+['سقوطها ونهاية حضاراتها','ساعد على سقوطها تفوق الأوروبيين في السلاح (الحديد والبارود والخيول) وانتشار أمراض جديدة مثل الجدري لم يكن عند السكان مناعة ضدها، وتحالف أعداء هذه الدول مع الإسبان. وما زالت لغات وعادات هذه الشعوب باقية حتى اليوم.']],
+k:[['الكيبو','حبال ملونة معقودة استخدمها الإنكا للتسجيل'],['المدرجات الزراعية','أراضٍ زراعية على سفوح الجبال على شكل درجات'],['الشيناميباس','جزر صناعية زراعية في البحيرة عند الأزتك'],['دولة المدينة','مدينة مستقلة لها حكومتها']],
+r:'المايا: كتابة وفلك وتقويم (أمريكا الوسطى) – الأزتك: تينوختيتلان (المكسيك) – الإنكا: كوزكو وماتشو بيتشو (بيرو).'},
+b1:{s:[
+['مصر قبل محمد علي','بعد خروج الحملة الفرنسية (1801) عمّت الفوضى مصر بين المماليك والعثمانيين، وعانى الشعب من الظلم والضرائب. جاء محمد علي (ضابط ألباني من قولة) ضمن القوات العثمانية، واستغل الأحداث.'],
+['توليه الحكم (1805)','ثار المصريون بقيادة العلماء وعلى رأسهم عمر مكرم ضد الوالي خورشيد باشا، واختاروا محمد علي واليًا، فأقرّه السلطان العثماني 1805. وفي 1807 هُزمت حملة فريزر الإنجليزية في رشيد. ثم تخلص من المماليك في مذبحة القلعة (1811) فاستقر له الحكم.'],
+['الجيش والأسطول','أنشأ جيشًا نظاميًا حديثًا من المصريين (التجنيد الإجباري)، واستعان بخبراء أجانب مثل سليمان باشا الفرنساوي، وأنشأ ترسانة للسفن في الإسكندرية وبنى أسطولًا قويًا، وأقام مدارس حربية.'],
+['التعليم والثقافة','أنشأ مدرسة الهندسة (1816) ومدرسة الطب (1827) ومدرسة الألسن (1835) وأرسل البعثات إلى أوروبا (منها بعثة رفاعة الطهطاوي إلى فرنسا 1826). أنشأ مطبعة بولاق وأصدر «الوقائع المصرية» (1828) وبدأ حركة الترجمة.'],
+['الزراعة والصناعة','مسح الأراضي وألغى نظام الالتزام وحفر الترع (ترعة المحمودية 1820) وأقام القناطر الخيرية عند رأس الدلتا لتنظيم الري، وأدخل زراعة القطن طويل التيلة (جوميل 1821) فصار أهم المحاصيل النقدية. وأنشأ مصانع للغزل والنسيج والأسلحة والسكر.'],
+['التوسع الخارجي ونهايته','أرسل جيوشه إلى الحجاز (1811–1818) والسودان (1820–1822 وأسس الخرطوم) وإلى المورة في اليونان (1824)، ثم إلى الشام بقيادة ابنه إبراهيم (1831–1833) وانتصر في قونية 1832. فخافت الدول الأوروبية فتدخلت، وانتهى الأمر بمعاهدة لندن 1840 التي حددت جيش مصر وحكمها الوراثي (فرمان 1841). توفي محمد علي 1849.']],
+k:[['الوالي','حاكم الولاية من قبل السلطان العثماني'],['الالتزام','نظام جباية الضرائب القديم الذي ألغاه'],['البعثات','طلاب يُرسلون للدراسة في الخارج'],['الفرمان','قرار رسمي يصدره السلطان']],
+r:'1805 تولي الحكم – 1811 مذبحة القلعة – جيش وأسطول – تعليم وبعثات – زراعة وقطن وقناطر – توسع ثم معاهدة لندن 1840 وفرمان 1841.'},
+b2:{s:[
+['خلفاء محمد علي','حكم بعده إبراهيم باشا (1848 وتوفي في العام نفسه)، ثم عباس الأول (1848–1854)، ثم سعيد (1854–1863)، ثم إسماعيل (1863–1879) ثم توفيق (1879–1892).'],
+['عباس الأول وسعيد','في عهد عباس الأول بدأ إنشاء أول سكة حديد في أفريقيا بين الإسكندرية والقاهرة (1851) واكتملت في عهد سعيد. ومنح سعيد المهندس الفرنسي ديليسبس امتياز حفر قناة السويس (1854)، وأصدر قانون الأراضي 1858 الذي يعترف بملكية الفلاحين.'],
+['إسماعيل ومشروعات النهضة','أراد إسماعيل أن تصبح مصر «قطعة من أوروبا». افتُتحت قناة السويس في نوفمبر 1869 بحضور ملوك وأمراء، وحصل من السلطان على لقب «الخديوي» (1867). أنشأ مجلس شورى النواب (1866) ودار الأوبرا (1869) ودار العلوم (1872) وكوبري قصر النيل، وزاد خطوط السكك الحديدية والتلغراف والمدارس والموانئ، وأنشأ أحياء جديدة في القاهرة.'],
+['قناة السويس','قناة بحرية بين بورسعيد على المتوسط والسويس على البحر الأحمر (نحو 193 كم). بدأ الحفر 1859 بأيدي المصريين بالسخرة، وراح ضحيتها آلاف العمال. اختصرت طريق التجارة بين أوروبا وآسيا فأصبحت مطمعًا للدول الكبرى.'],
+['الديون والتدخل الأجنبي','أنفق إسماعيل ببذخ واقترض بفوائد كبيرة حتى عجزت مصر عن السداد، فباع حصة مصر في أسهم القناة لبريطانيا (1875)، وفُرضت الرقابة الثنائية (بريطانيا وفرنسا) على المالية ثم عُزل إسماعيل عام 1879 وتولى ابنه توفيق، وهذا مهّد لثورة عرابي.']],
+k:[['الخديوي','لقب منحه السلطان العثماني لحاكم مصر'],['الامتياز','حق منحته الدولة لشركة أو شخص لتنفيذ مشروع'],['السخرة','العمل الإجباري بلا أجر'],['الرقابة الثنائية','إشراف بريطانيا وفرنسا على مالية مصر']],
+r:'سعيد: امتياز القناة – إسماعيل: افتتاحها 1869 ومجلس الشورى والنهضة – الديون ثم الرقابة الثنائية وعزل إسماعيل 1879.'},
+c1:{s:[
+['ما معنى النظام البيئي؟','هو مجموعة من الكائنات الحية (نباتات وحيوانات) تعيش في بيئة معينة وتتأثر بالمناخ والتربة والماء. والغابات أحد أهم النظم البيئية.'],
+['الغابات المطيرة (الاستوائية)','تنتشر قرب خط الاستواء في حوض الأمازون وأمريكا الوسطى. حارة مطيرة طوال العام (حرارة نحو 26°م ومطر يزيد على 2000 مم). أشجارها عريضة الأوراق دائمة الخضرة طويلة في طبقات كثيفة يصل ضوء الشمس إلى الأرض بصعوبة. وتضم نصف أنواع الكائنات الحية تقريبًا، مثل جاكوار وثعبان الأناكوندا والببغاوات. ومن نباتاتها المطاط والكاكاو والماهوجني.'],
+['الغابات الصنوبرية (التايجا)','في شمال كندا وألاسكا. الشتاء طويل شديد البرودة والصيف قصير، والمطر على شكل ثلوج. أشجارها إبرية مخروطية دائمة الخضرة (صنوبر وتنوب)، وتتحمل الثلج. فيها حيوانات الفراء والأيل والدب. تُستغل في صناعة الأخشاب والورق.'],
+['الغابات المتساقطة الأوراق','في شرق الولايات المتحدة وجنوب شرق كندا حيث المناخ معتدل دافئ مطير. أشجارها عريضة الأوراق تُسقط أوراقها في الخريف مثل البلوط والزان والقيقب. أُزيل كثير منها لتصبح أراضي زراعية ومدنًا.'],
+['غابات الساحل الغربي','على المحيط الهادئ (شمال غرب الولايات المتحدة وكندا) غابات مطيرة معتدلة فيها أشجار شديدة الارتفاع كالسكويا.'],
+['حماية الغابات','يهددها قطع الأشجار والحرائق والزراعة، وتفقد الغابات المطيرة مساحات كبيرة. وتساعد حمايتها على حفظ التنوع الحيوي وتنقية الهواء.']],
+k:[['دائمة الخضرة','أشجار لا تُسقط أوراقها كلها في وقت واحد'],['متساقطة الأوراق','أشجار تُسقط أوراقها في الخريف'],['التنوع الحيوي','تعدد أنواع الكائنات الحية'],['التايجا','الغابات الصنوبرية الشمالية']],
+r:'مطيرة (الأمازون: حار مطير) – صنوبرية (كندا: بارد، أشجار إبرية) – متساقطة (شرق أمريكا: معتدل، تُسقط أوراقها).'},
+c2:{s:[
+['الحشائش المعتدلة','البراري في وسط أمريكا الشمالية (الولايات المتحدة وكندا): مناخ معتدل بين الجاف والرطب، حشائش متوسطة الطول وتربة سوداء خصبة. حوّلها الإنسان إلى أكبر منطقة لزراعة القمح والذرة، وكانت موطنًا لقطعان البيسون. والبامبا في الأرجنتين وأوروجواي: سهول خصبة لزراعة القمح وتربية الأبقار والأغنام.'],
+['الحشائش المدارية (السافانا)','اليانوس في فنزويلا وكولومبيا حول نهر الأورينوكو، والكامبوس في هضبة البرازيل. مناخها حار فيه فصل مطير وفصل جاف. حشائشها طويلة وأشجارها متفرقة، وتُربى فيها الماشية، وفي البرازيل تُزرع فول الصويا والبن.'],
+['صحارى أمريكا الشمالية','سونورا وموهافي وتشيواوا في جنوب غرب الولايات المتحدة وشمال المكسيك. حارة جافة، ينمو فيها الصبّار والشجيرات الشوكية، وتعيش فيها الزواحف.'],
+['صحراء أتاكاما','في شمال تشيلي على ساحل الهادئ، من أجف صحارى العالم، لأن تيار همبولت البارد يقلل المطر وجبال الأنديز تحجب الرياح. غنية بالنحاس والنترات.'],
+['صحراء باتاجونيا','هضبة باردة جافة في جنوب الأرجنتين تقع في ظل المطر شرق الأنديز، رياحها قوية، وتُربى فيها الأغنام للصوف.']],
+k:[['السافانا','حشائش مدارية وأشجار متفرقة'],['ظل المطر','جهة جبلية جافة تقع خلف الجبال'],['الصبّار','نبات صحراوي يخزن الماء'],['البراري','حشائش معتدلة في أمريكا الشمالية']],
+r:'حشائش معتدلة: البراري والبامبا – مدارية: اليانوس والكامبوس – صحارى: سونورا (حارة) وأتاكاما (شديدة الجفاف) وباتاجونيا (باردة).'},
+c3:{s:[
+['المحيطات والبحار','تحيط بالأمريكتين المحيطات الأطلسي شرقًا والهادئ غربًا والمتجمد الشمالي. وفي المياه الباردة مصايد غنية بالأسماك، مثل مصايد نيوفاوندلاند في الأطلسي، ومصايد بيرو على الهادئ بفضل تيار همبولت البارد. وتفرعت منها البحر الكاريبي وخليج المكسيك.'],
+['الأنهار','في أمريكا الشمالية: الميسيسيبي–ميسوري (يصب في خليج المكسيك) وسانت لورانس (يصل البحيرات العظمى بالأطلسي). وفي الجنوبية: الأمازون (أكبر نهر في العالم) والأورينوكو وبارانا–البلاتا. وهي مصدر مياه وكهرباء وطرق نقل.'],
+['البحيرات','البحيرات العظمى الخمس (سوبريور وميشيجان وهيورون وإيري وأونتاريو) تضم نحو خُمس مياه العالم العذبة السطحية، وتصلح للملاحة والصيد. ومن أعلى البحيرات في العالم بحيرة تيتيكاكا في الأنديز.'],
+['الأراضي الرطبة والشعاب','في البرازيل البانتانال أكبر منطقة مستنقعات استوائية في العالم، وفي فلوريدا الإيفرجليدز. وتنمو الشعاب المرجانية في مياه الكاريبي الدافئة (وفيها ثاني أكبر حاجز مرجاني في العالم قرب بليز) وهي موطن آلاف الأنواع.'],
+['المخاطر والحماية','الصيد الجائر هدد أسماك نيوفاوندلاند، والتلوث الصناعي ومخلفات الزراعة تلوث الأنهار والبحيرات، وارتفاع الحرارة يضر الشعاب المرجانية. وتحميها القوانين والمحميات والصيد المنظم.']],
+k:[['المصب','المكان الذي يصب فيه النهر'],['الأراضي الرطبة','مناطق يغمرها الماء معظم العام'],['الشعاب المرجانية','بيئة بحرية ضحلة دافئة تبنيها كائنات صغيرة'],['الصيد الجائر','صيد الأسماك بأكثر مما تعوّضه الطبيعة']],
+r:'محيطات وأنهار كبرى (الميسيسيبي والأمازون) وبحيرات عظمى وأراضٍ رطبة وشعاب، وتهددها الملوثات والصيد الجائر.'},
+d1:{s:[
+['أسباب الثورة','ديون إسماعيل والرقابة الثنائية ثم عزله (1879) أثارت غضب المصريين من تدخل الأجانب. وفي الجيش كان الضباط المصريون يعانون من تفضيل الأتراك والشراكسة عليهم في الرتب. وانتشرت أفكار الحرية والدستور.'],
+['تطور الأحداث','في 9 سبتمبر 1881 تظاهر الجيش بقيادة أحمد عرابي أمام قصر عابدين أمام الخديوي توفيق وقدم مطالب الأمة: عزل الوزارة وتشكيل مجلس نواب ووضع دستور وزيادة عدد الجيش. وتروي الروايات أن عرابي قال للخديوي: «لقد خلقنا الله أحرارًا ولم يخلقنا تراثًا أو عقارًا». نجح المطلب فتشكلت وزارة شريف باشا ثم وزارة البارودي (1882) وكان عرابي وزير الحربية.'],
+['التدخل الأجنبي','أرسلت بريطانيا وفرنسا «المذكرة المشتركة» (يناير 1882) تؤيد الخديوي ضد الحركة الوطنية، ثم وصلت السفن الحربية إلى الإسكندرية. وفي 11 يونيو 1882 وقعت أحداث شغب في الإسكندرية، وفي 11 يوليو 1882 ضرب الأسطول البريطاني المدينة بالمدافع.'],
+['الهزيمة في التل الكبير','أنزلت القوات البريطانية بقيادة ولسلي في الإسماعيلية وسيطرت على القناة، وهاجمت معسكر عرابي في التل الكبير فجرًا في 13 سبتمبر 1882 فهُزم الجيش المصري، ودخل الإنجليز القاهرة.'],
+['النتائج','بدأ الاحتلال البريطاني لمصر (1882) واستمر أكثر من 70 عامًا حتى الجلاء (1956). وحوكم عرابي وحُكم عليه بالإعدام ثم خُفف إلى النفي إلى جزيرة سيلان (سريلانكا) وعاد إلى مصر سنة 1901. ومع فشل الثورة، ظلت دروسها حية في وجدان المصريين.']],
+k:[['الرقابة الثنائية','إشراف بريطانيا وفرنسا على مالية مصر'],['المذكرة المشتركة','رسالة بريطانية فرنسية لدعم الخديوي'],['الاحتلال','سيطرة دولة على أرض دولة أخرى بالقوة'],['النفي','إبعاد الشخص عن وطنه عقابًا']],
+r:'9/9/1881 عابدين – 11/7/1882 ضرب الإسكندرية – 13/9/1882 التل الكبير – بدء الاحتلال البريطاني ونفي عرابي إلى سيلان.'},
+d2:{s:[
+['مصر تحت الاحتلال','حكم مصر فعليًا المعتمد البريطاني اللورد كرومر (1883–1907) بينما بقي الخديوي حاكمًا بالاسم. اهتم كرومر بالمالية وبالقطن لخدمة المصانع البريطانية وقلل الإنفاق على التعليم. ثم أخضعت بريطانيا السودان (1896–1898) وأقامت فيه حكمًا ثنائيًا مع مصر (1899). وفي 1904 اتفقت مع فرنسا (الاتفاق الودي) لتُطلق يدها في مصر.'],
+['مصطفى كامل والحزب الوطني','مصطفى كامل (1874–1908) خطيب شاب نادى بالجلاء، وسافر إلى أوروبا ليعرّف العالم بقضية مصر، وأصدر جريدة «اللواء» (1900) وأسس المدارس الأهلية. وأسس الحزب الوطني عام 1907 ونادى بالدستور والجلاء. من أقواله الشهيرة: «لو لم أكن مصريًا لوددت أن أكون مصريًا». توفي شابًا في فبراير 1908.'],
+['حادثة دنشواي (1906)','في يونيو 1906 خرج ضباط إنجليز للصيد بالحمام في قرية دنشواي بالمنوفية فاشتبكوا مع الفلاحين، وتوفي أحد الضباط بضربة شمس. شكلت السلطات محكمة خاصة قضت بإعدام أربعة وجلد وسجن آخرين أمام أهل القرية. أثارت الحادثة غضب المصريين وزادت كراهية الاحتلال، وفي العام التالي استقال كرومر.'],
+['محمد فريد والحرب العالمية الأولى','خلف محمد فريد مصطفى كامل في رئاسة الحزب، لكنه اضطر إلى مغادرة مصر. ومع اندلاع الحرب (1914) أعلنت بريطانيا الحماية على مصر في ديسمبر 1914، وعزلت الخديوي عباس حلمي الثاني ونصّبت حسين كامل سلطانًا. وفرضت الأحكام العرفية واستولت على المحاصيل وسخّرت الفلاحين، فزاد الغضب.']],
+k:[['المعتمد البريطاني','الحاكم الفعلي لمصر أثناء الاحتلال'],['الحماية','سيطرة دولة قوية على شؤون دولة أخرى مع بقائها بالاسم'],['الأحكام العرفية','قوانين استثنائية تفرضها السلطة العسكرية'],['الجلاء','خروج القوات الأجنبية']],
+r:'كرومر 1883–1907 – اللواء 1900 – دنشواي 1906 – الحزب الوطني 1907 – الحماية البريطانية ديسمبر 1914.'},
+d3:{s:[
+['الوفد وبداية الثورة','بعد الحرب العالمية الأولى طلب سعد زغلول وعلي شعراوي وعبد العزيز فهمي (13 نوفمبر 1918) من المعتمد البريطاني السماح بالسفر لعرض قضية مصر، فرُفض الطلب وتكوّن «الوفد المصري» وجمع توكيلات من الشعب. اعتقلت بريطانيا سعدًا ونفته إلى مالطة في 8 مارس 1919 فاشتعلت الثورة في كل أنحاء مصر.'],
+['ثورة 1919','تظاهر الطلبة والعمال والفلاحون والمرأة (مظاهرة السيدات في 16 مارس بقيادة هدى شعراوي وصفية زغلول)، وتعطلت المواصلات وسقط شهداء، واتحد المسلمون والأقباط تحت شعار «الدين لله والوطن للجميع». اضطرت بريطانيا لإطلاق سعد زغلول.'],
+['تصريح 28 فبراير 1922 والدستور','أعلنت بريطانيا استقلال مصر مع أربعة تحفظات (أمن المواصلات البريطانية والدفاع وحماية الأجانب والسودان) فكان استقلالًا ناقصًا، وصار فؤاد ملكًا. ثم صدر دستور 1923 وفاز الوفد في الانتخابات وشكل سعد زغلول الوزارة (1924).'],
+['الاقتصاد الوطني','أسس طلعت حرب بنك مصر (1920) وشركات مصرية كشركة مصر للغزل والنسيج، لتتحرر مصر اقتصاديًا من الأجانب.'],
+['معاهدة 1936 ومونترو','وقّع مصطفى النحاس معاهدة 1936 مع بريطانيا: تتحالف الدولتان 20 سنة، وتنسحب بريطانيا من المدن وتبقى قواتها في منطقة القناة (نحو 10 آلاف جندي). ثم أنهت اتفاقية مونترو (1937) الامتيازات الأجنبية تدريجيًا، ثم بقيت مطالب الجلاء الكامل وتحقق بعد ثورة 23 يوليو 1952.']],
+k:[['الوفد','الوفد المصري بقيادة سعد زغلول'],['تصريح 28 فبراير','إعلان بريطاني باستقلال ناقص لمصر'],['الامتيازات الأجنبية','حقوق خاصة للأجانب في مصر كمحاكم قنصلية'],['الدستور','القانون الأعلى الذي ينظم الحكم']],
+r:'1918 الوفد – 1919 نفي سعد والثورة – 1922 تصريح 28 فبراير – 1923 الدستور – 1936 معاهدة النحاس – 1937 مونترو.'}
+};
+const FUN={
+e0:'تغطي الصحراء أكثر من 90% من مساحة مصر، لكن أكثر من 90% من السكان يعيشون على نحو 7% فقط من المساحة حول النيل والدلتا.',
+a1:'كريستوف كولومبوس ظن أنه وصل إلى الهند، ولذلك سُمّي سكان الأمريكتين الأصليون خطأً «الهنود الحمر».',
+a2:'بحيرات أمريكا الشمالية العظمى تحوي نحو خُمس المياه العذبة السطحية في العالم.',
+a3:'نهر الأمازون يصب فيه من الماء أكثر من أي نهر آخر في العالم، ويحمل وحده نحو خُمس ما تصبه الأنهار في المحيطات.',
+a4:'بنى الإنكا مدينة ماتشو بيتشو على قمة جبلية في جبال الأنديز على ارتفاع يزيد عن 2400 متر فوق سطح البحر.',
+b1:'أنشأ محمد علي مدرسة الألسن لترجمة العلوم الأوروبية، وكان رفاعة الطهطاوي من أشهر من ارتبط بها.',
+b2:'افتُتحت قناة السويس للملاحة عام 1869 وغيّرت طرق التجارة بين الشرق والغرب.',
+c1:'الغابات المطيرة تغطي نسبة صغيرة من اليابسة لكنها تضم أكثر من نصف أنواع الكائنات الحية المعروفة على الأرض تقريبًا.',
+c2:'الصحراء الكبرى في أفريقيا تقارب في مساحتها مساحة الولايات المتحدة الأمريكية.',
+c3:'تغطي المياه نحو 71% من سطح الأرض، ومعظمها مالح، أما المياه العذبة فنسبة قليلة منها.',
+d1:'أحمد عرابي قاد حركة وطنية عام 1881 رفعت شعار «مصر للمصريين» وطالبت بدستور وجيش قوي.',
+d2:'ثورة 1919 شاركت فيها المرأة المصرية والرجال والأقباط والمسلمون معًا، فكانت رمزًا للوحدة الوطنية.',
+e1a:'أفريقيا ثاني أكبر قارات العالم مساحة بعد آسيا، ويقطعها خط الاستواء قرب منتصفها.',
+e1b:'جبل كليمنجارو في تنزانيا أعلى قمة في أفريقيا، وقمته مغطاة بالجليد رغم قربها من خط الاستواء.',
+e1c:'بُنيت أهرامات الجيزة قبل نحو 4500 سنة، وظل الهرم الأكبر أطول بناء صنعه الإنسان قرابة 3800 سنة.',
+e1g:'يمر نهر النيل (نحو 6650 كم) في 11 دولة في حوضه، ويعد من أطول أنهار العالم.',
+e2a:'آسيا أكبر القارات مساحة وسكانًا، وفيها أعلى قمة في العالم: إيفرست.',
+e2e:'أوروبا من أصغر القارات مساحة لكن سواحلها المتعرجة الطويلة جعلتها غنية بالموانئ.',
+e2c:'بدأ الفتح الإسلامي لمصر سنة 20هـ على يد عمرو بن العاص، وأسس مدينة الفسطاط.',
+e2d:'أُنشئت القاهرة عام 969م في عهد الفاطميين، وبُني الجامع الأزهر عام 970م تقريبًا ليصبح من أقدم الجامعات في العالم.',
+e2g:'في معركة عين جالوت (1260م) هزم المماليك بقيادة قطز وبيبرس المغول، وكانت من أهم المعارك الفاصلة في التاريخ.',
+e3t2a:'قامت ثورة 23 يوليو 1952 بقيادة تنظيم الضباط الأحرار، وأُعلنت الجمهورية في 18 يونيو 1953.',
+e3t2b:'أُنشئ السد العالي في أسوان وافتُتح عام 1971، وتكونت خلفه بحيرة ناصر، من أكبر البحيرات الصناعية في العالم.',
+e3t2d:'تنتج الدول الزراعية الكبرى مثل الصين والهند والولايات المتحدة والبرازيل نسبة كبيرة من الغذاء العالمي.',
+p4a:'الاتجاهات الأصلية الأربعة: الشمال والجنوب والشرق والغرب، وتساعدنا البوصلة على معرفتها.',
+p4c:'تقع مصر في قارتين: معظمها في أفريقيا وسيناء في آسيا، ولذلك تسمى «ملتقى القارات».',
+p4d:'جبل سانت كاترين في سيناء أعلى قمة في مصر، ارتفاعه نحو 2629 مترًا.',
+p4e:'تُعد مصر هبة النيل كما قال هيرودوت، فالنيل يمدنا بالماء والتربة الخصبة منذ آلاف السنين.',
+p4f:'القطن المصري طويل التيلة مشهور عالميًا بجودته العالية.',
+p5a:'تمتد مصر بين دائرتي عرض 22° و31.5° شمالًا تقريبًا، ويمر بها مدار السرطان جنوبها.',
+p5d:'عرف المصريون القدماء الكتابة الهيروغليفية، وفكّ شامبليون رموزها بفضل حجر رشيد عام 1822.',
+p5f:'قناة السويس تختصر رحلة السفن بين أوروبا وآسيا آلاف الكيلومترات مقارنة بالدوران حول أفريقيا.',
+p5j:'استخدم المصري القديم ورق البردي للكتابة، وهو من نبات ينمو على ضفاف النيل.',
+p6a:'يضم الوطن العربي 22 دولة، ويمتد من المحيط الأطلسي غربًا إلى الخليج العربي شرقًا.',
+p6c:'الهجرة النبوية من مكة إلى المدينة عام 622م بداية التقويم الهجري.',
+p6f:'أسس العلماء المسلمون علومًا كثيرة، ومنهم ابن الهيثم الذي وضع أسس علم البصريات.',
+p6g:'تأسست جامعة الدول العربية في القاهرة عام 1945.',
+p6h:'تغطي المحيطات نحو 71% من سطح الأرض، وأكبرها المحيط الهادئ.',
+s1b:'بنى المصريون القدماء الأهرامات ومعابد الأقصر وأبو سمبل، وما زالت شاهدة على براعتهم الهندسية.',
+s1c:'ظهرت الكتابة المسمارية في بلاد الرافدين قبل نحو 5000 سنة، وهي من أقدم أنظمة الكتابة.',
+s1d:'أقام الفينيقيون موانئ تجارية في البحر المتوسط، ويُنسب إليهم نشر الأبجدية.',
+s2a:'يتجاوز عدد سكان العالم 8 مليارات نسمة، ويتركز أغلبهم في آسيا.',
+s3a:'يبلغ طول الساحل المصري على البحرين المتوسط والأحمر آلاف الكيلومترات، وهو مورد مهم للسياحة والتجارة.',
+h2:'نزل الوحي على النبي ﷺ في غار حراء بمكة، وكانت أول كلمة نزلت: «اقرأ».',
+h3:'من أول أعمال النبي ﷺ في المدينة بناء المسجد النبوي والمؤاخاة بين المهاجرين والأنصار ووثيقة المدينة.',
+h9:'مصر الإسلامية بدأت بمدينة الفسطاط ثم ظهرت العسكر والقطائع والقاهرة عبر العصور.',
+h11:'كان الجامع الأزهر في أول عهده مسجدًا ثم صار منارة للعلم الشرعي واللغة العربية.',
+h15:'ازدهرت في الحضارة الإسلامية الطب والفلك والرياضيات، وأسهم المسلمون في تقدم العلوم عند العالم كله.'
+};
+const Z=(g,tm,un,id,t,d,map,intro,secs,k,r,pins,qs,o)=>LS.push(Object.assign({id,g,tm,un,t,d,map,intro,x:{s:secs,k,r},pins,qs,regs:[],lines:[],lakes:[]},o||{}));
+const EGP={giza:P(31.13,29.98,'الجيزة','فيها أهرامات خوفو وخفرع ومنقرع وأبو الهول، من أشهر معالم مصر القديمة.'),cairo:P(31.24,30.04,'القاهرة','عاصمة مصر وأكبر مدنها، تقع جنوب الدلتا على النيل.'),alex:P(29.92,31.2,'الإسكندرية','ثاني أكبر مدينة ومينا رئيسي على البحر المتوسط، أسسها الإسكندر الأكبر.'),luxor:P(32.64,25.7,'الأقصر','متحف مفتوح للآثار؛ فيها معبد الكرنك ووادي الملوك (طيبة قديمًا).'),aswan:P(32.9,24.09,'أسوان','تقع عند الشلال الأول، وعندها السد العالي.'),abu:P(31.62,22.34,'أبو سمبل','معبدا رمسيس الثاني ونفرتاري على ضفة بحيرة ناصر.'),suez:P(32.55,29.97,'السويس','مدينة عند الطرف الجنوبي لقناة السويس على خليج السويس.'),port:P(32.3,31.26,'بورسعيد','مدينة عند المدخل الشمالي لقناة السويس على البحر المتوسط.'),siwa:P(25.52,29.2,'واحة سيوة','واحة في الصحراء الغربية قرب الحدود الليبية، فيها معبد آمون.'),cath:P(33.95,28.55,'سانت كاترين','في جنوب سيناء، وفيها جبل موسى وأعلى قمم مصر (جبل كاترين).'),hurg:P(33.8,27.26,'الغردقة','مدينة سياحية على ساحل البحر الأحمر.'),sharm:P(34.3,27.9,'شرم الشيخ','مدينة سياحية جنوب سيناء عند مدخل خليج العقبة.'),arish:P(33.8,31.13,'العريش','عاصمة شمال سيناء على البحر المتوسط.'),mans:P(31.38,31.04,'المنصورة','عاصمة الدقهلية في دلتا النيل.'),tanta:P(31.0,30.79,'طنطا','عاصمة الغربية في قلب الدلتا.'),asyut:P(31.18,27.18,'أسيوط','كبرى مدن صعيد مصر ووسط الوادي.'),minya:P(30.75,28.1,'المنيا','عروس الصعيد على النيل.'),fay:P(30.84,29.31,'الفيوم','واحة قرب بحيرة قارون وفيها ريّ من النيل.'),kharga:P(30.55,25.45,'الخارجة','كبرى واحات الوادي الجديد.'),mat:P(27.24,31.35,'مرسى مطروح','مدينة على الساحل الشمالي الغربي.'),ismail:P(32.27,30.6,'الإسماعيلية','مدينة على قناة السويس وعاصمة محافظة الإسماعيلية.'),qena:P(32.72,26.16,'قنا','في صعيد مصر عند انحناءة النيل.'),safaga:P(33.93,26.75,'سفاجا','ميناء على البحر الأحمر.'),ras:P(32.9,24.1,'أسوان','عند الشلال الأول.')};
+const E=(...ks)=>ks.map(k=>EGP[k]);
+// ===== الصف الأول الإعدادي =====
+Z('e1',1,'الوحدة الأولى: الملامح الطبيعية لأفريقيا','e1a','قارة أفريقيا: الموقع والحدود','الموقع الفلكي والجغرافي','afr',
+['أفريقيا ثاني أكبر القارات مساحة (نحو 30 مليون كم²) وتقطعها دائرة الاستواء ويمر بها المداران.','اضغط على العلامات.'],
+[['الموقع','تقع في الجزء الجنوبي الغربي من العالم القديم بين دائرتي عرض 37°21′ شمالًا و34°51′ جنوبًا، وتتصل بآسيا عند برزخ السويس (سيناء).'],['الحدود','يحدها المتوسط شمالًا، والأطلسي غربًا، والهندي جنوبًا وشرقًا، والأحمر شمال شرق.'],['الأهمية','قارة غنية بالموارد، وتتحكم في طرق الملاحة: قناة السويس ورأس الرجاء الصالح.']],
+[['برزخ السويس','يصل بين أفريقيا وآسيا.'],['رأس الرجاء الصالح','جنوب أفريقيا، طريق ملاحي.']],'يقطع خط الاستواء القارة في الوسط، فهي القارة الوحيدة التي يمر بها المداران والاستواء.',
+[P(32.3,30,'برزخ السويس','يصل أفريقيا بآسيا.'),P(18.5,-34.3,'رأس الرجاء الصالح','جنوب القارة، طريق ملاحي.'),P(9.7,0,'خط الاستواء','يمر بوسط القارة في الجابون.'),P(-17.5,14.7,'رأس فيردي','أقصى الغرب.'),P(51.3,10.4,'رأس حافون','أقصى الشرق.'),P(9.8,37.3,'رأس بنزرت','أقصى الشمال بتونس.')],
+[['مساحة أفريقيا مرتبتها؟','الثانية','الأولى','الثالثة','الخامسة','بعد آسيا.'],['يربطها بآسيا؟','برزخ السويس','جبل طارق','هرمز','البوسفور','عند قناة السويس.'],['المحيط غربًا؟','الأطلسي','الهادئ','الهندي','المتجمد','الأطلسي.'],['رأس الرجاء الصالح في؟','الجنوب','الشمال','الشرق','الغرب','أقصى الجنوب.'],['القارة التي يمر بها الاستواء والمداران؟','أفريقيا','أوروبا','أستراليا','آسيا','أفريقيا.']]);
+Z('e1',1,'الوحدة الأولى: الملامح الطبيعية لأفريقيا','e1b','مظاهر السطح والمناخ','الهضاب والجبال والأنهار والأقاليم','afr',
+['سطح أفريقيا هضبي في أغلبه، وتتنوع الأقاليم المناخية بحسب القرب من الاستواء.'],
+[['المظاهر','الهضاب (هضبة الحبشة وهضبة شرق أفريقيا)، والجبال (الأطلس وكليمنجارو وكينيا)، والأخدود الأفريقي العظيم، والصحراء الكبرى.'],['الأنهار والبحيرات','النيل والكونغو والنيجر والزامبيزي، وبحيرات فيكتوريا وتنجانيقا.'],['الأقاليم المناخية','استوائي حول الاستواء، موسمي (سافانا) حوله، صحراوي في الشمال والجنوب الغربي، متوسطي في أقصى الشمال والجنوب.']],
+[['الأخدود','واد عظيم نتج عن تصدع.'],['كليمنجارو','أعلى قمة بأفريقيا (5895م).']],'جبل كليمنجارو أعلى قمة في أفريقيا في تنزانيا.',
+[P(37.4,-3.1,'كليمنجارو','أعلى قمة (5895م).'),P(33,1,'بحيرة فيكتوريا','أكبر بحيرة عذبة بأفريقيا ومنبع النيل.'),P(23,-3,'نهر الكونغو','ثاني أطول أنهارها.'),P(8,10,'نهر النيجر','في غرب أفريقيا.'),P(15,23,'الصحراء الكبرى','أكبر صحراء حارة.'),P(39,9,'هضبة الحبشة','منبع النيل الأزرق.'),P(-3,32,'جبال الأطلس','شمال غرب القارة.'),P(31,-17,'نهر الزامبيزي','فيه شلالات فيكتوريا.')],
+[['أعلى قمة؟','كليمنجارو','الأطلس','كينيا','ستانلي','5895م.'],['أطول نهر؟','النيل','الكونغو','النيجر','الزامبيزي','النيل.'],['أكبر صحراء؟','الكبرى','كالاهاري','النوبية','ناميب','الكبرى.'],['بحيرة فيكتوريا؟','منبع النيل','في مصر','في أسيا','في أوروبا','منبع النيل الأبيض.'],['الإقليم حول الاستواء؟','استوائي','قطبي','صحراوي','متوسطي','أمطار غزيرة.']],{regs:[],lines:['NILE']});
+Z('e1',1,'الوحدة الثانية: الحضارة المصرية القديمة وعلاقتها بأفريقيا','e1c','الدولة القديمة والوسطى والحديثة','ملوك وإنجازات واتصال بأفريقيا','afr',
+['اتصلت مصر القديمة بأفريقيا تجارة وحربًا وثقافة، خصوصًا مع بلاد النوبة وبونت.'],
+[['الدولة القديمة','عصر بناة الأهرام (خوفو، خفرع، منقرع)، وأرسلت بعثات تجارية للنوبة.'],['الوسطى','أعاد منتوحتب توحيد البلاد، وبنى سنوسرت حصونًا في النوبة وحفر قناة بالشلال الأول.'],['الحديثة','وصلت رحلة حتشبسوت إلى بلاد بونت (الصومال)، وفتح تحتمس الثالث النوبة، وبنى رمسيس الثاني أبو سمبل.']],
+[['النوبة','جنوب مصر وشمال السودان.'],['بونت','بلاد البخور شرق أفريقيا.']],'رحلة حتشبسوت إلى بونت مصورة على معبد الدير البحري.',
+[P(32.6,25.7,'طيبة','عاصمة الدولة الحديثة.'),P(32.9,24.1,'الشلال الأول','حدود مصر الجنوبية.'),P(31.6,22.3,'أبو سمبل','رمسيس الثاني.'),P(48,10,'بلاد بونت','أرض البخور (الصومال).'),P(31.2,30,'منف','عاصمة الدولة القديمة.'),P(33,19,'النوبة','جنوب أسوان.')],
+[['رحلة حتشبسوت إلى؟','بونت','النوبة','الشام','قبرص','لجلب البخور.'],['بنى معبد أبو سمبل؟','رمسيس الثاني','خوفو','أحمس','سنوسرت','في النوبة.'],['عاصمة الحديثة؟','طيبة','منف','أسوان','تل العمارنة فقط','الأقصر.'],['بلاد النوبة؟','جنوب مصر','شمالها','شرقها','غربها','جنوب أسوان.'],['بنى أهرامات الجيزة؟','الدولة القديمة','الحديثة','الوسطى','البطلمية','الأسرة الرابعة.']]);
+Z('e1',1,'الوحدة الثالثة: النظم البيئية','e1d','النظم البيئية والإنسان في أفريقيا','الغابات والسافانا والصحارى','afr',
+['النظام البيئي مجموعة من الكائنات الحية والبيئة المحيطة بها.'],
+[['الغابات الاستوائية','حول الاستواء (الكونغو)، أمطار غزيرة وأشجار كثيفة وحيوانات مثل الغوريلا.'],['السافانا','حشائش وأشجار متفرقة، فيها الأسود والزرافات والفيلة.'],['الصحراء والمتوسطي','قليلة النبات والحيوان في الصحراء، ونباتات متوسطية في الأطراف. والإنسان يؤثر في البيئة بالقطع والصيد الجائر والتلوث.']],
+[['سافانا','حشائش مدارية.'],['تنوع حيوي','تعدد الكائنات.']],'السافانا أغنى مناطق الحياة البرية بأفريقيا.',
+[P(23,0,'الغابات الاستوائية','حوض الكونغو.'),P(37,-2,'سافانا شرق أفريقيا','سيرينجيتي.'),P(15,22,'الصحراء الكبرى','جافة.'),P(-5,33,'إقليم متوسطي','شمال أفريقيا.'),P(22,-23,'كالاهاري','صحراء الجنوب.')],
+[['غابات الكونغو في؟','الاستواء','الشمال','الجنوب الأقصى','الشرق','حول خط الاستواء.'],['السافانا؟','حشائش وأشجار متفرقة','جليد','غابة كثيفة','رمال','حشائش.'],['حيوان السافانا؟','الأسد','الدب القطبي','البطريق','الفقمة','الأسد.'],['المسبب للتدهور؟','الصيد الجائر','التشجير','المحميات','الري','يقلل التنوع.'],['صحراء الجنوب؟','كالاهاري','الكبرى','النفود','الربع الخالي','كالاهاري.']]);
+Z('e1',1,'الوحدة الرابعة: مصر وأفريقيا في العصور الوسطى','e1e','علاقة مصر بأفريقيا في العصور الوسطى','الامتداد والدور الحضاري','afr',
+['امتد نفوذ مصر الإسلامية إلى النوبة والحبشة والغرب الأفريقي، وكانت الأزهر والتجارة جسورًا للتواصل.'],
+[['امتداد النفوذ','عقد عبد الله بن أبي السرح معاهدة «البقط» مع النوبة، وسيطر الفاطميون والمماليك على التجارة مع السودان.'],['الدور الحضاري','نشر الإسلام واللغة العربية، وأرسلت مصر العلماء والكسوة، واستقبل الأزهر الطلاب الأفارقة.'],['مملكة مالي','رحلة مانسا موسى للحج مرورًا بالقاهرة سنة 1324م بالذهب الكثير.']],
+[['البقط','اتفاق بين مصر والنوبة.'],['مانسا موسى','ملك مالي.']],'رحلة الحج الشهيرة لمانسا موسى عام 1324م.',
+[P(31.2,30,'القاهرة','مركز الإشعاع.'),P(32.9,24.1,'أسوان','بوابة النوبة.'),P(-4,16.7,'تمبكتو','مدينة علمية بمالي.'),P(38,9,'الحبشة','ارتبطت بمصر كنسيًا.'),P(32.5,15.6,'الخرطوم','جنوبًا على النيل.')],
+[['اتفاق مصر والنوبة؟','البقط','سايكس','كامب','أوسلو','معاهدة البقط.'],['ملك مالي حاج 1324؟','مانسا موسى','أحمس','صلاح','قطز','ذهب كثير.'],['الأزهر استقبل؟','الطلاب الأفارقة','لا أحد','الفرس','الصينيين','أهم دوره.'],['مدينة علمية بمالي؟','تمبكتو','أسوان','طنطا','عدن','تمبكتو.'],['نشر مصر؟','الإسلام والعربية','التجارة فقط','الحرب فقط','لا شيء','دور حضاري.']]);
+// ---- الترم الثاني (تقريبي) ----
+Z('e1',2,'الوحدة الأولى: السكان والأنشطة في أفريقيا','e1f','سكان أفريقيا','التوزيع والكثافة والمشكلات','afr',
+['يبلغ سكان أفريقيا أكثر من مليار ونصف مليار نسمة، ويتوزعون بحسب المناخ والموارد.'],
+[['التوزيع','يكثرون في وادي النيل وغرب أفريقيا وشرقها، ويقلون في الصحراء والغابات الكثيفة.'],['المشكلات','سرعة النمو والفقر ونقص الخدمات والأمراض والتصحر.'],['الحلول','التعليم والتنمية والتعاون بين الدول.']],
+[['كثافة','نسمة/كم².'],['فقر','نقص الدخل.']],'أكثر دول أفريقيا سكانًا نيجيريا.',
+[P(8,9,'نيجيريا','الأكثر سكانًا.'),P(31.2,30,'مصر','وادي النيل كثيف.'),P(38,9,'إثيوبيا','سكان كثيرون.'),P(23,-3,'الكونغو','غابات قليلة السكان.'),P(15,23,'الصحراء','قليلة.')],
+[['الأكثر سكانًا؟','نيجيريا','مصر','ليبيا','تشاد','نيجيريا.'],['أقل كثافة؟','الصحراء','الدلتا','الوادي','الساحل','قلة المياه.'],['مشكلة؟','الفقر','الثراء','العدالة','الحرية','نقص الدخل.'],['الحل؟','التعليم','الإهمال','التجاهل','الحرب','للتنمية.'],['يكثر السكان بـ؟','وادي النيل','الغابات الكثيفة','الصحراء','الجبال','المياه والتربة.']]);
+Z('e1',2,'الوحدة الأولى: السكان والأنشطة في أفريقيا','e1g','الأنشطة الاقتصادية وحوض النيل','الزراعة والتعدين ودول الحوض','afr',
+['تتنوع أنشطة أفريقيا: زراعة وتعدين ورعي. ويجمع حوض النيل 11 دولة.'],
+[['الزراعة','الكاكاو في غانا، والبن في إثيوبيا، والقطن في مصر والسودان.'],['التعدين','الذهب والماس في جنوب أفريقيا، والنحاس في زامبيا، والبترول في نيجيريا وليبيا.'],['دول حوض النيل','أوغندا وكينيا وتنزانيا ورواندا وبوروندي والكونغو وإثيوبيا وإريتريا وجنوب السودان والسودان ومصر. ويجب التعاون العادل في المياه.']],
+[['حوض النيل','المنطقة التي يغذيها النيل.'],['تعدين','استخراج المعادن.']],'تتقاسم 11 دولة مياه النيل.',
+[P(-1,7.5,'غانا','كاكاو.'),P(28,-26,'جنوب أفريقيا','ذهب وماس.'),P(28,-13,'زامبيا','نحاس.'),P(32.5,0.3,'أوغندا','منبع النيل.'),P(38.7,9,'إثيوبيا','سد النهضة.'),P(32.5,15.6,'الخرطوم','التقاء النيلين.')],
+[['الكاكاو في؟','غانا','مصر','ليبيا','مالي','غانا.'],['النحاس في؟','زامبيا','مصر','المغرب','تونس','حزام النحاس.'],['عدد دول الحوض؟','11','5','20','3','احد عشر.'],['النيل الأبيض منبعه؟','بحيرة فيكتوريا','هضبة الحبشة','المتوسط','الأطلسي','الاستوائية.'],['النيل الأزرق منبعه؟','هضبة الحبشة','فيكتوريا','الأطلس','الكونغو','طانا.']]);
+Z('e1',2,'الوحدة الثانية: الاستعمار والتحرر','e1h','الاستعمار وحركات التحرر والاتحاد الأفريقي','دور مصر','afr',
+['استعمرت أوروبا معظم أفريقيا في القرن 19، ثم نالت الدول استقلالها وساندتها مصر.'],
+[['الاستعمار','مؤتمر برلين 1884-1885 قسّم القارة بين الدول الأوروبية طمعًا في الموارد.'],['التحرر','قادت الحركات الوطنية استقلالًا: غانا 1957، الجزائر 1962 (ثورة المليون شهيد)، وساندتها مصر بالمال والسلاح والتعليم.'],['الاتحاد الأفريقي','تأسست منظمة الوحدة الأفريقية 1963 ثم صار الاتحاد الأفريقي 2002 ومقره أديس أبابا.']],
+[['الاستعمار','سيطرة دولة على أخرى.'],['الاستقلال','تحرر من الاحتلال.']],'جمال عبد الناصر دعم حركات التحرر الأفريقي.',
+[P(13.4,52.5,'برلين','مؤتمر التقسيم.'),P(3,36.7,'الجزائر','استقلت 1962.'),P(-0.2,5.6,'غانا','أول مستقلة 1957.'),P(38.7,9,'أديس أبابا','مقر الاتحاد الأفريقي.'),P(31.2,30,'القاهرة','دعمت التحرر.')],
+[['مؤتمر برلين؟','قسّم أفريقيا','وحد القارة','أنشأ الاتحاد','أقام السد','1884.'],['أول مستقلة جنوب الصحراء؟','غانا','الجزائر','ليبيا','تونس','1957.'],['مقر الاتحاد؟','أديس أبابا','القاهرة','لاجوس','برلين','إثيوبيا.'],['ثورة المليون شهيد؟','الجزائر','مصر','غانا','كينيا','1954-62.'],['دعمت التحرر؟','مصر','لا أحد','بريطانيا','فرنسا','دعم عبد الناصر.']]);
+// ===== الصف الثاني الإعدادي (محتوى تقريبي) =====
+Z('e2',1,'الوحدة الأولى: قارة آسيا','e2a','آسيا: الموقع والسطح','أكبر القارات','asia',
+['آسيا أكبر قارات العالم (نحو 44 مليون كم²) وأكثرها سكانًا.'],
+[['الموقع','تمتد من القطب المتجمد الشمالي إلى جنوب خط الاستواء، يحدها شرقًا الهادئ وجنوبًا الهندي وغربًا أوروبا وأفريقيا.'],['السطح','جبال الهيمالايا (إفرست 8849م)، هضبة التبت، سهول سيبيريا، سهول الهند والصين.'],['الأنهار','يانجتسي والأصفر في الصين، السند والجانج في الهند، دجلة والفرات في العراق.']],
+[['الهيمالايا','أعلى جبال العالم.'],['هضبة التبت','سقف العالم.']],'جبل إفرست أعلى قمة في العالم.',
+[P(86.9,28,'جبل إفرست','8849م.'),P(90,32,'هضبة التبت','سقف العالم.'),P(112,31,'نهر يانجتسي','أطول نهر آسيوي.'),P(80,27,'نهر الجانج','الهند.'),P(45,33,'دجلة والفرات','العراق.'),P(100,60,'سهول سيبيريا','شمال آسيا.')],
+[['أكبر القارات؟','آسيا','أفريقيا','أوروبا','أستراليا','آسيا.'],['أعلى قمة؟','إفرست','كليمنجارو','الأطلس','فوجي','8849م.'],['هضبة التبت؟','سقف العالم','سهل','واحة','صحراء','أعلى هضبة.'],['أطول نهر في آسيا؟','يانجتسي','النيل','الجانج','السند','نهر الصين.'],['نهر الهند؟','الجانج','دجلة','الفرات','النيل','في الهند.']]);
+Z('e2',1,'الوحدة الأولى: قارة آسيا','e2b','المناخ والنبات والسكان','أقاليم آسيا','asia',
+['تتنوع أقاليم آسيا: موسمي ومتوسطي وصحراوي وبارد.'],
+[['المناخ','موسمي في جنوب وشرق آسيا (مطر صيفًا)، صحراوي في غرب آسيا، بارد في سيبيريا.'],['النبات','غابات موسمية، حشائش الاستبس، تندرا وتايجا في الشمال.'],['السكان','الصين والهند أكثر دول العالم سكانًا، ويتركزون في السهول الموسمية.']],
+[['الموسمي','مطر صيفي غزير.'],['تايجا','غابات صنوبرية شمالية.']],'تأثر المناخ الموسمي بالرياح الموسمية.',
+[P(116,40,'الصين','أكثر سكان آسيا.'),P(78,22,'الهند','نمو سكاني كبير.'),P(135,35,'اليابان','أرخبيل.'),P(100,62,'سيبيريا','باردة.'),P(55,25,'غرب آسيا','صحراوي.')],
+[['المناخ الموسمي في؟','جنوب وشرق آسيا','سيبيريا','غرب آسيا','قطبي','مطر صيفي.'],['أكبر سكان؟','الصين والهند','اليابان','مصر','البرازيل','الأعلى.'],['تايجا؟','غابات صنوبرية','صحراء','سافانا','مرجان','الشمال.'],['الصحراوي في؟','غرب آسيا','شرقها','وسطها فقط','شمالها','جاف.'],['سيبيريا؟','باردة','حارة','ممطرة','استوائية','في الشمال.']]);
+Z('e2',1,'الوحدة الثانية: مصر في العصر الإسلامي','e2c','الفتح الإسلامي والولاة','فتح مصر ثم الطولونيون والإخشيديون','egypt',
+['فتح العرب مصر سنة 641م على يد عمرو بن العاص، ثم أصبحت ولاية إسلامية.'],
+[['الفتح','دخل عمرو العريش ثم بلبيس وحصن بابليون وأنشأ الفسطاط وجامع عمرو.'],['الولاة','حكمها ولاة الخلفاء، ثم قامت الدولة الطولونية (868م) فحقق أحمد بن طولون الاستقلال وبنى مسجده والمستشفى.'],['الإخشيديون','حكمها الإخشيد (935م) ثم كافور، وكانت مصر مستقلة قوية.']],
+[['الفسطاط','أول عاصمة إسلامية بمصر.'],['الطولونيون','أول دولة مستقلة بمصر الإسلامية.']],'مسجد ابن طولون من أقدم المساجد الباقية بالقاهرة.',
+E('cairo','arish','ismail','alex'),
+[['فاتح مصر؟','عمرو بن العاص','طارق','خالد','عقبة','641م.'],['أول عاصمة؟','الفسطاط','القاهرة','طيبة','منف','عمرو.'],['الدولة الطولونية؟','868م','1000م','500م','1517م','أحمد بن طولون.'],['الإخشيديون؟','بعد الطولونيين','قبلهم','الفاطميين','العثمانيين','935م.'],['مسجد؟','ابن طولون','الأزهر','الحاكم','الأقمر','بناه أحمد بن طولون.']]);
+Z('e2',1,'الوحدة الثانية: مصر في العصر الإسلامي','e2d','الدولة الفاطمية','القاهرة والأزهر','egypt',
+['دخل الفاطميون مصر 969م على يد جوهر الصقلي وأسسوا القاهرة.'],
+[['تأسيس القاهرة','بنى جوهر القاهرة 969م وأسس الأزهر 970م.'],['المعز لدين الله','انتقل إليها 973م وجعلها عاصمة.'],['الازدهار','ازدهرت التجارة والعلوم ودار الحكمة.']],
+[['القاهرة','المدينة القاهرة.'],['جوهر الصقلي','قائد الفاطميين.']],'سميت القاهرة نسبة للكوكب القاهر.',
+E('cairo','giza','alex'),
+[['مؤسس القاهرة؟','جوهر الصقلي','عمرو','صلاح الدين','قطز','969م.'],['الأزهر أنشئ؟','970م','1000م','641م','1517م','الفاطميون.'],['المعز؟','نقل العاصمة','فتح مصر','بنى الهرم','أنشأ الفسطاط','973م.'],['العاصمة الفاطمية؟','القاهرة','الفسطاط','منف','الإسكندرية','القاهرة.'],['دار الحكمة؟','مركز علمي','مسجد','قلعة','سوق','تعليم.']]);
+// ---- الترم الثاني ----
+Z('e2',2,'الوحدة الأولى: قارة أوروبا','e2e','أوروبا: الموقع والسطح والمناخ','الجبال والأنهار والأقاليم','eur',
+['أوروبا قارة صغيرة المساحة (نحو 10 مليون كم²) عالية الكثافة والتقدم.'],
+[['الموقع','غرب أوراسيا، يحدها المتوسط جنوبًا والأطلسي غربًا والمتجمد شمالًا وجبال الأورال شرقًا.'],['السطح','جبال الألب والبرانس والقوقاز، سهل أوروبا الشمالي، أنهار الراين والدانوب والفولجا.'],['المناخ','متوسطي في الجنوب، غربي أوروبي ممطر في الغرب، قاري في الشرق، بارد في الشمال.']],
+[['ألب','أشهر جبال أوروبا.'],['دانوب','يمر بعدة عواصم.']],'الفولجا أطول نهر في أوروبا.',
+[P(7.9,46.5,'جبال الألب','وسط أوروبا.'),P(-1,42.7,'جبال البرانس','بين فرنسا وإسبانيا.'),P(8,50,'نهر الراين','ألمانيا.'),P(25,45,'الدانوب','شرق.'),P(47,52,'الفولجا','روسيا.'),P(12.5,41.9,'روما','إيطاليا.')],
+[['أطول نهر؟','الفولجا','الراين','الدانوب','التايمز','أطول.'],['الألب في؟','وسط أوروبا','شمالها','شرقها','جنوب أفريقيا','وسط.'],['مناخ جنوب أوروبا؟','متوسطي','قطبي','استوائي','صحراوي','دافئ.'],['الأورال؟','حد شرقي','حد غربي','حد جنوبي','نهر','يفصلها عن آسيا.'],['البرانس؟','بين فرنسا وإسبانيا','بين ألمانيا وبولندا','في روسيا','في مصر','جنوب غرب.']]);
+Z('e2',2,'الوحدة الأولى: قارة أوروبا','e2f','اقتصاد أوروبا والاتحاد الأوروبي','الصناعة والزراعة والتعاون','eur',
+['أوروبا قارة صناعية متقدمة تعتمد على التقنية والتجارة.'],
+[['الصناعة','ألمانيا وفرنسا وبريطانيا وإيطاليا في الحديد والسيارات والكيماويات.'],['الزراعة','القمح في فرنسا، الزيتون في إيطاليا واليونان، الألبان في هولندا.'],['الاتحاد الأوروبي','تأسس 1993 ويضم دولًا تعتمد اليورو وتتبادل التجارة بلا حدود.']],
+[['اتحاد','تعاون سياسي واقتصادي.'],['يورو','عملة موحدة.']],'ألمانيا أكبر اقتصاد أوروبي.',
+[P(10,51,'ألمانيا','أكبر اقتصاد.'),P(2,47,'فرنسا','القمح.'),P(12,43,'إيطاليا','زيتون.'),P(4.9,52.3,'هولندا','ألبان.'),P(-1,52,'بريطانيا','ثورة صناعية.'),P(4.4,50.8,'بروكسل','مقر الاتحاد.')],
+[['أكبر اقتصاد؟','ألمانيا','مالطا','اليونان','أيسلندا','ألمانيا.'],['العملة؟','اليورو','الدولار','الجنيه','الريال','موحدة.'],['زيتون؟','إيطاليا','روسيا','النرويج','فنلندا','متوسطي.'],['مقر الاتحاد؟','بروكسل','موسكو','برلين','أثينا','بلجيكا.'],['ثورة صناعية؟','بريطانيا','مصر','الصين','الهند','بدأت فيها.']]);
+Z('e2',2,'الوحدة الثانية: مصر في العصر الإسلامي','e2g','الأيوبيون والمماليك','صلاح الدين والحروب الصليبية وعين جالوت','egypt',
+['أنهى صلاح الدين الدولة الفاطمية وأسس الأيوبية، وانتصر على الصليبيين في حطين 1187م، وهزم المماليك المغول في عين جالوت 1260م.'],
+[['صلاح الدين','أقام الدولة الأيوبية 1171م، وبنى القلعة، واستعاد بيت المقدس.'],['الحروب الصليبية','حملات أوروبية على المشرق، وهُزمت في المنصورة وفارسكور على يد المماليك والأيوبيين.'],['المماليك','قطز وبيبرس هزما المغول في عين جالوت 1260م وأنقذا الحضارة.']],
+[['حطين','معركة 1187م.'],['عين جالوت','هزيمة المغول 1260م.']],'قطز وبيبرس قادا النصر في عين جالوت.',
+E('cairo','mans','alex','port'),
+[['بطل حطين؟','صلاح الدين','قطز','بيبرس','عمرو','1187م.'],['عين جالوت؟','1260م','1187م','1517م','641م','المغول.'],['قاهر المغول؟','قطز','صلاح','أحمس','عمرو','المماليك.'],['المنصورة؟','هزيمة لويس التاسع','فتح','تأسيس','سد','1250م.'],['القلعة؟','صلاح الدين','المعز','عمرو','أحمس','قلعة الجبل.']]);
+// ===== الصف الثالث الإعدادي - الترم الثاني (محتوى تقريبي) =====
+Z('e3',2,'الوحدة الأولى: ثورة 23 يوليو والتحول','e3t2a','ثورة 23 يوليو 1952','الأسباب والمبادئ والنتائج','egypt',
+['قام الضباط الأحرار بثورة 23 يوليو 1952 فأنهت الملكية وأعلنت الجمهورية 1953.'],
+[['الأسباب','الاحتلال البريطاني، فساد الحكم الملكي، الفوارق الاجتماعية، وهزيمة فلسطين 1948.'],['المبادئ الستة','القضاء على الاستعمار والإقطاع والاحتكار، وإقامة عدالة اجتماعية وجيش وطني وحياة ديمقراطية سليمة.'],['النتائج','قانون الإصلاح الزراعي 1952، إعلان الجمهورية 1953، اتفاقية الجلاء 1954 فجلت القوات البريطانية 1956.']],
+[['الإصلاح الزراعي','توزيع الأرض على الفلاحين.'],['الجلاء','خروج المحتل.']],'اللواء محمد نجيب أول رئيس للجمهورية.',
+E('cairo','alex','suez','port'),
+[['تاريخ الثورة؟','23 يوليو 1952','1919','1967','1973','قاد الضباط الأحرار.'],['أول رئيس؟','محمد نجيب','السادات','مبارك','ناصر','1953.'],['الجلاء؟','1956','1948','1967','1973','اكتمل.'],['الإصلاح الزراعي؟','توزيع الأرض','هدم السد','تأميم القناة','حرب','1952.'],['المبادئ؟','ستة','ثلاثة','عشرة','اثنان','ستة.']]);
+Z('e3',2,'الوحدة الثانية: التحدي والبناء','e3t2b','تأميم القناة والعدوان الثلاثي والسد العالي','معركة السيادة والتنمية','egypt',
+['أمّم عبد الناصر القناة في 26 يوليو 1956 فشنّ الإنجليز والفرنسيون وإسرائيل العدوان الثلاثي، وانتصرت مصر سياسيًا، ثم بني السد العالي.'],
+[['التأميم','أعلن جمال عبد الناصر تأميم الشركة العالمية لقناة السويس بعد سحب تمويل السد.'],['العدوان الثلاثي','أكتوبر 1956، صمد الشعب في بورسعيد وأجبرت الأمم المتحدة المعتدين على الانسحاب.'],['السد العالي','بدأ 1960 واكتمل 1970، حمى مصر من الفيضان والجفاف، وولّد الكهرباء وأنشأ بحيرة ناصر.']],
+[['التأميم','نقل الملكية إلى الدولة.'],['العدوان','هجوم مسلح.']],'السد العالي أنشأ بحيرة ناصر.',
+E('port','suez','aswan','ismail'),
+[['التأميم؟','26 يوليو 1956','1952','1967','1973','قناة السويس.'],['المقاومة؟','بورسعيد','أسوان','سيوة','الفيوم','1956.'],['السد العالي؟','أسوان','القاهرة','السويس','الإسماعيلية','بحيرة ناصر.'],['فائدته؟','الكهرباء والري','تلوث','فيضان','جفاف','حماية.'],['العدوان؟','بريطانيا وفرنسا وإسرائيل','أمريكا','روسيا','الصين','ثلاثي.']]);
+Z('e3',2,'الوحدة الثالثة: مصر والقضية الفلسطينية','e3t2c','مصر والقضية الفلسطينية','من 1948 إلى السلام','arab',
+['القضية الفلسطينية قضية العرب المركزية، ولمصر الدور الأكبر في دعمها.'],
+[['1948 و1967','نكبة 1948 وقيام إسرائيل، ثم نكسة 1967 واحتلال سيناء والضفة وغزة والجولان.'],['حرب أكتوبر 1973','عبر الجيش المصري القناة وحطم خط بارليف في 6 أكتوبر 1973.'],['السلام','اتفاقية كامب ديفيد 1978 ومعاهدة 1979، واسترداد سيناء كاملة بعودة طابا 1989.']],
+[['النكبة','ضياع فلسطين 1948.'],['خط بارليف','حصن إسرائيلي.']],'استعادت مصر طابا بالتحكيم الدولي سنة 1989.',
+[P(35.2,31.8,'القدس','مدينة مقدسة.'),P(34.4,31.5,'غزة','قطاع.'),P(32.3,30.6,'القنطرة','عبور القناة.'),P(34.9,29.5,'طابا','عادت 1989.'),P(34.8,32,'تل أبيب','في إسرائيل.')],
+[['حرب أكتوبر؟','1973','1967','1956','1948','العبور.'],['نكسة؟','1967','1973','1948','1956','سيناء.'],['طابا؟','1989','1979','1973','1967','تحكيم.'],['خط بارليف؟','حصن','طريق','سد','نهر','حطمه الجيش.'],['معاهدة السلام؟','1979','1948','1952','1956','كامب ديفيد.']]);
+Z('e3',2,'الوحدة الرابعة: النشاط الاقتصادي في العالم','e3t2d','النشاط الزراعي والصناعي في العالم','أهم الأقاليم الزراعية والصناعية','world',
+['يتأثر النشاط الزراعي بالمناخ والتربة، والصناعي بالمواد الخام والطاقة والأسواق.'],
+[['الزراعة','القمح في السهول المعتدلة (أمريكا وروسيا)، الأرز في آسيا الموسمية، البن في البرازيل، القطن في مصر والهند.'],['الصناعة','أبرز مراكزها الصين وأمريكا واليابان وألمانيا، وتقوم على الحديد والبترول.'],['النقل والتجارة','الموانئ الكبرى والممرات: قناة السويس وبنما وجبل طارق.']],
+[['إقليم زراعي','منطقة تشتهر بمحصول.'],['منطقة صناعية','تجمع المصانع.']],'الصين أكبر منتج صناعي في العالم.',
+[P(-98,40,'أمريكا (القمح)','سهول.'),P(113,23,'الصين','مصانع.'),P(-47,-15,'البرازيل','بن.'),P(139,36,'اليابان','صناعة.'),P(10,51,'ألمانيا','صناعة.'),P(-79.5,9,'قناة بنما','ممر.'),P(32.3,30.6,'قناة السويس','ممر.')],
+[['الأرز في؟','آسيا الموسمية','القطب','الصحراء','الألب','أمطار.'],['البن؟','البرازيل','الصين','روسيا','كندا','أكبر منتج.'],['أكبر صناعة؟','الصين','الهند','مصر','تشيلي','أكبر.'],['قناة بنما؟','تربط الهادئ بالأطلسي','تربط المتوسط بالأحمر','في آسيا','في أوروبا','ممر.'],['القمح؟','السهول المعتدلة','القطب','الغابة','الصحراء','محصول.']]);
+// ===== الصف الرابع الابتدائي =====
+Z('p4',1,'الوحدة الأولى: اتجاهاتنا ترسم خطواتنا','p4a','الأماكن والاتجاهات والخريطة','الجهات الأصلية وقراءة الخريطة','egypt',
+['الاتجاهات تساعدنا في معرفة موقع أي مكان. والخريطة رسم لسطح الأرض أو جزء منه مصغّر على ورقة.','اضغط على المدن لترى موقع كل منها بالنسبة إلى باقي مصر.'],
+[['الجهات الأصلية','الجهات الأصلية أربع: الشمال والجنوب والشرق والغرب. نعرف الشمال بالبوصلة، وإذا وقفت وشروق الشمس أمامك فالشرق أمامك والغرب خلفك واليمين جنوب واليسار شمال. وبين الجهات الأصلية جهات فرعية مثل الشمال الشرقي والجنوب الغربي.'],['مفتاح الخريطة','لكل خريطة عنوان ومفتاح يشرح رموزها وألوانها: الأزرق للمياه والأخضر للزراعة والأصفر والبني للصحراء والجبال. وتوجد على الخريطة سهم الشمال ومقياس الرسم الذي يبيّن كم يمثل السنتيمتر الواحد من المسافة الحقيقية.'],['تطور الخريطة ومصادر المعلومات','رسم الإنسان الخرائط قديمًا على ألواح الطين والجلد، ثم تطورت بالبوصلة والتصوير الجوي والأقمار الصناعية ونظم الـ GPS. ومن مصادر المعلومات: الكتب والمتاحف والمقابلات والإنترنت والخرائط والصور والتقارير.']],
+[['الخريطة','رسم مصغّر لسطح الأرض أو جزء منه.'],['البوصلة','أداة تحدد الشمال والجهات.'],['مقياس الرسم','يربط المسافة على الخريطة بالمسافة الحقيقية.'],['مفتاح الخريطة','يشرح رموز وألوان الخريطة.']],'السهم الذي يشير إلى الشمال على الخريطة يساعدك على تحديد باقي الجهات.',
+E('cairo','alex','aswan','port','siwa','sharm'),
+[['أي من التالي جهة أصلية؟','الشرق','الشمال الشرقي','الجنوب الغربي','الشمال الغربي','الجهات الأصلية: شمال وجنوب وشرق وغرب فقط.'],['الأداة التي تحدد الشمال هي؟','البوصلة','المسطرة','الميزان','المنظار','البوصلة إبرتها المغناطيسية تشير للشمال.'],['اللون الأزرق على الخريطة غالبًا يدل على؟','المياه','الجبال','الصحراء','المدن','الأزرق يرمز للبحار والأنهار والبحيرات.'],['تقع الإسكندرية بالنسبة للقاهرة في جهة؟','الشمال','الجنوب','الشرق','الغرب','الإسكندرية على البحر المتوسط شمال القاهرة.'],['تقع أسوان بالنسبة للقاهرة في جهة؟','الجنوب','الشمال','الغرب','الشرق','أسوان في أقصى جنوب مصر.'],['الذي يشرح رموز الخريطة هو؟','مفتاح الخريطة','العنوان','سهم الشمال','الإطار','المفتاح يبيّن معنى كل رمز.'],['من وسائل تطور الخرائط حديثًا؟','الأقمار الصناعية','ألواح الطين','الجلد','الرمال','الأقمار الصناعية تصوّر الأرض بدقة.']]);
+Z('p4',1,'الوحدة الثانية: مدينتنا وحياتنا اليومية','p4b','مدينتنا وخدماتها','المحافظة والأماكن الخدمية والمدينة في المستقبل','egypt',
+['تتكون مصر من 27 محافظة، ولكل محافظة عاصمة. وفي المدينة أماكن خدمية تلبّي احتياجاتنا.','اضغط على عواصم المحافظات لتعرف أين تقع.'],
+[['كيف تبدو مدينتنا','تضم المدينة مساكن وشوارع ومدارس ومستشفيات وأسواقًا وحدائق. وتختلف المدن في مواقعها: ساحلية وصحراوية ونهرية، فتتأثر مبانيها وأعمال سكانها بموقعها.'],['الأماكن الخدمية','الخدمات أنواع: تعليمية (مدارس وجامعات)، صحية (مستشفيات ووحدات صحية)، أمنية (أقسام الشرطة والمطافئ)، ترفيهية (حدائق ونوادٍ)، ومواصلات واتصالات وبريد. وعلينا المحافظة عليها لأنها ملك للجميع.'],['تطور المدينة ومستقبلها','تطورت مدننا من بيوت بسيطة إلى مبانٍ عالية وطرق وكباري ومترو. وتهتم الدولة اليوم ببناء مدن جديدة مثل العاصمة الإدارية الجديدة والعلمين الجديدة، ومدن ذكية صديقة للبيئة.']],
+[['محافظة','وحدة إدارية في الدولة لها عاصمة.'],['خدمات','ما يقدمه المجتمع للناس كالتعليم والصحة.'],['مدينة جديدة','مدينة أنشئت حديثًا لتخفيف الزحام.']],'عدد محافظات مصر 27 محافظة.',
+E('cairo','alex','mans','tanta','asyut','minya','qena','aswan','suez','ismail','port','arish','mat','hurg'),
+[['عدد محافظات مصر؟','27','20','30','25','تنقسم مصر إلى 27 محافظة.'],['المستشفى من الخدمات؟','الصحية','التعليمية','الأمنية','الترفيهية','المستشفيات تقدم الرعاية الصحية.'],['المدرسة من الخدمات؟','التعليمية','الصحية','الأمنية','الاتصالات','المدارس تقدم التعليم.'],['عاصمة محافظة الدقهلية؟','المنصورة','طنطا','المنيا','أسيوط','المنصورة تقع شرق دلتا النيل.'],['عاصمة محافظة الغربية؟','طنطا','المنصورة','قنا','سوهاج','طنطا وسط الدلتا.'],['من المدن الجديدة في مصر؟','العاصمة الإدارية الجديدة','الأقصر','أسوان','طنطا','أنشئت لتخفيف الزحام عن القاهرة.'],['يجب علينا تجاه الأماكن الخدمية؟','المحافظة عليها','إتلافها','تجاهلها','بيعها','هي ملك للجميع.']]);
+Z('p4',1,'الوحدة الثالثة: مصر وطننا','p4c','مصر على خريطة العالم','الموقع والحدود والعلم','arab',
+['مصر دولة عربية في شمال شرق أفريقيا، وجزء منها في آسيا هو سيناء. موقعها بين قارات العالم القديم جعلها همزة وصل بين الشرق والغرب.','علم مصر ثلاثة ألوان: الأحمر والأبيض والأسود وفي الوسط نسر صلاح الدين.'],
+[['موقع مصر','تقع مصر في شمال شرق أفريقيا، يحدها شمالًا البحر المتوسط وشرقًا البحر الأحمر وفلسطين المحتلة وجنوبًا السودان وغربًا ليبيا. وتطل على بحرين مهمين وتتحكم في قناة السويس التي تربط البحرين الأبيض والأحمر.'],['علم وطننا','الأحمر يرمز لدماء الشهداء والنضال، والأبيض للمستقبل المشرق والسلام، والأسود لانتهاء الظلم والاستعمار. وفي الوسط نسر صلاح الدين الذهبي رمز القوة والعزة.'],['أهمية الموقع','موقع مصر جعل منها ملتقى للتجارة والحضارات، وجذب السياح، ورفع مكانتها السياسية بين دول العالم.']],
+[['القارة','أكبر قسم من اليابسة.'],['قناة السويس','ممر مائي يربط المتوسط بالأحمر.'],['نسر صلاح الدين','شعار في وسط علم مصر.']],'تقع مصر في قارتين: أفريقيا (الجزء الأكبر) وآسيا (سيناء).',
+[P(30,27,'مصر','دولة عربية في شمال شرق أفريقيا وعاصمتها القاهرة.'),P(15,30,'ليبيا','تحد مصر من الغرب.'),P(30,15,'السودان','يحد مصر من الجنوب.'),P(35,31.5,'فلسطين','تحد مصر من الشرق عند سيناء.'),P(18,35,'البحر المتوسط','يحد مصر من الشمال.'),P(38,20,'البحر الأحمر','يحد مصر من الشرق.')],
+[['تقع مصر في قارة؟','أفريقيا (وجزء منها في آسيا)','أوروبا فقط','أمريكا','أستراليا','الجزء الأكبر في أفريقيا وسيناء في آسيا.'],['الدولة التي تحد مصر جنوبًا؟','السودان','ليبيا','فلسطين','تونس','السودان جنوب مصر.'],['الدولة التي تحد مصر غربًا؟','ليبيا','السودان','الأردن','سوريا','ليبيا غرب مصر.'],['اللون الأسود في علم مصر يرمز إلى؟','نهاية الظلم والاستعمار','الصحراء','النيل','الجبال','الأسود يرمز لانتهاء عهود الظلم.'],['شعار علم مصر؟','نسر صلاح الدين','الهرم','الهلال','النخلة','نسر صلاح الدين ذهبي.'],['القناة التي تربط المتوسط بالأحمر؟','قناة السويس','قناة المحمودية','ترعة الإبراهيمية','بحر يوسف','قناة السويس افتتحت 1869.']]);
+Z('p4',1,'الوحدة الثالثة: مصر وطننا','p4d','تضاريس مصر وثرواتها ومعالمها','الصحارى والوادي والثروات والمعالم','egypt',
+['تتنوع تضاريس مصر بين وادي النيل والدلتا والصحارى وسيناء. ولمصر ثروات كثيرة ومعالم تاريخية مشهورة.','اضغط على المناطق والمعالم لتتعرف عليها.'],
+[['التضاريس','وادي النيل والدلتا أرض زراعية خصبة. الصحراء الغربية أكبر الصحارى، والصحراء الشرقية جبلية على البحر الأحمر، وسيناء شبه جزيرة جبلية فيها أعلى قمم مصر.'],['ثروات مصر','الثروة الزراعية (القطن والقمح والأرز)، والمعدنية (الحديد والفوسفات والذهب)، والبترول والغاز الطبيعي، والسياحة، والثروة السمكية. وعلينا ترشيد استهلاكها.'],['المعالم التاريخية','الأهرامات وأبو الهول ومعابد الأقصر وأبو سمبل وقلعة صلاح الدين وقلعة قايتباي بالإسكندرية. وهي كنوز تحتاج منا للحفاظ عليها.']],
+[['الدلتا','أرض مثلثة خصبة شمال مصر.'],['ثروة معدنية','ما يستخرج من باطن الأرض كالحديد.'],['معلم تاريخي','أثر قديم يدل على تاريخ الأمة.']],'نحو 95% من السكان يعيشون في وادي النيل والدلتا.',
+E('giza','luxor','abu','siwa','cath','hurg','alex'),
+[['أكبر الصحارى في مصر؟','الصحراء الغربية','الشرقية','سيناء','النوبية فقط','الغربية تشغل ثلثي المساحة.'],['الأهرامات توجد في؟','الجيزة','أسوان','سيناء','سيوة','أهرامات خوفو وخفرع ومنقرع بالجيزة.'],['معبد أبو سمبل يعود إلى الملك؟','رمسيس الثاني','خوفو','أحمس','توت عنخ آمون','بناه رمسيس الثاني.'],['من الثروات المعدنية في مصر؟','الحديد والفوسفات','القطن','الأرز','القمح','الحديد والفوسفات معادن.'],['من الثروات الزراعية؟','القطن','الذهب','البترول','الفوسفات','القطن محصول زراعي شهير.'],['أعلى قمم مصر في؟','سيناء','الدلتا','الفيوم','الإسكندرية','جبل كاترين بسيناء.']]);
+// ---- الترم الثاني (محتوى تقريبي) ----
+Z('p4',2,'الوحدة الأولى: النيل والزراعة','p4e','نهر النيل شريان الحياة','منابع النيل ومجراه وفوائده','egypt',
+['النيل أطول أنهار العالم (نحو 6650 كم)، وبدونه لا حياة في مصر. ينبع من جنوب القارة ويصب في البحر المتوسط.','اضغط على المدن والمعالم المرتبطة بالنيل.'],
+[['مجرى النيل','يصل النيل إلى مصر من السودان فيجري شمالًا حتى القاهرة ثم يتفرع إلى فرعي رشيد ودمياط. وتحميه من الفيضان بحيرة ناصر خلف السد العالي.'],['فوائد النيل','مصدر مياه الشرب والري، وأرضه خصبة، وفيه الثروة السمكية والنقل النهري والسياحة النيلية، وعليه قامت الحضارة المصرية القديمة.'],['حماية النيل','لا نلقي المخلفات في النيل، ولا نسرف في الماء، ونعمل على صيانة الترع والمصارف.']],
+[['فرعا النيل','رشيد ودمياط.'],['الري','توصيل المياه للأرض الزراعية.'],['السد العالي','سد عند أسوان يتحكم في المياه.']],'مصر تعتمد على النيل في أكثر من 90% من مواردها المائية.',
+E('aswan','cairo','tanta','mans','luxor'),
+[['أطول نهر في العالم؟','النيل','الأمازون','المسيسبي','دجلة','نحو 6650 كم.'],['فرعا النيل؟','رشيد ودمياط','السويس وبورسعيد','الفرات ودجلة','الأحمر والأزرق','يتفرع شمال القاهرة.'],['السد العالي في؟','أسوان','الأقصر','القاهرة','بني سويف','عند أسوان.'],['من فوائد النيل؟','الري والشرب','تدمير الزرع','التلوث','لا شيء','النيل مصدر المياه.'],['يجب علينا تجاه النيل؟','حمايته من التلوث','إلقاء القمامة','الإسراف','الإهمال','الحفاظ عليه واجب.']]);
+Z('p4',2,'الوحدة الثانية: الزراعة والصناعة','p4f','الزراعة والصناعة في مصر','المحاصيل والصناعات','egypt',
+['تعتمد الزراعة المصرية على مياه النيل، ومن محاصيلها القطن والقمح والأرز وقصب السكر.','وتحوّل الصناعة المواد الخام إلى سلع مفيدة.'],
+[['الزراعة','المحاصيل الشتوية كالقمح والبرسيم، والصيفية كالقطن والأرز، والنيلية. ومناطقها الدلتا والوادي. وهناك مشروعات لاستصلاح الصحراء وزراعتها.'],['الصناعة','من الصناعات: الغزل والنسيج في المحلة الكبرى، والحديد والصلب في حلوان، والأسمدة والسكر والأغذية، والصناعات الغذائية. ونسعى لتشجيع المنتج المصري.'],['العلاقة بين الزراعة والصناعة','القطن مادة خام للنسيج، وقصب السكر للسكر، فتقوم صناعات على المنتجات الزراعية.']],
+[['مادة خام','مادة لم تُصنّع بعد.'],['محصول','ما تنتجه الأرض الزراعية.'],['استصلاح','تحويل الأرض البور إلى صالحة للزراعة.']],'القطن المصري طويل التيلة يشتهر عالميًا.',
+E('tanta','mans','cairo','asyut','minya','fay'),
+[['القطن محصول؟','صيفي','شتوي فقط','حيواني','معدني','القطن يزرع صيفًا.'],['القمح محصول؟','شتوي','صيفي','حيواني','معدني','القمح من محاصيل الشتاء.'],['المادة الخام للغزل والنسيج؟','القطن','القمح','الأرز','الفوسفات','القطن يتحول إلى خيوط ونسيج.'],['من الصناعات في مصر؟','الغزل والنسيج','تعدين الماس فقط','الألماس','الذهب','الغزل والنسيج صناعة مهمة.'],['استصلاح الأراضي يعني؟','تحويل الصحراء لأرض زراعية','هدم المباني','ردم النيل','قطع الشجر','توسيع الرقعة الزراعية.']]);
+Z('p4',2,'الوحدة الثالثة: السكان والحضارة والحقوق','p4g','السكان والحضارة المصرية','أين نعيش؟ ومن بنى الأهرامات؟','egypt',
+['سكان مصر أكثر من 100 مليون نسمة، يتركزون في الوادي والدلتا. وللمصريين القدماء حضارة عظيمة.','اضغط على المعالم لتعرف المزيد.'],
+[['السكان','تزداد الكثافة السكانية في وادي النيل والدلتا وتقل في الصحارى. ومن مشكلات الزيادة السكانية الازدحام ونقص الخدمات، ونواجهها بتنظيم الأسرة والمدن الجديدة.'],['الحضارة المصرية القديمة','بنى المصريون القدماء الأهرامات والمعابد، واخترعوا الكتابة الهيروغليفية والتقويم، وبرعوا في الطب والهندسة والتحنيط.'],['الحقوق والواجبات','من حقوقنا: التعليم والصحة والأمان. ومن واجباتنا: احترام القانون والمحافظة على الممتلكات العامة والمشاركة في خدمة الوطن.']],
+[['كثافة سكانية','عدد السكان في وحدة المساحة.'],['الهيروغليفية','كتابة المصريين القدماء.'],['حق وواجب','لكل حق واجب يقابله.']],'اخترع المصريون القدماء الورق (البردي).',
+E('giza','luxor','abu','cairo'),
+[['اخترع المصريون القدماء؟','الكتابة الهيروغليفية','الطباعة','التليفون','السيارة','الهيروغليفية كتابة قديمة.'],['الأهرامات بنيت لدفن؟','الملوك','الجنود','التجار','الفلاحين','مقابر ملكية.'],['من واجبات المواطن؟','احترام القانون','إتلاف الممتلكات','الغش','التجاهل','الواجبات تحمي المجتمع.'],['يتركز السكان في؟','الوادي والدلتا','الصحراء','البحر','الجبال','بسبب المياه والأرض الخصبة.'],['أول من كتب على البردي؟','المصريون القدماء','الرومان','الصينيون','الفرس','البردي نبات نيلي.']]);
+// ===== الصف الخامس الابتدائي =====
+Z('p5',1,'الوحدة الأولى: مصر موقع متميز وطبيعة متنوعة','p5a','الموقع الفلكي والجغرافي لمصر','دوائر العرض وخطوط الطول','egypt',
+['موقع مصر الفلكي تحدده دوائر العرض وخطوط الطول، وموقعها الجغرافي يتميز بأنه وسط العالم القديم.','اضغط على أطراف مصر لتعرف حدودها.'],
+[['الموقع الفلكي','تقع مصر بين دائرتي عرض 22° و31°35′ شمالًا وخطي طول 25° و36°55′ شرقًا تقريبًا. ويمر بها مدار السرطان (23°27′ شمالًا) عند جنوب أسوان تقريبًا، فيقع أغلب أراضيها في المنطقة المعتدلة الدافئة وجنوبها في المدارية.'],['الموقع الجغرافي','تقع في شمال شرق أفريقيا وتتصل بآسيا بسيناء، وتطل على البحرين المتوسط والأحمر، وتتحكم في قناة السويس.'],['أهمية الموقع','تحكم في طريق التجارة العالمي، ومناخ متنوع، وجذب السياحة، وملتقى حضارات.']],
+[['دائرة العرض','خط وهمي يوازي خط الاستواء.'],['خط الطول','خط وهمي يصل بين القطبين.'],['مدار السرطان','دائرة عرض 23°27′ شمالًا.']],'تحدد دوائر العرض البعد شمال أو جنوب خط الاستواء.',
+E('port','suez','aswan','siwa','sharm','mat'),
+[['تقع مصر فلكيًا بين دائرتي عرض؟','22° و31°35′ شمالًا','10° و20°','40° و50°','0° و10°','هذا هو امتدادها.'],['البحر الذي يحد مصر شمالًا؟','المتوسط','الأحمر','الأسود','العرب','البحر المتوسط.'],['تتصل مصر بآسيا عن طريق؟','سيناء','سيوة','الفيوم','الدلتا','شبه جزيرة سيناء.'],['القناة التي تربط البحرين؟','السويس','المحمودية','الإبراهيمية','النصر','قناة السويس.'],['يمر بجنوب مصر مدار؟','السرطان','الجدي','الاستواء','القطب','عند أسوان تقريبًا.']]);
+Z('p5',1,'الوحدة الأولى: مصر موقع متميز وطبيعة متنوعة','p5b','مظاهر السطح','الوادي والدلتا والصحارى وسيناء','egypt',
+['ينقسم سطح مصر إلى أربعة أقاليم: وادي النيل والدلتا، الصحراء الغربية، الصحراء الشرقية، وسيناء.'],
+[['وادي النيل والدلتا','أرض سهلية طميية خصبة بها أكثر السكان.'],['الصحراء الغربية','أكبر الأقاليم، فيها واحات (سيوة، البحرية، الفرافرة، الداخلة، الخارجة) ومنخفض القطارة.'],['الصحراء الشرقية وسيناء','الشرقية جبال مرتفعة قرب البحر الأحمر وثروة معدنية، وسيناء جبلية في الجنوب وسهلية شمالًا، وفيها جبل كاترين (2629م) أعلى قمة بمصر.']],
+[['الواحة','منطقة خضراء في الصحراء حول عين ماء.'],['منخفض القطارة','أخفض نقطة بمصر.'],['جبل كاترين','أعلى قمة في مصر.']],'منخفض القطارة أخفض نقطة في مصر (نحو 133م تحت سطح البحر).',
+E('siwa','kharga','fay','cath','hurg','alex'),
+[['أكبر أقاليم مصر مساحة؟','الصحراء الغربية','الدلتا','سيناء','الصحراء الشرقية','نحو ثلثي المساحة.'],['أعلى قمة في مصر؟','جبل كاترين','الأهرامات','الدلتا','الفيوم','2629م.'],['من الواحات؟','سيوة','الأقصر','المنصورة','الإسماعيلية','سيوة في الغربية.'],['أراضي الدلتا؟','طميية خصبة','صخرية','رملية','جليدية','النيل يرسب الطمي.'],['أخفض نقطة في مصر؟','منخفض القطارة','جبل كاترين','الدلتا','الخارجة','133م تحت سطح البحر.']],{regs:['delta','west','east','sinai'],lines:['NILE','ROSETTA','DAMIETTA']});
+Z('p5',1,'الوحدة الأولى: مصر موقع متميز وطبيعة متنوعة','p5c','المناخ والنبات والحيوان','أنواع المناخ والبيئات','egypt',
+['يتأثر مناخ مصر بالموقع والبحار فهو حار جاف صيفًا ودافئ ممطر قليلًا شتاءً.'],
+[['مناخ مصر','مناخ البحر المتوسط على الساحل الشمالي (ممطر شتاءً)، ومناخ صحراوي في معظم البلاد (حار جاف). والأمطار قليلة وتزيد في الشمال.'],['النباتات','نخيل البلح في الواحات، الحشائش على الساحل الشمالي، الأشجار الشوكية في الصحراء.'],['الحيوانات','الجمل في الصحراء، الغزال والثعلب، والتماسيح في بحيرة ناصر، وأنواع كثيرة من الطيور المهاجرة.']],
+[['مناخ','حالة الجو في مدة طويلة.'],['محمية','منطقة تحمي النباتات والحيوانات.']],'مصر تقع في إقليم صحراوي جاف في معظمها.',
+E('alex','mat','aswan','cath','siwa'),
+[['مناخ الساحل الشمالي؟','البحر المتوسط','استوائي','قطبي','موسمي','دافئ ممطر شتاءً.'],['الحيوان الأنسب للصحراء؟','الجمل','البطريق','الدب','الفيل','يتحمل الجفاف.'],['النبات المنتشر في الواحات؟','النخيل','الصنوبر','الغابات المطيرة','الجليد','النخيل يتحمل الحرارة.'],['الأمطار في مصر؟','قليلة','غزيرة','دائمة','ثلجية فقط','تزيد في الشمال.'],['الغرض من المحميات؟','حماية الكائنات','الصيد','التلوث','البناء','الحفاظ على البيئة.']]);
+Z('p5',1,'الوحدة الثانية: الحضارة المصرية القديمة','p5d','قيام الحضارة المصرية القديمة','العوامل وعصور ما قبل التاريخ','egypt',
+['نشأت حضارة مصر على ضفاف النيل بسبب الموقع والنيل وتوحيد القطرين على يد الملك مينا (نعرمر).'],
+[['عوامل القيام','النيل والأرض الخصبة، والحماية الطبيعية بالصحارى والبحار، وتميز المناخ، وروح التعاون.'],['ما قبل التاريخ','العصر الحجري القديم عاش فيه الإنسان على الصيد، والحديث استقر في القرى وزرع الأرض ودجّن الحيوان.'],['التوحيد','وحّد الملك مينا القطرين (الوجه القبلي والبحري) نحو 3200 ق.م وجعل عاصمته منف.']],
+[['ما قبل التاريخ','قبل اختراع الكتابة.'],['القطران','الوجه القبلي والبحري.'],['الأسرة','حكم ملوك من نفس العائلة.']],'مينا أول ملك وحّد مصر.',
+E('cairo','giza','luxor','aswan'),
+[['من وحّد القطرين؟','مينا','خوفو','أحمس','رمسيس','مينا أول ملك لمصر الموحدة.'],['عاصمة مينا؟','منف','طيبة','أسوان','الإسكندرية','منف قرب الجيزة.'],['أهم عامل لقيام الحضارة؟','النيل','الجبال','الثلج','الغابات','النيل يوفر الماء والتربة.'],['اشتهر العصر الحجري الحديث ب؟','الزراعة','الصيد فقط','الصناعة','الحديد','الاستقرار والزراعة.'],['الوجه القبلي يقع؟','جنوبًا','شمالًا','شرقًا','غربًا','الصعيد.']]);
+Z('p5',1,'الوحدة الثانية: الحضارة المصرية القديمة','p5e','العصور التاريخية والبطالمة والرومان','من الدولة القديمة إلى الحكم الروماني','egypt',
+['مرّت مصر بالدولة القديمة والوسطى والحديثة ثم عصر البطالمة والرومان.'],
+[['القديمة والوسطى','القديمة عصر بناة الأهرام (خوفو)، والوسطى عصر الازدهار والتجارة (سنوسرت).'],['الحديثة','طرد أحمس الهكسوس وبدأ الإمبراطورية، وحكم تحتمس الثالث ورمسيس الثاني وحتشبسوت وتوت عنخ آمون.'],['البطالمة والرومان','بعد الإسكندر الأكبر (332 ق.م) حكم البطالمة وجعلوا الإسكندرية منارة العلم (المكتبة والفنار) ثم الرومان.']],
+[['الهكسوس','حكموا مصر ثم طردهم أحمس.'],['الفنار','منارة الإسكندرية القديمة.']],'أحمس أنهى حكم الهكسوس وأسس الدولة الحديثة.',
+E('giza','luxor','alex','abu'),
+[['باني الهرم الأكبر؟','خوفو','أحمس','رمسيس','تحتمس','هرم خوفو.'],['طارد الهكسوس؟','أحمس','مينا','خوفو','حتشبسوت','أحمس.'],['أنشأ الإسكندرية؟','الإسكندر الأكبر','بطليموس','مينا','أحمس','332 ق.م.'],['الفنار في؟','الإسكندرية','الأقصر','أسوان','سيناء','من عجائب الدنيا.'],['حكم مصر بعد الإسكندر؟','البطالمة','الهكسوس','الفرس','الفراعنة','بطليموس.']]);
+Z('p5',1,'الوحدة الثالثة: كنوز مصر','p5f','الثروات والمياه والمشروعات القومية','المعادن والطاقة والموارد المائية','egypt',
+['لدى مصر ثروة معدنية ومائية، وتقيم الدولة مشروعات قومية كبرى.'],
+[['المعادن والطاقة','البترول في خليج السويس وسيناء والصحراء الغربية، والغاز في المتوسط (حقل ظهر)، والحديد في أسوان والواحات، والفوسفات بالبحر الأحمر، والذهب في الصحراء الشرقية، والطاقة الشمسية والرياح.'],['موارد المياه','النيل والمياه الجوفية والأمطار وتحلية البحر، ويجب ترشيد الاستهلاك.'],['المشروعات القومية','قناة السويس الجديدة، العاصمة الإدارية، شبكة الطرق، مشروع بنبان للطاقة الشمسية، توشكى.']],
+[['طاقة متجددة','لا تنفد كالشمس والرياح.'],['تحلية','إزالة الملح من ماء البحر.']],'أكبر مجمع للطاقة الشمسية في مصر في بنبان بأسوان.',
+E('suez','aswan','safaga','hurg','port','ismail'),
+[['الفوسفات يوجد قرب؟','البحر الأحمر','الدلتا','الفيوم','المنيا','سفاجا.'],['أكبر مجمع شمسي في؟','بنبان بأسوان','الإسكندرية','الدلتا','السويس','بنبان.'],['الطاقة المتجددة مثل؟','الشمس والرياح','البترول','الفحم','الغاز','لا تنفد.'],['مصدر مصر المائي الأول؟','النيل','الأمطار','الثلج','البحيرات','النيل.'],['تحلية المياه تعني؟','إزالة الملح','تلوين الماء','تسخينه','تجميده','للشرب.']]);
+// ---- الترم الثاني (تقريبي) ----
+Z('p5',2,'الوحدة الأولى: سكان مصر ونشاطهم','p5g','السكان وتوزيعهم','الكثافة والتوزيع والمشكلات','egypt',
+['سكان مصر يتركزون في 5% من المساحة، وتتوزع الكثافة بحسب الموارد.'],
+[['التوزيع','أعلى كثافة في الدلتا والوادي والقاهرة الكبرى، وأقلها في الصحارى.'],['الزيادة السكانية','تسبب الزحام ونقص الخدمات، وتواجه بالتوعية والتنمية وتوسيع العمران في الصحراء.'],['العمران','المدن الجديدة والمشروعات القومية لإعادة التوزيع.']],
+[['الكثافة','عدد السكان لكل كم².'],['الهجرة الداخلية','الانتقال داخل الدولة.']],'القاهرة أكبر محافظات مصر سكانًا.',
+E('cairo','alex','giza','aswan','kharga','mat'),
+[['أكثر المناطق كثافة؟','الدلتا والوادي','الصحارى','الواحات','سيناء','المياه والأرض.'],['حل الزحام؟','المدن الجديدة','البناء على الزراعة','إهمال','تجاهل','تعمير الصحراء.'],['أكبر مدينة؟','القاهرة','أسوان','المنيا','قنا','العاصمة.'],['قلة السكان في؟','الصحراء','الدلتا','القاهرة','الإسكندرية','قلة المياه.'],['الكثافة تقاس ب؟','عدد السكان/المساحة','الطول','الارتفاع','العمق','نسمة/كم².']]);
+Z('p5',2,'الوحدة الثانية: الأنشطة الاقتصادية','p5h','الزراعة والري والصناعة','أهم المحاصيل ومصادر الري','egypt',
+['الزراعة تقوم على الري من النيل والمياه الجوفية، وتعدّ المحاصيل مادة للصناعة.'],
+[['أنواع الري','ري بالراحة في الدلتا والوادي، وبالتنقيط والرش في الأراضي الجديدة لتوفير المياه.'],['المحاصيل','القمح والأرز والقطن وقصب السكر والذرة والفاكهة.'],['الصناعة','الغزل والنسيج والسكر والأسمدة والحديد.']],
+[['الري بالتنقيط','يوصل الماء للجذور بقطرات.'],['صناعة','تحويل المواد الخام لسلع.']],'الري بالتنقيط يوفر نحو نصف المياه.',
+E('tanta','mans','asyut','fay','alex'),
+[['الري الحديث؟','بالتنقيط','بالغمر فقط','بلا ماء','بالصخور','يوفر الماء.'],['قصب السكر يزرع في؟','الصعيد','سيناء فقط','الجبال','البحار','يزرع في قنا وأسوان.'],['سكر وأسمدة؟','صناعات','محاصيل','أنهار','جبال','صناعات.'],['القطن؟','محصول صيفي','شتوي','معدن','طاقة','يزرع صيفًا.'],['القمح؟','شتوي','صيفي','معدني','سمكي','في الشتاء.']]);
+Z('p5',2,'الوحدة الثانية: الأنشطة الاقتصادية','p5i','النقل والتجارة والسياحة','طرق المواصلات والمقاصد السياحية','egypt',
+['النقل يربط أجزاء الوطن، والسياحة مورد مهم للدخل.'],
+[['النقل','برّي (طرق وسكك حديدية ومترو)، ونهري، وبحري (الموانئ كبورسعيد والإسكندرية)، وجوي (مطار القاهرة).'],['التجارة','داخلية وخارجية، تصدر مصر القطن والبترول والمنتجات وتستورد القمح والآلات.'],['السياحة','ثقافية (الأقصر وأسوان)، شاطئية (الغردقة وشرم)، علاجية (سيوة وحلوان)، دينية (سانت كاترين).']],
+[['صادرات','سلع تباع للخارج.'],['واردات','سلع تشترى من الخارج.']],'قناة السويس أهم مورد بالعملة الصعبة.',
+E('port','alex','luxor','aswan','hurg','sharm','cath','siwa','cairo'),
+[['السياحة الشاطئية؟','الغردقة','الأقصر','أسوان','أسيوط','على البحر الأحمر.'],['السياحة الثقافية؟','الأقصر','شرم','الغردقة','دهب','الآثار.'],['أكبر ميناء متوسطي؟','الإسكندرية','السويس','أسوان','سفاجا','ميناء رئيسي.'],['ما تبيعه الدولة للخارج؟','الصادرات','الواردات','الرسوم','القروض','تسمى صادرات.'],['القناة تدر؟','دخلًا بالعملة الصعبة','لا شيء','ضررًا','غرامة','دخل مهم.']]);
+Z('p5',2,'الوحدة الثالثة: الحياة في مصر القديمة','p5j','الحياة اليومية عند المصري القديم','الحرف والدين والعلوم','egypt',
+['عاش المصري القديم حياة منظمة: زراعة وحرف وعلوم وديانة تؤمن بالبعث.'],
+[['الحياة اليومية','الفلاح زرع، والحرفي صنع، والكاتب دوّن. وكان المجتمع طبقات: الملك والكهنة والكتّاب والجنود والعمال والفلاحون.'],['العلوم','برعوا في الطب والتحنيط والهندسة والفلك والتقويم الشمسي.'],['الدين والفنون','عبدوا آمون ورع وإيزيس وأوزيريس، وآمنوا بالحياة بعد الموت فبنوا المقابر والمعابد.']],
+[['التحنيط','حفظ جسد الميت.'],['الكاتب','يسجل الأمور بالهيروغليفية.']],'التقويم المصري القديم من 365 يومًا.',
+E('luxor','giza','cairo','abu'),
+[['بنوا المقابر لأنهم يؤمنون ب؟','البعث','النسيان','الفناء التام','المال فقط','عقيدة الحياة بعد الموت.'],['التحنيط؟','حفظ الجسد','طعام','رياضة','لعبة','حفظ الموتى.'],['إله الشمس؟','رع','أنوبيس','حابي','إيزيس','إله الشمس رع.'],['التقويم المصري؟','365 يومًا','300','400','350','سنة شمسية.'],['من الحرفيين؟','النجار','الملك','الكاهن','الجندي','يصنع الأثاث.']]);
+// ===== الصف السادس الابتدائي =====
+Z('p6',1,'الوحدة الأولى: جغرافية الوطن العربي','p6a','موقع الوطن العربي','الحدود والدول والأهمية','arab',
+['الوطن العربي يمتد من المحيط الأطلسي غربًا إلى الخليج العربي شرقًا، وفي آسيا وأفريقيا.','اضغط على العلامات لتتعرف على الدول والمعالم.'],
+[['الموقع','يقع في جنوب غرب آسيا وشمال أفريقيا، وتبلغ مساحته نحو 14 مليون كم²، ويضم 22 دولة عضوًا في جامعة الدول العربية.'],['الحدود','يحده شمالًا البحر المتوسط وتركيا، وجنوبًا المحيط الهندي ودول الساحل الأفريقي، وغربًا المحيط الأطلسي، وشرقًا إيران والخليج العربي.'],['أهمية الموقع','يتحكم في قناة السويس ومضيقي جبل طارق وباب المندب وهرمز، وبه البترول والمعادن، وهو ملتقى ثلاث قارات.']],
+[['الوطن العربي','الأرض التي يسكنها العرب.'],['مضيق','ممر مائي ضيق بين بحرين.'],['جامعة الدول العربية','منظمة تأسست 1945 بالقاهرة.']],'تأسست جامعة الدول العربية عام 1945 ومقرها القاهرة.',
+[P(31.2,30,'مصر','أكبر دول الوطن العربي سكانًا.'),P(45,24.5,'السعودية','أكبر دول شبه الجزيرة ومهبط الوحي.'),P(3,28,'الجزائر','أكبر دولة عربية مساحة.'),P(-6,32,'المغرب','على الأطلسي والمتوسط.'),P(44,33,'العراق','بلد النهرين دجلة والفرات.'),P(36.5,34,'سوريا','في المشرق العربي.'),P(-5.6,35.9,'مضيق جبل طارق','يفصل المغرب عن إسبانيا.'),P(43.3,12.7,'مضيق باب المندب','بين البحر الأحمر وخليج عدن.'),P(56.4,26.5,'مضيق هرمز','مدخل الخليج العربي.')],
+[['عدد دول الجامعة العربية؟','22','15','30','10','22 دولة.'],['أكبر دولة عربية مساحة؟','الجزائر','مصر','السعودية','العراق','نحو 2.4 مليون كم².'],['مضيق يفصل المغرب عن إسبانيا؟','جبل طارق','هرمز','باب المندب','البوسفور','عند الأطلسي.'],['يحد الوطن العربي غربًا؟','المحيط الأطلسي','الهادئ','الهندي','المتجمد','غربًا الأطلسي.'],['مقر الجامعة العربية؟','القاهرة','الرياض','عمّان','بغداد','القاهرة.'],['مضيق باب المندب يصل بين؟','الأحمر وخليج عدن','المتوسط والأطلسي','الخليج والهندي','الأسود والمتوسط','جنوب الأحمر.']]);
+Z('p6',1,'الوحدة الأولى: جغرافية الوطن العربي','p6b','التضاريس والمناخ والتحديات البيئية','الجبال والصحارى والأنهار','arab',
+['تتنوع تضاريس الوطن العربي بين صحارى وجبال وسهول وأنهار.'],
+[['التضاريس','جبال الأطلس في المغرب العربي، جبال السراة في الحجاز واليمن، جبال لبنان، سهول بلاد الشام والرافدين، أكبر صحراء الصحراء الكبرى وصحراء الربع الخالي.'],['المناخ والنبات','مناخ متوسطي ممطر شتاءً على السواحل، وصحراوي في معظم الأرض، وموسمي في الجنوب. والنبات غابات وحشائش وأشجار شوكية.'],['التحديات البيئية','التصحر وقلة المياه والتلوث وتغير المناخ، ونواجهها بالتشجير وترشيد المياه والتحلية.']],
+[['التصحر','تحول الأرض الخصبة إلى صحراء.'],['الأطلس','جبال المغرب العربي.']],'الصحراء الكبرى أكبر صحراء حارة في العالم.',
+[P(-4,32,'جبال الأطلس','في المغرب والجزائر وتونس.'),P(15,24,'الصحراء الكبرى','أكبر صحراء حارة.'),P(51,20,'الربع الخالي','صحراء الجزيرة العربية.'),P(35.8,33.9,'جبال لبنان','على المتوسط.'),P(31,28,'نهر النيل','أطول نهر.'),P(44.5,33,'دجلة والفرات','نهرا العراق.'),P(43,15,'جبال اليمن','مرتفعات جنوب غرب الجزيرة.')],
+[['أكبر صحراء عربية وعالمية؟','الصحراء الكبرى','الربع الخالي','النفود','سيناء','أكبر حارّة.'],['جبال الأطلس في؟','المغرب العربي','الشام','العراق','اليمن','شمال غرب أفريقيا.'],['نهرا العراق؟','دجلة والفرات','النيل','السند','الأمازون','بلاد النهرين.'],['التصحر؟','تحول الأرض لصحراء','زيادة الأمطار','زراعة','بناء','مشكلة بيئية.'],['حل التصحر؟','التشجير','القطع','الرعي الجائر','الحرق','تثبيت التربة.']]);
+Z('p6',1,'الوحدة الثانية: التاريخ الإسلامي','p6c','الجزيرة العربية والهجرة','قبل الإسلام وبعثة النبي','arab',
+['ظهر الإسلام في مكة المكرمة في شبه الجزيرة العربية، ثم هاجر النبي ﷺ إلى المدينة وأسس الدولة.'],
+[['الجزيرة قبل الإسلام','كانت قبائل متفرقة، تعبد الأصنام، تعيش على الرعي والتجارة، وتعاني من الحروب.'],['البعثة','بُعث محمد ﷺ في مكة نحو 610م، ودعا للتوحيد، فاضطهدته قريش.'],['الهجرة','هاجر النبي ﷺ إلى المدينة (622م) وبها أسس المسجد وآخى بين المهاجرين والأنصار وكتب الصحيفة.']],
+[['الهجرة','انتقال النبي من مكة إلى المدينة.'],['المؤاخاة','أخوّة بين المهاجرين والأنصار.']],'بدأ التقويم الهجري بهجرة النبي سنة 622م.',
+[P(39.8,21.4,'مكة المكرمة','مولد النبي ﷺ ومهبط الوحي وفيها الكعبة.'),P(39.6,24.5,'المدينة المنورة','دار الهجرة وعاصمة الدولة الأولى.'),P(40.1,21.4,'الطائف','سافر إليها النبي ﷺ يدعو أهلها.')],
+[['بدأ الإسلام في؟','مكة','المدينة','الشام','القدس','في مكة.'],['الهجرة إلى؟','المدينة','الحبشة','الطائف','مصر','إلى يثرب.'],['أول عمل بالمدينة؟','بناء المسجد','الحرب','السفر','الزراعة','مسجد قباء والنبوي.'],['المؤاخاة بين؟','المهاجرين والأنصار','قريش وثقيف','الروم','الفرس','أخوّة.'],['سنة الهجرة؟','622م','610م','570م','632م','622 ميلادية.']],{map:'arab'});
+Z('p6',1,'الوحدة الثانية: التاريخ الإسلامي','p6d','الخلفاء الراشدون والأمويون والعباسيون','الفتوحات والدولتان','arab',
+['تعاقب الخلفاء الأربعة، ثم قامت الدولتان الأموية والعباسية.'],
+[['الخلفاء الراشدون','أبو بكر (حروب الردة وجمع القرآن)، عمر (الفتوحات والدواوين)، عثمان (جمع المصحف)، علي. وفُتحت الشام ومصر والعراق وفارس.'],['الدولة الأموية','عاصمتها دمشق ومؤسسها معاوية، وامتدت إلى الأندلس والسند.'],['الدولة العباسية','عاصمتها بغداد، ازدهرت في الترجمة والعلوم في عهد هارون الرشيد والمأمون (بيت الحكمة).']],
+[['الخلافة','حكم المسلمين بعد النبي.'],['بيت الحكمة','مركز الترجمة في بغداد.']],'فتح عمرو بن العاص مصر سنة 641م.',
+[P(36.3,33.5,'دمشق','عاصمة الأمويين.'),P(44.4,33.3,'بغداد','عاصمة العباسيين.'),P(39.6,24.5,'المدينة','عاصمة الراشدين.'),P(-4.8,37.9,'الأندلس','وصل إليها المسلمون بقيادة طارق بن زياد.'),P(31.2,30,'الفسطاط','أنشأها عمرو بن العاص بمصر.')],
+[['أول الخلفاء؟','أبو بكر','عمر','علي','عثمان','أبو بكر الصديق.'],['عاصمة الأمويين؟','دمشق','بغداد','القاهرة','مكة','دمشق.'],['عاصمة العباسيين؟','بغداد','دمشق','المدينة','مصر','بغداد.'],['فاتح مصر؟','عمرو بن العاص','خالد','طارق','موسى','سنة 641م.'],['بيت الحكمة؟','مركز للترجمة والعلم','سوق','حصن','مسجد فقط','ببغداد.']]);
+Z('p6',1,'الوحدة الثالثة: التنمية الاقتصادية في الوطن العربي','p6e','الزراعة والثروة والطاقة والسياحة','الموارد الاقتصادية العربية','arab',
+['للوطن العربي موارد زراعية وحيوانية ومعدنية وسياحية.'],
+[['الزراعة','القمح والشعير والقطن والتمور والحمضيات في الوادي والسهول، ومناطق الري بالأنهار.'],['الثروة الحيوانية والسمكية','الأغنام والإبل والماعز، وصيد الأسماك من المتوسط والأحمر والأطلسي والخليج.'],['الطاقة والمعادن والسياحة','أكثر من نصف احتياطي البترول العالمي في الخليج، والفوسفات في المغرب، والحديد في الجزائر، وسياحة الآثار والشواطئ.']],
+[['احتياطي','كمية موجودة غير مستخرجة.'],['تمور','ثمار النخيل.']],'يضم الخليج العربي أكبر احتياطي نفط في العالم.',
+[P(48,29.5,'الكويت','دولة بترولية.'),P(50.5,26.5,'الخليج العربي','ثروة نفطية.'),P(-7,33,'فوسفات المغرب','أكبر احتياطي في العالم.'),P(3,36,'الجزائر','بترول وغاز.'),P(32,26,'سياحة مصر','آثار وشواطئ.'),P(44,33,'العراق','نفط وزراعة.')],
+[['أكبر احتياطي بترول في؟','الخليج العربي','الأطلسي','الصحراء','الجبال','الخليج.'],['الفوسفات في؟','المغرب','العراق','عمان','قطر','من الأكبر عالميًا.'],['من محاصيل العرب؟','القمح','الجليد','الشاي','الكاكاو','القمح والشعير.'],['التمور تنتج من؟','النخيل','الزيتون','القطن','الأرز','النخلة.'],['الثروة الحيوانية؟','الأغنام والإبل','الدببة','القرود','الفيلة','في الرعي.']]);
+// ---- الترم الثاني (تقريبي) ----
+Z('p6',2,'الوحدة الأولى: الحضارة الإسلامية وإسهاماتها','p6f','الحضارة الإسلامية','العلوم والعمارة','arab',
+['ازدهرت الحضارة الإسلامية في العلوم والفنون والعمارة.'],
+[['العلوم','ابن الهيثم في البصريات، والخوارزمي في الجبر، وابن سينا في الطب، والبيروني في الفلك والجغرافيا.'],['العمارة','مساجد وقباب ومآذن وقصور، كالمسجد الأموي ومسجد ابن طولون والأزهر والحمراء بالأندلس.'],['تأثيرها','نقلت العلوم إلى أوروبا عبر الأندلس وصقلية وأسهمت في نهضتها.']],
+[['الجبر','فرع الرياضيات أسسه الخوارزمي.'],['البصريات','علم الضوء.']],'الأزهر أنشأه الفاطميون عام 970م.',
+[P(31.26,30.05,'الأزهر','جامعة ومسجد أُسس بالقاهرة.'),P(36.3,33.5,'المسجد الأموي','تحفة أموية.'),P(-3.6,37.2,'الحمراء','قصر بالأندلس.'),P(44.4,33.3,'بغداد','بيت الحكمة.')],
+[['مؤسس الجبر؟','الخوارزمي','ابن سينا','ابن الهيثم','البيروني','الخوارزمي.'],['عالم الطب؟','ابن سينا','الخوارزمي','البيروني','ابن خلدون','القانون في الطب.'],['البصريات؟','ابن الهيثم','الرازي','الكندي','الفارابي','علم الضوء.'],['الحمراء؟','الأندلس','العراق','مصر','المغرب','غرناطة.'],['الأزهر؟','جامعة بالقاهرة','قلعة','سوق','ميناء','970م.']]);
+Z('p6',2,'الوحدة الثانية: المنظمات والتعاون الدولي','p6g','الجامعة العربية والأمم المتحدة','التعاون وحقوق الإنسان','world',
+['التعاون بين الدول يحل المشكلات ويحقق السلام والتنمية.'],
+[['الجامعة العربية','تأسست 1945 بالقاهرة بين 7 دول، وتعمل على التنسيق في السياسة والاقتصاد والثقافة.'],['الأمم المتحدة','تأسست 1945 بعد الحرب العالمية الثانية، ومقرها نيويورك، وأجهزتها الجمعية العامة ومجلس الأمن.'],['حقوق الإنسان','الإعلان العالمي لحقوق الإنسان 1948 يقر الحق في الحياة والتعليم والعمل، وعلينا احترامها.']],
+[['مجلس الأمن','جهاز للسلم والأمن الدولي.'],['حقوق الإنسان','حقوق لكل إنسان.']],'الأمم المتحدة أنشئت 1945.',
+[P(-74,40.7,'نيويورك','مقر الأمم المتحدة.'),P(31.2,30,'القاهرة','مقر الجامعة العربية.'),P(6.1,46.2,'جنيف','مقر منظمات دولية.')],
+[['مقر الأمم المتحدة؟','نيويورك','القاهرة','باريس','لندن','نيويورك.'],['مقر الجامعة العربية؟','القاهرة','تونس','عمان','الرياض','القاهرة.'],['إعلان حقوق الإنسان؟','1948','1900','2000','1800','10 ديسمبر 1948.'],['الجهاز الأهم للسلم؟','مجلس الأمن','البرلمان','البنك','الشرطة','مجلس الأمن.'],['تأسست الجامعة؟','1945','1919','1960','1990','1945.']]);
+Z('p6',2,'الوحدة الثالثة: قارات العالم ومحيطاته','p6h','القارات والمحيطات','الأرض وتوزيع اليابس والماء','world',
+['تنقسم اليابسة إلى سبع قارات وتحيط بها خمسة محيطات.'],
+[['القارات','آسيا (الأكبر)، أفريقيا، أمريكا الشمالية، أمريكا الجنوبية، أنتاركتيكا، أوروبا، أستراليا (الأصغر).'],['المحيطات','الهادئ (الأكبر)، الأطلسي، الهندي، المتجمد الشمالي، والجنوبي.'],['نسبة اليابس','نحو 29% يابسة و71% مياه.']],
+[['قارة','كتلة يابسة ضخمة.'],['محيط','مسطح مائي واسع.']],'الهادئ أكبر المحيطات وآسيا أكبر القارات.',
+[P(90,45,'آسيا','أكبر القارات.'),P(20,5,'أفريقيا','ثاني أكبر القارات.'),P(-100,45,'أمريكا الشمالية','قارة شمال الأمريكتين.'),P(-60,-15,'أمريكا الجنوبية','قارة الأمازون.'),P(15,50,'أوروبا','قارة غرب أوراسيا.'),P(135,-25,'أستراليا','أصغر القارات.'),P(-140,0,'المحيط الهادئ','أكبر المحيطات.'),P(-35,30,'المحيط الأطلسي','بين الأمريكتين وأوروبا وأفريقيا.'),P(80,-25,'المحيط الهندي','جنوب آسيا.')],
+[['أكبر القارات؟','آسيا','أفريقيا','أوروبا','أستراليا','آسيا.'],['أكبر المحيطات؟','الهادئ','الهندي','الأطلسي','المتجمد','الهادئ.'],['أصغر القارات؟','أستراليا','أوروبا','أفريقيا','آسيا','أستراليا.'],['عدد القارات؟','7','5','6','9','سبع.'],['نسبة الماء؟','71%','29%','50%','10%','الأغلب مياه.']]);
+// ===== المرحلة الثانوية (محتوى مختصر تقريبي) =====
+// الصف الأول الثانوي - التاريخ
+Z('s1',1,'التاريخ: حضارات العالم القديم','s1a','مدخل لدراسة الحضارة','تعريف الحضارة وعوامل نشأتها','world',
+['الحضارة هي ما أنتجه الإنسان من علوم وفنون ونظم. ونشأت الحضارات الأولى على ضفاف الأنهار.'],
+[['مفهوم الحضارة','هي مجموع الإنجازات المادية والمعنوية للمجتمع: العمارة والكتابة والقانون والدين.'],['عوامل النشأة','النهر والتربة الخصبة والمناخ والموقع وروح التعاون.'],['أقدم الحضارات','مصر (النيل) والعراق (دجلة والفرات) والهند (السند) والصين (النهر الأصفر).']],
+[['حضارة','تراث إنساني.'],['حضارة نهرية','قامت على نهر.']],'أقدم حضارتين: مصر والعراق.',
+[P(31,27,'مصر القديمة','النيل.'),P(44,33,'العراق القديم','دجلة والفرات.'),P(68,27,'وادي السند','الهند.'),P(112,35,'النهر الأصفر','الصين.')],
+[['قامت الحضارات على؟','الأنهار','الصحاري','الجليد','الجبال','للخصب.'],['حضارة مصر على؟','النيل','الفرات','السند','الأصفر','النيل.'],['العراق؟','دجلة والفرات','النيل','السند','الأصفر','بلاد الرافدين.'],['الحضارة؟','إنجازات الإنسان','الجبال','الصحراء','الأرض','تراث.'],['وادي السند في؟','الهند','مصر','الصين','العراق','الهند.']]);
+Z('s1',1,'التاريخ: حضارات العالم القديم','s1b','حضارة مصر القديمة','الملامح السياسية والاقتصادية والاجتماعية والدينية','egypt',
+['حضارة مصر القديمة من أعرق الحضارات في التاريخ وتميّزت بوحدة الدولة والكتابة والعمارة.'],
+[['سياسيًا وإداريًا','الفرعون إله وملك، والوزير يدير الدولة، وقُسمت مصر إلى أقاليم (نومات).'],['اقتصاديًا واجتماعيًا','الزراعة أساس الاقتصاد، والتجارة والصناعة، وطبقات: الفرعون والكهنة والكتبة والعمال والفلاحون.'],['دينيًا وفكريًا','تعدد الآلهة (آمون ورع) ثم محاولة إخناتون للتوحيد، واختراع الهيروغليفية والتقويم وعلوم الطب والهندسة، وتواصل مع أفريقيا.']],
+[['الفرعون','ملك مصر القديمة.'],['نوم','إقليم.']],'اخناتون دعا إلى عبادة آتون.',
+E('giza','luxor','abu','cairo'),
+[['الحاكم؟','الفرعون','الوزير فقط','الكاتب','الجندي','ملك إله.'],['أساس الاقتصاد؟','الزراعة','البترول','الصناعة','السياحة','النيل.'],['الكتابة؟','الهيروغليفية','المسمارية','اللاتينية','العربية','هيروغليفية.'],['التوحيد؟','إخناتون','خوفو','أحمس','رمسيس','آتون.'],['الإقليم؟','نوم','سنتر','مركز','قرية','الإداري.']]);
+Z('s1',1,'التاريخ: حضارات العالم القديم','s1c','العراق القديم','سومر وبابل وآشور','arab',
+['قامت في العراق حضارات سومر وأكاد وبابل وآشور.'],
+[['سومر','أسسوا المدن (أور وأوروك) واخترعوا الكتابة المسمارية.'],['بابل','أشهر ملوكها حمورابي ووضع شريعة مكتوبة (قانون حمورابي).'],['آشور','دولة حربية قوية عاصمتها نينوى، ومكتبة آشور بانيبال.']],
+[['مسمارية','كتابة على الطين.'],['حمورابي','واضع أول قانون.']],'قانون حمورابي من أقدم القوانين المكتوبة.',
+[P(46,31,'أور','مدينة سومرية.'),P(44.4,32.5,'بابل','حمورابي.'),P(43.1,36.4,'نينوى','آشور.')],
+[['الكتابة المسمارية؟','سومر','مصر','الصين','الهند','على الطين.'],['حمورابي؟','بابل','آشور','سومر','مصر','قانون.'],['نينوى؟','آشور','بابل','سومر','مصر','عاصمة.'],['آشور بانيبال؟','مكتبة','هرم','قلعة','طريق','مكتبة نينوى.'],['العراق؟','بلاد الرافدين','وادي النيل','السند','الصين','دجلة والفرات.']]);
+Z('s1',2,'التاريخ: حضارة المتوسط','s1d','فينيقيا واليونان','التجارة والفلسفة والديمقراطية','eur',
+['اشتهر الفينيقيون بالتجارة البحرية والأبجدية، واليونان بالفلسفة والديمقراطية.'],
+[['فينيقيا','مدن صور وصيدا وبيبلوس، أنشأت قرطاج، ونشرت الأبجدية.'],['اليونان','دول المدن: أثينا (ديمقراطية) وإسبرطة (حربية)، وسقراط وأفلاطون وأرسطو وهيرودوت.'],['الإسكندر','غزا الشرق ومصر 332 ق.م وأسس الإسكندرية.']],
+[['دولة المدينة','مدينة مستقلة.'],['ديمقراطية','حكم الشعب.']],'أثينا أصل الديمقراطية.',
+[P(23.7,38,'أثينا','ديمقراطية.'),P(22.4,37,'إسبرطة','حربية.'),P(35.2,33.3,'صور','فينيقيا.'),P(10.3,36.8,'قرطاج','فينيقية.')],
+[['الأبجدية؟','الفينيقيون','المصريون','الرومان','الصينيون','نشروها.'],['الديمقراطية؟','أثينا','إسبرطة','قرطاج','صور','أثينا.'],['فيلسوف؟','أرسطو','عمرو','قطز','أحمس','يوناني.'],['إسبرطة؟','حربية','تجارية','زراعية','صناعية','حربية.'],['الإسكندر في مصر؟','332 ق.م','641م','1517','1798','أسس الإسكندرية.']]);
+Z('s1',2,'التاريخ: حضارة المتوسط','s1e','الرومان وتواصل مصر مع أوروبا','الدولة الرومانية ومصر','eur',
+['أقام الرومان إمبراطورية ضخمة، وضمّوا مصر 30 ق.م بعد هزيمة كليوباترا.'],
+[['روما','من مدينة إلى إمبراطورية حول المتوسط، قانون روماني أثّر في العالم.'],['مصر الرومانية','صارت مصر سلة غلال لروما، وانتشرت المسيحية بها.'],['التواصل مع أوروبا','عبر التجارة والثقافة والكنيسة.']],
+[['إمبراطورية','دولة كبرى.'],['سلة الغلال','أرض زراعية لتغذية.']],'سقطت الدولة الرومانية الغربية 476م.',
+[P(12.5,41.9,'روما','العاصمة.'),P(29.9,31.2,'الإسكندرية','بمصر.'),P(28.9,41,'القسطنطينية','العاصمة الشرقية.')],
+[['العاصمة؟','روما','أثينا','دمشق','بغداد','روما.'],['ضمّت مصر؟','30 ق.م','641م','1517','1952','أكتافيان.'],['سلة الغلال؟','مصر','فرنسا','الصين','الهند','للقمح.'],['القانون؟','الروماني','الفرعوني','الهندي','الصيني','أثر.'],['سقوط؟','476م','30ق.م','641م','1453م','الغربية.']]);
+// الصف الثاني الثانوي - الجغرافيا
+Z('s2',1,'الجغرافيا: الموارد والسكان','s2a','الموارد الطبيعية والسكان','المياه والتربة والمعادن','world',
+['الموارد الطبيعية أساس التنمية، ويتفاوت توزيعها بين الدول.'],
+[['الموارد','الماء والتربة والمعادن والغابات والطاقة، منها المتجدد وغير المتجدد.'],['السكان','يتوزعون بحسب المناخ والموارد، ويكثرون في آسيا الموسمية وأوروبا.'],['التنمية','الاستغلال الرشيد للموارد دون استنزاف.']],
+[['مورد متجدد','كالشمس.'],['تنمية مستدامة','تحفظ حق الأجيال.']],'البترول مورد غير متجدد.',
+[P(113,23,'الصين','سكان وصناعة.'),P(78,22,'الهند','سكان.'),P(48,29,'الخليج','نفط.'),P(-98,40,'أمريكا','زراعة وصناعة.')],
+[['متجدد؟','الشمس','البترول','الفحم','الغاز','لا ينفد.'],['غير متجدد؟','البترول','الرياح','الماء','الشمس','ينفد.'],['كثافة سكان؟','آسيا الموسمية','القطب','الصحراء','الأمازون','مناخ.'],['التنمية؟','مستدامة','عشوائية','سريعة','ضارة','رشيدة.'],['المعادن؟','موارد','أنهار','جبال','غابات','مناجم.']]);
+Z('s2',2,'الجغرافيا: الأقاليم والأنشطة','s2b','الأقاليم المناخية والأنشطة','المناخ والنشاط الاقتصادي','world',
+['يتأثر النشاط البشري بالإقليم المناخي.'],
+[['الأقاليم','استوائي، موسمي، مداري، صحراوي، متوسطي، معتدل، بارد، قطبي.'],['الأنشطة','زراعة ورعي وصيد وصناعة وسياحة حسب كل إقليم.'],['مصر','إقليم صحراوي وشبه متوسطي في الشمال.']],
+[['إقليم','منطقة متشابهة.'],['نشاط','عمل اقتصادي.']],'المتوسطي ممطر شتاءً حار صيفًا.',
+[P(-60,-3,'الأمازون','استوائي.'),P(15,23,'الصحراء الكبرى','صحراوي.'),P(12,41,'المتوسط','إقليم.'),P(100,62,'سيبيريا','بارد.')],
+[['الأمازون؟','استوائي','قطبي','صحراوي','متوسطي','مطر غزير.'],['الكبرى؟','صحراوي','موسمي','استوائي','قطبي','جاف.'],['المتوسط؟','شتاؤه ممطر','صيفه ممطر','جليدي','جاف دائمًا','معتدل.'],['سيبيريا؟','بارد','حار','استوائي','موسمي','شمال.'],['النشاط؟','زراعة ورعي','لا شيء','فقط الحرب','لعب','اقتصاد.']]);
+// الصف الثالث الثانوي - الجغرافيا
+Z('s3',1,'الجغرافيا: جغرافية مصر','s3a','الموقع والسطح والمناخ في مصر','دراسة تفصيلية','egypt',
+['دراسة جغرافية مصر: الموقع والسطح والمناخ والموارد.'],
+[['الموقع','بين دائرتي 22° و31°35′ شمالًا، وخطي 25° و36°55′ شرقًا، في شمال شرق أفريقيا.'],['السطح','الوادي والدلتا، الصحراء الغربية، الشرقية، سيناء.'],['المناخ','صحراوي في معظمها، متوسطي في الساحل الشمالي.']],
+[['الوادي','شريط النيل.'],['منخفض','أرض أقل من سطح البحر.']],'أعلى قمة: جبل كاترين.',
+E('cairo','cath','siwa','aswan','alex'),
+[['أعلى قمة؟','كاترين','الأهرام','سيوة','الفيوم','2629م.'],['مناخ؟','صحراوي','قطبي','استوائي','موسمي','أغلبه.'],['الغربية؟','أكبر','أصغر','الدلتا','الوادي','ثلثا.'],['الدلتا؟','خصبة','صخرية','جليدية','رملية','طمي.'],['الموقع؟','شمال شرق أفريقيا','جنوب','غرب','وسط','في القارة.']]);
+Z('s3',2,'الجغرافيا: التنمية الاقتصادية','s3b','جغرافية التنمية والنقل والتجارة','الموارد والأنشطة والنقل','egypt',
+['تدرس جغرافية التنمية الموارد الاقتصادية والأنشطة والنقل والتجارة في مصر.'],
+[['الموارد','الزراعة، المعادن، الطاقة، السياحة.'],['الأنشطة','زراعة وصناعة وخدمات.'],['النقل والتجارة','موانئ، طرق، سكك حديدية، قناة السويس.']],
+[['تنمية','نمو اقتصادي.'],['نقل','ربط بين الأماكن.']],'قناة السويس شريان تجاري عالمي.',
+E('suez','port','alex','aswan','hurg'),
+[['قناة؟','السويس','النصر','المحمودية','الإبراهيمية','تجارة.'],['ميناء؟','الإسكندرية','قنا','أسوان','أسيوط','متوسط.'],['تنمية؟','نمو','تراجع','فقر','حرب','اقتصادي.'],['نقل؟','طرق','فوسفات','نهر','جبل','وسيلة.'],['سياحة؟','خدمات','زراعة','صناعة','تعدين','نشاط.']]);
+// ===== الصف الثاني الثانوي الأزهري: التاريخ (مطابق لتوزيع المنهج) + الجغرافيا (تقريبي) =====
+const U1='التاريخ – الوحدة الأولى: الحضارة العربية وظهور الإسلام',U2='التاريخ – الوحدة الثانية: الفتوح الإسلامية وانتشار الإسلام',U3='التاريخ – الوحدة الثالثة: مصر والدول المستقلة',U4='التاريخ – الوحدة الرابعة: الحضارة الإسلامية وإسهاماتها';
+Z('z2',1,'الجغرافيا (تقريبية): الأرض والسكان','z2g1','مدخل لجغرافية العالم','الموقع والأقاليم','world',
+['نبدأ بنظرة على قارات العالم وأقاليمه الطبيعية.'],
+[['الكرة الأرضية','لها خطوط طول ودوائر عرض، وتقسم لثلاثة نطق حرارية: مدارية ومعتدلة وباردة.'],['القارات','سبع قارات، أكبرها آسيا وأصغرها أستراليا.'],['الأقاليم','استوائي وموسمي وصحراوي ومتوسطي ومعتدل وبارد.']],
+[['دائرة عرض','خط وهمي يوازي الاستواء.'],['قارة','كتلة يابسة كبرى.']],'تفصل خطوط الطول بين الشرق والغرب.',
+[P(90,45,'آسيا','أكبر القارات.'),P(20,5,'أفريقيا','قارة.'),P(15,50,'أوروبا','قارة.'),P(-60,-15,'أمريكا الجنوبية','قارة.'),P(135,-25,'أستراليا','أصغر.')],
+[['أكبر قارة؟','آسيا','أفريقيا','أوروبا','أستراليا','آسيا.'],['أصغر؟','أستراليا','أوروبا','أفريقيا','آسيا','أستراليا.'],['عدد القارات؟','7','5','9','6','سبع.'],['دوائر العرض؟','توازي الاستواء','عمودية','قطرية','لا شيء','أفقية.'],['إقليم الأمازون؟','استوائي','صحراوي','قطبي','متوسطي','مطير.']]);
+Z('z2',2,'الجغرافيا (تقريبية): الاقتصاد','z2g2','الأنشطة الاقتصادية في العالم','الزراعة والصناعة والنقل','world',
+['تتوزع الأنشطة الاقتصادية بحسب المناخ والموارد.'],
+[['الزراعة','القمح في السهول المعتدلة، الأرز في آسيا الموسمية، البن في البرازيل.'],['الصناعة','مراكزها الصين وأمريكا وألمانيا واليابان.'],['النقل والتجارة','الممرات الملاحية: السويس وبنما وجبل طارق وهرمز.']],
+[['ممر ملاحي','طريق بحري.'],['صناعة','تحويل الخام.']],'قناة السويس تختصر الطريق بين آسيا وأوروبا.',
+[P(32.3,30.6,'السويس','ممر.'),P(-79.5,9,'بنما','ممر.'),P(113,23,'الصين','صناعة.'),P(-47,-15,'البرازيل','بن.')],
+[['الأرز؟','آسيا الموسمية','القطب','الصحراء','الألب','مطر.'],['البن؟','البرازيل','الصين','مصر','كندا','أكبر.'],['بنما؟','قناة','جبل','نهر','بحيرة','تربط.'],['الصناعة؟','الصين','تشاد','نيبال','مالي','أكبر.'],['السويس؟','قناة','مضيق','نهر','بحر','1869.']]);
+// ===== ثانية ثانوي أزهر – التاريخ: شرح كامل لكل درس (14 درسًا) =====
+Z('z2',1,U1,'h1','١) حضارات شبه الجزيرة العربية قبل الإسلام','اليمن والشمال والحجاز','arab',
+['شبه الجزيرة العربية أكبر شبه جزيرة في العالم (نحو ثلاثة ملايين كم²)، تحيط بها المياه من ثلاث جهات: الأحمر غربًا والخليج العربي والهندي شرقًا وجنوبًا. معظمها صحراء، لكن أطرافها وفيها اليمن ازدهرت.','اضغط على العلامات لتعرف أهم مراكز الحضارة.'],
+[['أولًا: الموقع وأثره','موقع الجزيرة بين آسيا وأفريقيا جعلها طريقًا للتجارة بين الهند والصين شرقًا ومصر والشام والروم غربًا. وساعدت الصحراء على عزلتها فلم تُحتل بسهولة، وحافظت القبائل على لغتها العربية.'],['ثانيًا: حضارات الجنوب (اليمن)','أهم الممالك: معين (قرابة 1200 ق.م)، سبأ (أشهرها، وعاصمتها مأرب وفيها سد مأرب العظيم)، قتبان، حضرموت، ثم حمير (115 ق.م – 525م). اشتغل اليمنيون بالزراعة بفضل الأمطار الموسمية والسدود، وبتجارة اللبان والبخور والتوابل. وانهيار سد مأرب سبب هجرة قبائل (الأزد والغساسنة) إلى الشمال.'],['ثالثًا: حضارات الشمال','الأنباط عاصمتهم البتراء (جنوب الأردن) وسيطروا على طرق القوافل، وتدمر في الشام (الملكة زنوبيا)، والغساسنة (حلفاء الروم) والمناذرة في الحيرة (حلفاء الفرس)، وكندة في وسط الجزيرة.'],['رابعًا: الحجاز ومكة','مكة بناها إبراهيم وإسماعيل بالكعبة، وتولّت قريش خدمتها والسقاية والرفادة، وكانت مركزًا دينيًا وتجاريًا. وبفضل الإيلاف أقامت قريش رحلتي الشتاء إلى اليمن والصيف إلى الشام. ويثرب (المدينة) واحة زراعية يسكنها الأوس والخزرج وبعض اليهود.'],['خامسًا: الحياة الدينية والاجتماعية','عبد العرب الأصنام (هبل واللات والعزى ومناة) مع بقايا الحنيفية، وانتشرت اليهودية في يثرب وخيبر واليمن، والنصرانية في نجران. والمجتمع قبلي يقوم على العصبية، وللمرأة والرقيق أوضاع متفاوتة، وبرز الشعر ديوانًا للعرب وسوق عكاظ منتدى أدبيًا.']],
+[['حمير','آخر الممالك اليمنية القديمة.'],['العصبية','تعصب الفرد لقبيلته.'],['الإيلاف','عهود التجارة لقريش مع الجوار.'],['الحنيفية','دين إبراهيم عليه السلام.']],'سبأ هي الملكة التي ذكرها القرآن في قصة سليمان، وعاصمتها مأرب.',
+[P(45.3,15.4,'مأرب','عاصمة سبأ وفيها السد العظيم.'),P(35.4,30.3,'البتراء','عاصمة الأنباط.'),P(38.3,34.6,'تدمر','مملكة زنوبيا.'),P(39.8,21.4,'مكة','قريش والكعبة.'),P(39.6,24.5,'يثرب','واحة الأوس والخزرج.'),P(44.2,15.4,'صنعاء','يمن حمير.'),P(44.5,32,'الحيرة','المناذرة.'),P(44.1,17.5,'نجران','مركز نصراني.')],
+[['عاصمة سبأ؟','مأرب','صنعاء','مكة','البتراء','مأرب وفيها السد.'],['حلفاء الروم؟','الغساسنة','المناذرة','كندة','قريش','الغساسنة بالشام.'],['حلفاء الفرس؟','المناذرة','الغساسنة','الأنباط','حمير','في الحيرة.'],['البتراء عاصمة؟','الأنباط','سبأ','تدمر','معين','جنوب الأردن.'],['سبب هجرة القبائل اليمنية؟','انهيار سد مأرب','الحروب مع مكة','الكعبة','الإسلام','سيل العرم.'],['رحلتا قريش؟','الشتاء والصيف','الحج والعمرة','الحرب والسلم','الزراعة والصناعة','لليمن والشام.']]);
+Z('z2',1,U1,'h2','٢) ظهور الإسلام','المولد والبعثة والدعوة','arab',
+['وُلد النبي محمد ﷺ في مكة عام الفيل (نحو 570م)، ونشأ يتيمًا ثم عُرف بالصادق الأمين.','اضغط على أماكن الأحداث.'],
+[['أولًا: قبل البعثة','وُلد يتيمًا (مات أبوه عبد الله وهو جنين وأمه آمنة وهو في السادسة)، فكفله جده عبد المطلب ثم عمه أبو طالب. اشتغل بالرعي والتجارة، وتزوج خديجة، وشارك في حلف الفضول، وحكّمته قريش في وضع الحجر الأسود.'],['ثانيًا: البعثة','نزل الوحي في غار حراء بأول سورة العلق وهو في الأربعين (610م). وأوائل المسلمين: خديجة وأبو بكر وعلي وزيد.'],['ثالثًا: الدعوة السرية والجهرية','استمرت السرية نحو ثلاث سنوات واجتمع المسلمون في دار الأرقم، ثم أمر الله بالجهر «فاصدع بما تؤمر» فصدع على الصفا. فاشتد أذى قريش وعذّبوا بلالًا وعمارًا وآل ياسر.'],['رابعًا: الهجرة إلى الحبشة والمقاطعة','هاجر المسلمون إلى الحبشة لدى النجاشي مرتين، وحاصرتهم قريش في شعب أبي طالب ثلاث سنوات (المقاطعة)، ثم عام الحزن بوفاة أبي طالب وخديجة.'],['خامسًا: الطائف والإسراء وبيعتا العقبة','عرض النبي دعوته على ثقيف بالطائف فردّوه، ثم الإسراء والمعراج، ثم بيعتا العقبة الأولى والثانية مع أهل يثرب فمهّدتا الهجرة.']],
+[['الوحي','ما ينزل على النبي من الله.'],['دار الأرقم','مركز الدعوة السرية.'],['عام الحزن','وفاة أبي طالب وخديجة.'],['بيعة العقبة','عهد أهل يثرب بنصرة النبي.']],'أول من أسلم من الرجال أبو بكر ومن النساء خديجة ومن الصبيان علي.',
+[P(39.8,21.4,'مكة','المولد والبعثة.'),P(39.9,21.45,'غار حراء','نزل الوحي.',{dx:20,dy:-12}),P(40.4,21.3,'الطائف','دعوة ثقيف.'),P(39.9,21.4,'العقبة (منى)','بيعتا العقبة.',{dx:-18,dy:14}),P(38,13,'الحبشة','هجرة المسلمين.'),P(39.6,24.5,'يثرب','الهجرة.')],
+[['أول ما نزل؟','اقرأ','المدثر','الفاتحة','الإخلاص','أول سورة العلق.'],['الجهر بالدعوة بعد؟','ثلاث سنوات','سنة','عشر سنوات','شهر','الدعوة السرية.'],['مقر الدعوة السرية؟','دار الأرقم','الكعبة','حراء','المسجد','سرية.'],['هاجر المسلمون إلى؟','الحبشة','الشام','مصر','فارس','عند النجاشي.'],['عام الحزن؟','وفاة أبي طالب وخديجة','الهجرة','بدر','الفتح','كلاهما.'],['بيعة العقبة مع؟','أهل يثرب','قريش','ثقيف','اليهود','مهدت الهجرة.']]);
+Z('z2',1,U1,'h3','٣) دعائم بناء الدولة الإسلامية','الهجرة والمسجد والمؤاخاة والصحيفة','arab',
+['هاجر النبي ﷺ إلى المدينة في ربيع الأول 1هـ (622م) ورافقه أبو بكر، وبدأ تأسيس الدولة.'],
+[['أولًا: الهجرة','خرج ليلًا وعلي نائم في فراشه، واختبأ في غار ثور ثلاثة أيام، وسلك طريق الساحل مع دليل (ابن أريقط). واستُقبل في المدينة بالأنشودة «طلع البدر علينا». وبدأ التقويم الهجري في عهد عمر.'],['ثانيًا: بناء المسجد','بنى النبي ﷺ المسجد النبوي (قبله مسجد قباء) ليكون مكانًا للعبادة والشورى وتعليم الناس واستقبال الوفود.'],['ثالثًا: المؤاخاة','آخى بين المهاجرين والأنصار (فآخى بين عبد الرحمن بن عوف وسعد بن الربيع)، فذابت العصبيات وتقاسموا الأموال.'],['رابعًا: الصحيفة (وثيقة المدينة)','نظّمت العلاقة بين المسلمين وغيرهم، وأقرّت حرية الدين، وجعلت المدينة حرمًا آمنًا، ودفاع الجميع عنها مشترك، والمرجع في الخلاف رسول الله.'],['خامسًا: الاقتصاد والسوق','أنشأ سوقًا للمسلمين، وفرض الزكاة، ونظّم موارد الدولة.']],
+[['الهجرة','انتقال من دار الكفر إلى دار الإسلام.'],['المهاجرون','من هاجروا من مكة.'],['الأنصار','أهل المدينة الذين نصروا.'],['الصحيفة','دستور المدينة.']],'قباء أول مسجد بُني في الإسلام.',
+[P(39.6,24.5,'المدينة','عاصمة الدولة.'),P(39.8,21.4,'مكة','منها خرجت الهجرة.'),P(39.8,21.38,'غار ثور','اختبأ فيه النبي.',{dx:20,dy:12}),P(39.62,24.44,'قباء','أول مسجد.',{dx:-16,dy:14})],
+[['الغار؟','ثور','حراء','الأرقم','قباء','ثلاث ليالٍ.'],['أول مسجد؟','قباء','النبوي','الأقصى','الأموي','قباء.'],['الأنصار؟','أهل المدينة','أهل مكة','اليهود','الروم','نصروا.'],['الصحيفة؟','دستور المدينة','عقد زواج','معاهدة تجارية','قانون عقوبات','كتبها النبي.'],['المؤاخاة؟','بين المهاجرين والأنصار','مع قريش','مع الروم','مع الفرس','أخوّة.'],['من نام في فراش النبي؟','علي','أبو بكر','عمر','عثمان','ليلة الهجرة.']]);
+Z('z2',1,U1,'h4','٤) المخاطر التي واجهت الدولة في المدينة','قريش واليهود والمنافقون','arab',
+['واجهت الدولة الناشئة ثلاثة أخطار: قريش من الخارج، واليهود في الداخل، والمنافقون.'],
+[['أولًا: خطر قريش','بدر 2هـ (انتصر فيها 313 مسلمًا على نحو ألف)، أحد 3هـ (خالف الرماة أمر النبي فانقلب النصر)، الخندق (الأحزاب) 5هـ بفكرة سلمان الفارسي وفشلت قريش وحلفاؤها.'],['ثانيًا: الحديبية','عقد صلح الحديبية 6هـ (هدنة عشر سنين) فاعترفت قريش بالمسلمين وانتشر الإسلام، ثم نقضت قريش العهد.'],['ثالثًا: اليهود','بنو قينقاع وبنو النضير (أجلاهم) وبنو قريظة (نقضوا العهد يوم الخندق) ثم خيبر 7هـ.'],['رابعًا: فتح مكة','سنة 8هـ دخلها النبي ﷺ بعشرة آلاف بلا قتال تقريبًا وقال: «اذهبوا فأنتم الطلقاء».'],['خامسًا: حنين وتبوك وحجة الوداع','حنين 8هـ على هوازن، وتبوك 9هـ ضد الروم، وحجة الوداع 10هـ. وتوفي ﷺ في 11هـ (632م).']],
+[['الخندق','حفره المسلمون حول المدينة.'],['الحديبية','صلح مع قريش.'],['الطلقاء','من عفا عنهم يوم الفتح.'],['المنافقون','يُظهرون الإسلام ويبطنون الكفر.']],'صاحب فكرة الخندق سلمان الفارسي.',
+[P(39.1,24.4,'بدر','2هـ.'),P(39.6,24.5,'أحد','3هـ.',{dx:-14,dy:14}),P(39.7,24.55,'الخندق','5هـ.',{dx:16,dy:-12}),P(39.6,21.2,'الحديبية','6هـ.'),P(39.3,25.7,'خيبر','7هـ.'),P(39.8,21.4,'مكة','الفتح 8هـ.'),P(36.6,28.4,'تبوك','9هـ.')],
+[['صاحب فكرة الخندق؟','سلمان الفارسي','عمر','علي','خالد','الفارسي.'],['بدر؟','2هـ','3هـ','5هـ','8هـ','أول معركة.'],['خالف الرماة في؟','أحد','بدر','حنين','الخندق','الجبل.'],['الحديبية؟','هدنة عشر سنين','فتح','حرب','هجرة','6هـ.'],['فتح مكة؟','8هـ','6هـ','2هـ','11هـ','بلا قتال.'],['وفاة النبي؟','11هـ','8هـ','2هـ','1هـ','632م.']]);
+Z('z2',1,U2,'h5','٥) الدولة الإسلامية بعد وفاة النبي ﷺ','الخلافة وحروب الردة','arab',
+['بعد وفاة النبي ﷺ اجتمع الأنصار في سقيفة بني ساعدة، واختير أبو بكر الصديق خليفة.'],
+[['أولًا: السقيفة','اختلف الأنصار والمهاجرون ثم بايعوا أبا بكر بعد قول عمر: «ابسط يدك أبايعك». ثم جاءت البيعة العامة بالمسجد.'],['ثانيًا: حروب الردة','ارتد بعض العرب ومنعوا الزكاة وادّعى بعضهم النبوة (مسيلمة والأسود العنسي وطليحة)، فجهز أبو بكر أحد عشر جيشًا، وأشهرها اليمامة بقيادة خالد وقُتل مسيلمة.'],['ثالثًا: جمع القرآن','بعد اليمامة استشهد كثير من القراء، فأشار عمر بجمع القرآن، وكلّف أبو بكر زيد بن ثابت.'],['رابعًا: جيش أسامة','أنفذ أبو بكر جيش أسامة بن زيد إلى الشام تنفيذًا لوصية النبي ﷺ.'],['خامسًا: استخلاف عمر','عهد أبو بكر لعمر بالخلافة وتوفي 13هـ.']],
+[['الردة','الرجوع عن الإسلام.'],['اليمامة','معركة ضد مسيلمة.'],['السقيفة','مكان اختيار الخليفة.']],'ولي أبو بكر الخلافة سنتين وثلاثة أشهر تقريبًا.',
+[P(39.6,24.5,'السقيفة (المدينة)','اختيار أبي بكر.'),P(46.3,24.2,'اليمامة','معركة مسيلمة.'),P(36.3,33.5,'الشام','وجهة جيش أسامة.')],
+[['أول الخلفاء؟','أبو بكر','عمر','عثمان','علي','الصديق.'],['قاد الجيوش في الردة؟','خالد بن الوليد','عمرو','سعد','أبو عبيدة','سيف الله.'],['جامع القرآن؟','زيد بن ثابت','عمر','عثمان','علي','في عهد أبي بكر.'],['مسيلمة؟','مدّعي النبوة','فاتح','تاجر','خليفة','باليمامة.'],['وفاة أبي بكر؟','13هـ','11هـ','23هـ','35هـ','بعد سنتين.'],['خليفة أبي بكر؟','عمر','عثمان','علي','معاوية','باستخلافه.']]);
+Z('z2',1,U2,'h6','٦) الفتوحات في عهد الخلفاء الراشدين','الشام والعراق وفارس ومصر','arab',
+['انطلقت الفتوحات لنشر الدعوة وتأمين الحدود ورد العدوان، ووقفت دولتا الفرس والروم أمامها.'],
+[['أولًا: العراق وفارس','بدأها خالد بن الوليد، وأهم معاركها: ذات السلاسل، وفي عهد عمر القادسية 15هـ بقيادة سعد بن أبي وقاص، ثم المدائن، ثم نهاوند 21هـ (فتح الفتوح) فسقطت الدولة الساسانية.'],['ثانيًا: الشام','أجنادين وفحل ثم اليرموك 15هـ بقيادة خالد وأبي عبيدة وهزيمة الروم، وتسلم عمر مفاتيح بيت المقدس 15هـ وكتب العهدة العمرية.'],['ثالثًا: مصر','فتحها عمرو بن العاص 20هـ: العريش ثم الفرما وبلبيس وأم دنين وحصن بابليون الذي حاصره ستة أشهر ثم الإسكندرية 21هـ.'],['رابعًا: ليبيا وشمال أفريقيا','فتح عمرو برقة وطرابلس، وفتح عثمان إفريقية وقبرص، وبنى معاوية أسطولًا بحريًا.'],['خامسًا: أسباب النجاح','قوة العقيدة، وعدالة الفاتحين، وضعف الروم والفرس، وكره الأهالي للاستبداد.']],
+[['العهدة العمرية','أمان لأهل إيلياء.'],['نهاوند','فتح الفتوح.'],['الفتوح','انتشار الإسلام بالجهاد.']],'فتح بيت المقدس سنة 15هـ وتسلّمه عمر بنفسه.',
+[P(36,32.7,'اليرموك','هزيمة الروم.'),P(44.2,31.9,'القادسية','هزيمة الفرس.'),P(48.3,34.2,'نهاوند','فتح الفتوح.'),P(35.2,31.8,'القدس','العهدة العمرية.'),P(31.2,30,'بابليون','فتح مصر.'),P(29.9,31.2,'الإسكندرية','21هـ.')],
+[['قائد القادسية؟','سعد بن أبي وقاص','خالد','عمرو','أبو عبيدة','15هـ.'],['اليرموك؟','هزيمة الروم','هزيمة الفرس','فتح مصر','حرب الردة','15هـ.'],['فاتح مصر؟','عمرو بن العاص','خالد','سعد','طارق','20هـ.'],['فتح الفتوح؟','نهاوند','القادسية','اليرموك','بدر','21هـ.'],['العهدة العمرية؟','أمان لأهل القدس','فتح مصر','حرب','دستور','15هـ.'],['سقطت دولة الفرس؟','الساسانية','الأموية','العباسية','المملوكية','في عهد عمر.']]);
+Z('z2',1,U2,'h7','٧) الفتوحات في العصر الأموي','الأندلس والسند وآسيا الوسطى','arab',
+['أسس معاوية بن أبي سفيان الدولة الأموية سنة 41هـ وجعل دمشق عاصمتها، واستمرت حتى 132هـ.'],
+[['أولًا: الشرق','فتح قتيبة بن مسلم بخارى وسمرقند وخوارزم (بلاد ما وراء النهر)، وفتح محمد بن القاسم السند 93هـ.'],['ثانيًا: شمال أفريقيا','عقبة بن نافع أسس القيروان 50هـ، وحسان بن النعمان أسقط قرطاجة، وموسى بن نصير أتم فتح المغرب.'],['ثالثًا: الأندلس','عبر طارق بن زياد جبل طارق 92هـ وانتصر على لذريق في وادي لكة (711م)، ثم تبعه موسى بن نصير، وتوغلوا إلى بلاط الشهداء 114هـ.'],['رابعًا: الحصار على القسطنطينية','حاصرها الأمويون مرارًا ولم يفتحوها.'],['خامسًا: أسباب السقوط','العصبية القبلية وثورات الخوارج والشيعة وضعف الخلفاء ودعوة العباسيين.']],
+[['القيروان','مدينة أسسها عقبة بن نافع.'],['وادي لكة','معركة فتح الأندلس.'],['ما وراء النهر','بلاد ما بعد نهر جيحون.']],'سمّي جبل طارق نسبة إلى طارق بن زياد.',
+[P(36.3,33.5,'دمشق','عاصمة الأمويين.'),P(-5.6,36,'جبل طارق','عبره طارق 92هـ.'),P(10.1,35.7,'القيروان','أسسها عقبة.'),P(66.9,39.6,'سمرقند','فتحها قتيبة.'),P(67,25.4,'السند','فتحها ابن القاسم.'),P(28.9,41,'القسطنطينية','حصار لم يكتمل.')],
+[['مؤسس الأموية؟','معاوية','عمر','يزيد','مروان','41هـ.'],['فاتح الأندلس؟','طارق بن زياد','عقبة','قتيبة','حسان','92هـ.'],['فاتح السند؟','محمد بن القاسم','قتيبة','موسى','سعد','93هـ.'],['مؤسس القيروان؟','عقبة بن نافع','طارق','موسى','حسان','50هـ.'],['عاصمة الأمويين؟','دمشق','بغداد','القاهرة','الكوفة','شامية.'],['بلاط الشهداء؟','114هـ','92هـ','132هـ','41هـ','بفرنسا.']]);
+Z('z2',1,U2,'h8','٨) الفتوحات في العصر العباسي','الدفاع عن الثغور','arab',
+['قامت الدولة العباسية 132هـ على يد أبي العباس السفاح، وعاصمتها بغداد (بناها المنصور 145هـ).'],
+[['أولًا: طابع الفتوحات','غلب عليها الدفاع عن الحدود وتأمين الثغور بدلًا من التوسع الكبير.'],['ثانيًا: مع الروم','أقام هارون الرشيد الثغور والعواصم، وحقق انتصارات على نقفور، وردّ المعتصم على الروم بفتح عمورية 223هـ حين استنجدت امرأة: «وا معتصماه».'],['ثالثًا: البحر المتوسط','فتح الأغالبة صقلية 212هـ بقيادة أسد بن الفرات.'],['رابعًا: أسباب الضعف','تنافس الأتراك والفرس، واستقلال ولايات، وضعف الخلفاء.']],
+[['الثغور','مدن الحدود.'],['عمورية','مدينة رومية فتحها المعتصم.'],['الأغالبة','دولة بتونس.']],'فُتحت صقلية 212هـ في عهد الأغالبة.',
+[P(44.4,33.3,'بغداد','عاصمة العباسيين.'),P(31.4,39.9,'عمورية','فتحها المعتصم 223هـ.'),P(13.4,38.1,'صقلية','فتحها الأغالبة.'),P(35.5,37,'الثغور','حدود الشام والروم.')],
+[['مؤسس بغداد؟','المنصور','الرشيد','المأمون','السفاح','145هـ.'],['فاتح عمورية؟','المعتصم','الرشيد','المنصور','المأمون','223هـ.'],['فتح صقلية؟','الأغالبة','العباسيون','الأمويون','الفاطميون','212هـ.'],['الثغور؟','مدن الحدود','موانئ','أسواق','قصور','دفاعية.'],['قيام العباسية؟','132هـ','41هـ','358هـ','656هـ','السفاح.'],['طابع الفتوحات العباسية؟','دفاعي','توسعي كبير','دبلوماسي','لا شيء','تأمين.']]);
+Z('z2',1,U3,'h9','٩) مصر من الفتح حتى الدول المستقلة','عصر الولاة','egypt',
+['دخلت مصر في الدولة الإسلامية بعد الفتح، فحكمها ولاة من قِبل الخلفاء.'],
+[['أولًا: الفسطاط','أنشأ عمرو بن العاص الفسطاط عاصمة وجامع عمرو (21هـ) ودار الإمارة.'],['ثانيًا: الإدارة','قُسمت مصر إلى كور (أقاليم)، وتولى الوالي الحكم والقاضي القضاء وصاحب الخراج المال.'],['ثالثًا: الخراج والثورات','فُرضت الجزية والخراج، وثارت القبط على زيادة الضرائب فقمعها الولاة.'],['رابعًا: العباسيون','تعاقب الولاة، وبنى أحمد بن طولون قوته على الجيش، فاستقل عن بغداد.'],['خامسًا: الازدهار','نشأ العمران الإسلامي حول الفسطاط، وازدهرت الزراعة بعد إصلاح الترع.']],
+[['الفسطاط','أول عاصمة إسلامية في مصر.'],['الخراج','ضريبة الأرض.'],['الكور','الأقاليم.']],'مسجد عمرو بن العاص أول مسجد في مصر وأفريقيا.',
+E('cairo','arish','alex','asyut'),
+[['أول عاصمة؟','الفسطاط','القاهرة','القطائع','العسكر','عمرو.'],['أول مسجد؟','عمرو','الأزهر','ابن طولون','الحاكم','21هـ.'],['الخراج؟','ضريبة الأرض','ضريبة الدخل','غرامة','زكاة','على الأرض.'],['تولى القضاء؟','القاضي','الوالي','الجابي','الكاتب','قاضي مصر.'],['ثار على الضرائب؟','القبط','العرب','الروم','الفرس','في الثورات.'],['استقل عن بغداد؟','أحمد بن طولون','عمرو','المعز','قطز','868م.']]);
+Z('z2',1,U3,'h10','١٠) مصر في عصر الطولونيين والإخشيديين','الاستقلال والازدهار','egypt',
+['بدأ استقلال مصر عن الخلافة العباسية مع أحمد بن طولون (254هـ/868م).'],
+[['أولًا: أحمد بن طولون','جاء واليًا من سامراء، وأقام جيشًا قويًا وأسطولًا، وضم الشام، وبنى القطائع ومسجده (265هـ) والبيمارستان (المستشفى) والقناطر.'],['ثانيًا: خمارويه','ازدهرت مصر وزوّج ابنته قطر الندى للخليفة المعتضد، ثم ضعفت الدولة وسقطت 292هـ.'],['ثالثًا: الإخشيديون','أسسها محمد بن طغج الإخشيد 323هـ، ثم كافور الإخشيدي (وصي)، وكان الشاعر المتنبي يمدحه ثم هجاه.'],['رابعًا: أثرهم','حفظوا استقلال مصر ووحّدوها مع الشام، وحافظوا على الاقتصاد حتى جاء الفاطميون 358هـ.']],
+[['القطائع','عاصمة ابن طولون.'],['البيمارستان','مستشفى.'],['الإخشيد','لقب فارسي.']],'مسجد أحمد بن طولون من أقدم مساجد القاهرة وأشهرها بمئذنته الملوية.',
+E('cairo','ismail','alex'),
+[['القطائع؟','عاصمة الطولونيين','الإخشيدية','الفاطمية','الأيوبية','بناها ابن طولون.'],['خمارويه؟','ابن ابن طولون','كافور','جوهر','قطز','ابنه.'],['أول الإخشيديين؟','محمد بن طغج','كافور','أحمد','خمارويه','323هـ.'],['كافور؟','وصي إخشيدي','فاطمي','أيوبي','مملوكي','حكم باسمهم.'],['مسجد ابن طولون؟','265هـ','358هـ','21هـ','970م','في القاهرة.'],['أنهى الفاطميون؟','الإخشيديين','الأيوبيين','الطولونيين','العباسيين','358هـ.']]);
+Z('z2',2,U3,'h11','١١) مصر في العصر الفاطمي','جوهر والمعز والمستنصر','egypt',
+['فتح جوهر الصقلي مصر 358هـ (969م) بجيش المعز لدين الله الفاطمي القادم من المغرب.'],
+[['أولًا: القاهرة والأزهر','أسّس جوهر القاهرة وسُمّيت لظهور كوكب القاهر وقت البناء، وأنشأ الأزهر (359هـ) ليكون جامعًا ثم جامعة.'],['ثانيًا: المعز لدين الله','قدم القاهرة 362هـ وجعلها عاصمة الدولة الفاطمية.'],['ثالثًا: العزيز والحاكم','حكم العزيز بالله فازدهرت مصر، وأنشأ الحاكم دار الحكمة وكان غريب الأطوار.'],['رابعًا: المستنصر والشدة','طالت مدته (60 سنة) وحدثت الشدة المستنصرية 457-464هـ بسبب نقص النيل والفوضى.'],['خامسًا: السقوط','استعان الوزراء بنور الدين، وسيطر شيركوه وصلاح الدين، وألغى صلاح الدين الدولة 567هـ.']],
+[['القاهرة','مدينة أنشأها جوهر.'],['دار الحكمة','مركز علم.'],['الشدة','مجاعة كبرى.']],'سميت القاهرة لقهرها الأعداء وتيمّنًا بالكوكب القاهر.',
+E('cairo','giza','alex'),
+[['فاتح مصر الفاطمي؟','جوهر الصقلي','المعز','الحاكم','العزيز','358هـ.'],['الأزهر؟','359هـ','641م','1171م','1250م','جوهر.'],['الشدة؟','المستنصرية','العزيزية','الحاكمية','الظاهرية','457هـ.'],['دار الحكمة؟','الحاكم','المعز','العزيز','جوهر','علمية.'],['ألغاها؟','صلاح الدين','قطز','بيبرس','عمرو','567هـ.'],['نقل المعز؟','العاصمة للقاهرة','الأزهر','الجيش','الفسطاط','362هـ.']]);
+Z('z2',2,U3,'h12','١٢) مصر في عصر الأيوبيين والمماليك','حطين وعين جالوت','egypt',
+['أسس صلاح الدين الدولة الأيوبية 567هـ (1171م) وأعاد المذهب السني وتصدى للصليبيين.'],
+[['أولًا: صلاح الدين','أنهى الفاطميين، وبنى القلعة وسور القاهرة، ووحّد مصر والشام وانتصر في حطين 583هـ (1187م) واسترد بيت المقدس.'],['ثانيًا: الحملة الصليبية على مصر','حملة لويس التاسع 647هـ، ودخل دمياط، وهُزم في المنصورة (فارسكور) وأُسر.'],['ثالثًا: قيام المماليك','شجرة الدر ثم عز الدين أيبك، ثم قطز.'],['رابعًا: عين جالوت','هزم قطز والظاهر بيبرس المغول 658هـ (1260م) بقيادة كتبغا.'],['خامسًا: بيبرس والخلافة','أحيا بيبرس الخلافة العباسية في القاهرة، وطهّر الشام من الصليبيين، وسقطت المماليك على يد العثمانيين 923هـ (1517م).']],
+[['حطين','انتصار صلاح الدين.'],['شجرة الدر','حكمت مصر.'],['المماليك','عبيد اشتراهم السلاطين.']],'عين جالوت أنقذت العالم الإسلامي من خطر المغول.',
+E('cairo','mans','port','alex'),
+[['حطين؟','583هـ','658هـ','647هـ','923هـ','1187م.'],['عين جالوت؟','658هـ','583هـ','567هـ','923هـ','1260م.'],['أسر لويس التاسع؟','المنصورة','حطين','عين جالوت','القدس','647هـ.'],['شجرة الدر؟','حكمت مصر','فتحت القدس','بنت القلعة','هزمت المغول','سلطانة.'],['أحيا الخلافة؟','بيبرس','قطز','صلاح','الرشيد','في القاهرة.'],['سقوط المماليك؟','923هـ','658هـ','647هـ','567هـ','1517م.']]);
+Z('z2',2,U4,'h13','١٣) النظام السياسي والإداري في الحضارة الإسلامية','الخلافة والوزارة والقضاء','arab',
+['قام الحكم الإسلامي على الشورى والعدل، وتطورت نظمه الإدارية مع اتساع الدولة.'],
+[['أولًا: الخلافة','الخليفة رأس الدولة وخليفة رسول الله، يُختار بالشورى (الراشدون) أو بالوراثة (الأمويون والعباسيون).'],['ثانيًا: الوزارة','ظهرت في العصر العباسي، ووزير التفويض ووزير التنفيذ، وأشهر الوزراء البرامكة.'],['ثالثًا: الإدارة المحلية','الولاة على الأقاليم، وأمير الجيش، والعمال على الخراج، وصاحب البريد (المخابرات).'],['رابعًا: القضاء','القاضي مستقل، وقاضي القضاة منصب عباسي، ومظالم يحكمها الخليفة بنفسه.'],['خامسًا: الشرطة والجيش','صاحب الشرطة للأمن، والجيش عماده العرب ثم الموالي والأتراك.']],
+[['الشورى','تبادل الرأي.'],['الوزير','أول معاون للخليفة.'],['البريد','وسيلة المراسلة والأخبار.']],'أول من اتخذ وزيرًا العباسيون.',
+[P(44.4,33.3,'بغداد','مقر الخلافة العباسية.'),P(36.3,33.5,'دمشق','مقر الأمويين.'),P(31.2,30,'القاهرة','الفاطميين والمماليك.')],
+[['الشورى؟','تبادل الرأي','وراثة','حرب','غنيمة','أساس.'],['الوزارة؟','العباسيون','الراشدون','الأمويون','النبوة','أول ظهورها.'],['البريد؟','المراسلة والأخبار','الجيش','المال','القضاء','وظيفة.'],['قاضي القضاة؟','عباسي','أموي','راشدي','عثماني','منصب.'],['عماد الجيش؟','العرب ثم الأتراك','الروم','الفرس','الصينيين','حسب العصر.'],['البرامكة؟','وزراء','قادة','قضاة','تجار','في عهد الرشيد.']]);
+Z('z2',2,U4,'h14','١٤) النظام المالي والحياة الاقتصادية والاجتماعية','الزكاة والخراج والتجارة والمجتمع','arab',
+['اعتمدت الدولة على موارد منظمة وأنفقتها في مصالح الناس.'],
+[['أولًا: موارد بيت المال','الزكاة (على المسلمين)، والخراج (على الأرض)، والجزية (على غير المسلمين القادرين وهي بدل الدفاع)، والعشور (جمارك)، والغنائم والفيء.'],['ثانيًا: مصارف بيت المال','رواتب الجند والموظفين، والمنافع العامة، وإغاثة الفقراء والمحتاجين.'],['ثالثًا: الزراعة والصناعة والتجارة','اهتم الحكام بالري، وتميّزت صناعات النسيج والورق والزجاج والسكر، وعُرفت الصكوك والسفاتج، ومن الطرق: طريق الحرير وطريق البخور.'],['رابعًا: المجتمع','تكوّن من العرب والموالي وأهل الذمة، وكان للمرأة دور، ونُظّمت الأسواق بالحسبة.'],['خامسًا: الاحتفالات','الأعياد والمواسم كالمولد والنيروز.']],
+[['الجزية','تدفع بدلاً من الخدمة العسكرية.'],['السفتجة','حوالة مالية.'],['الحسبة','مراقبة الأسواق.']],'أنشأ عمر بن الخطاب أول ديوان للجند والعطاء.',
+[P(44.4,33.3,'بغداد','عاصمة التجارة.'),P(31.2,30,'القاهرة','تجارة بين الشرق والغرب.'),P(66.9,39.6,'سمرقند','ورق.'),P(36.3,33.5,'دمشق','صناعات.')],
+[['الزكاة تدفع من؟','المسلمين','غير المسلمين','الأجانب','الجنود','فريضة.'],['الخراج؟','الأرض','الدخل','الحيوان','الكتب','الزراعة.'],['الجزية؟','بدل الدفاع عن غير المسلمين','زكاة','ضريبة بيع','رسوم','يدفعونها القادرون.'],['الحسبة؟','مراقبة الأسواق','قضاء','جيش','كتابة','المحتسب.'],['السفتجة؟','حوالة مالية','سلاح','لقب','سفينة','ورقة تجارية.'],['العشور؟','جمارك','زكاة','هدايا','غرامات','على التجارة.']]);
+Z('z2',2,U4,'h15','١٥) الحياة العلمية والعمارة','العلماء والمدارس والمساجد','arab',
+['ازدهرت الحضارة الإسلامية في العلم والعمارة وأثّرت في أوروبا.'],
+[['أولًا: الترجمة وبيت الحكمة','أنشأ المأمون بيت الحكمة ببغداد وترجم كتب اليونان والهند والفرس إلى العربية، وكانت حنين بن إسحاق من أشهر المترجمين.'],['ثانيًا: العلوم التطبيقية','الخوارزمي (الجبر والخوارزميات)، وابن الهيثم (البصريات والمنهج التجريبي)، وجابر بن حيان (الكيمياء)، والبيروني (الفلك والجغرافيا).'],['ثالثًا: الطب والفلسفة','الرازي (الحاوي)، وابن سينا (القانون في الطب)، وابن النفيس (الدورة الدموية الصغرى)، وابن رشد والفارابي في الفلسفة، وابن خلدون (المقدمة في علم الاجتماع).'],['رابعًا: المؤسسات','الكتاتيب والمساجد والمدارس (النظامية) والمكتبات والأزهر والقرويين.'],['خامسًا: العمارة','المساجد بقبابها ومآذنها وأقواسها: الأموي بدمشق، وقبة الصخرة، وابن طولون والأزهر والحاكم بالقاهرة، والحمراء بالأندلس. ومن الفنون: الخط العربي والزخرفة.']],
+[['الترجمة','نقل العلوم من لغة لأخرى.'],['النظامية','مدارس نظام الملك.'],['الخط','فن الكتابة.']],'ابن النفيس سبق في اكتشاف الدورة الدموية الصغرى.',
+[P(44.4,33.3,'بغداد','بيت الحكمة.'),P(31.26,30.05,'الأزهر','970م.'),P(-6,34,'القرويين','فاس بالمغرب.'),P(-3.6,37.2,'الحمراء','غرناطة.'),P(35.2,31.8,'قبة الصخرة','القدس.'),P(36.3,33.5,'الأموي','دمشق.')],
+[['بيت الحكمة؟','المأمون','الرشيد','المنصور','المعتصم','ببغداد.'],['الجبر؟','الخوارزمي','ابن سينا','البيروني','الرازي','أسسه.'],['البصريات؟','ابن الهيثم','الرازي','الكندي','الفارابي','المنهج التجريبي.'],['الدورة الدموية؟','ابن النفيس','ابن سينا','الرازي','الخوارزمي','الصغرى.'],['المقدمة؟','ابن خلدون','البيروني','ابن رشد','الفارابي','اجتماع.'],['الحمراء؟','غرناطة','قرطبة','القاهرة','فاس','الأندلس.']]);
+const $=s=>document.querySelector(s);
+const r=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const shuf=a=>a.slice().sort(()=>Math.random()-.5);
+const LAKEMAP={LNASSER,QARUN,MANZALA,BURULLUS,LTIT,TEXC};
+const LINEMAP={NILE,ROSETTA,DAMIETTA,CANAL,MAMOUDIYA,AMAZON,MISSISSIPPI,STLAW,PARANA,ORINOCO};
+let S={pts:0,d:{},st:{}};
+try{const x=JSON.parse(localStorage.getItem('sst1'));if(x)S=Object.assign(S,x)}catch(e){}
+const save=()=>{try{localStorage.setItem('sst1',JSON.stringify(S))}catch(e){}};
+/* ===== تحفيز ===== */
+const today=()=>new Date().toISOString().slice(0,10);
+function bump(){const t=today();if(S.last===t)return;const y=new Date(Date.now()-864e5).toISOString().slice(0,10);S.days=(S.last===y?(S.days||0):0)+1;S.last=t;save()}
+function toast(m){let t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2800)}
+function confetti(){const c=['#e8a317','#1f7a8c','#c0392b','#1b8a4b','#9a5b13'];for(let i=0;i<46;i++){const e=document.createElement('i');e.className='conf';e.style.cssText=`left:${Math.random()*100}vw;background:${c[i%5]};animation-delay:${Math.random()*.6}s;animation-duration:${1.8+Math.random()*1.5}s`;document.body.appendChild(e);setTimeout(()=>e.remove(),4200)}}
+const LVLS=[[0,'مستكشف 🧭'],[150,'رحّالة 🎒'],[400,'باحث 🔎'],[800,'جغرافي 🗺️'],[1400,'مؤرخ 📜'],[2200,'عالِم 🏆']];
+const lvl=p=>{let x=LVLS[0];LVLS.forEach(l=>{if(p>=l[0])x=l});return x[1]};
+/* ===== صوت ===== */
+let AC=null,snd=true;
+function ac(){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume()}catch(e){}return AC}
+function nz(t,d,f,g){const c=ac();if(!c)return;const b=c.createBuffer(1,Math.floor(c.sampleRate*d),c.sampleRate),x=b.getChannelData(0);for(let i=0;i<x.length;i++)x[i]=Math.random()*2-1;const s=c.createBufferSource();s.buffer=b;const fl=c.createBiquadFilter();fl.type='bandpass';fl.frequency.value=f;fl.Q.value=.7;const ga=c.createGain();ga.gain.setValueAtTime(.0001,t);ga.gain.linearRampToValueAtTime(g,t+.01);ga.gain.exponentialRampToValueAtTime(.0001,t+d);s.connect(fl);fl.connect(ga);ga.connect(c.destination);s.start(t)}
+function clap(){if(!snd)return;const c=ac();if(!c)return;const t=c.currentTime;nz(t,1.6,900,.12);for(let i=0;i<28;i++)nz(t+Math.random()*1.5,.05+Math.random()*.05,1500+Math.random()*2500,.4)}
+function tone(f,t,d,type,g){const c=ac();if(!c)return;const o=c.createOscillator(),ga=c.createGain();o.type=type;o.frequency.value=f;ga.gain.setValueAtTime(.0001,t);ga.gain.exponentialRampToValueAtTime(g,t+.02);ga.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(ga);ga.connect(c.destination);o.start(t);o.stop(t+d+.05)}
+function fanfare(){if(!snd)return;const c=ac();if(!c)return;const t=c.currentTime+.3;[523,659,784,1047].forEach((f,i)=>tone(f,t+i*.15,.4,'triangle',.25));clap()}
+function buzz(){if(!snd)return;const c=ac();if(!c)return;const t=c.currentTime;[0,.3].forEach((o,i)=>{const os=c.createOscillator(),g=c.createGain(),f=c.createBiquadFilter();os.type='sawtooth';f.type='lowpass';f.frequency.value=900;os.frequency.setValueAtTime(i?190:260,t+o);os.frequency.exponentialRampToValueAtTime(i?110:170,t+o+.26);g.gain.setValueAtTime(.0001,t+o);g.gain.exponentialRampToValueAtTime(.25,t+o+.03);g.gain.exponentialRampToValueAtTime(.0001,t+o+.28);os.connect(f);f.connect(g);g.connect(c.destination);os.start(t+o);os.stop(t+o+.3)})}
+/* ===== الخرائط ===== */
+const W=600;
+function proj(m,lon,lat){const k=W/((m.lon1-m.lon0)*m.c);return[(lon-m.lon0)*m.c*k,(m.lat0-lat)*k]}
+function pts(m,poly){return poly.map(p=>proj(m,p[0],p[1]).map(v=>v.toFixed(1)).join(',')).join(' ')}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function txt(x,y,s,cls,extra){return `<text x='${x.toFixed(1)}' y='${y.toFixed(1)}' class='${cls}' ${extra||''}>${esc(s)}</text>`}
+/* mode: learn | locate | free ; extra: لـ locate تمرير القائمة */
+function mapSVG(L,mode,sel){
+  const m=MAPS[L.map],k=W/((m.lon1-m.lon0)*m.c),H=Math.round((m.lat0-m.lat1)*k);
+  const EG=L.map==='egypt'||L.map==='delta';
+  const LANDS=EG?[EGY]:[NA,SA,CUBA,AFRICA,MADAG,EURASIA,UK,AUS];
+  let h=`<svg viewBox='0 0 ${W} ${H}' class='map' role='img' aria-label='خريطة'><defs><clipPath id='land'>`+LANDS.map(p=>`<polygon points='${pts(m,p)}'/>`).join('')+`</clipPath></defs><rect width='${W}' height='${H}' class='sea'/>`;
+  h+=LANDS.map(p=>`<polygon points='${pts(m,p)}' class='land'/>`).join('');
+  if(!EG)h+=`<polygon points='${pts(m,HUDSON)}' class='sea'/>`;
+  if(EG){[['ليبيا',25.6,26.5],['السودان',29,21.9],['البحر المتوسط',28.5,32.0],['البحر الأحمر',36.2,25.6],['فلسطين',35.1,31.9]].forEach(a=>{const p=proj(m,a[1],a[2]);h+=txt(p[0],p[1],a[0],'sl')})}
+  else if(m.lab){m.lab.forEach(a=>{const p=proj(m,a[1],a[2]);h+=txt(p[0],p[1],a[0],'sl')})}
+  else{
+    if(L.map==='na'||L.map==='all'){[['المحيط الأطلسي',-48,30],['المحيط الهادئ',-135,10]].forEach(a=>{const p=proj(m,a[1],a[2]);h+=txt(p[0],p[1],a[0],'sl')})}
+    if(L.map==='sa'||L.map==='am'){const p=proj(m,-45,-40);h+=txt(p[0],p[1],'المحيط الأطلسي','sl');const q=proj(m,L.map==='sa'?-80.2:-108,-40);h+=txt(q[0],q[1],'المحيط الهادئ','sl')}
+  }
+  // مناطق
+  const regs=(L.regs||[]).map(id=>Object.assign({id},RG[id]));
+  regs.forEach(g=>{h+=`<polygon points='${pts(m,g.poly)}' clip-path='url(#land)' class='rg${sel==='r:'+g.id?' on':''}' data-r='${g.id}' style='fill:${g.c}'/>`});
+  (L.lakes||[]).forEach(id=>{const v=LAKEMAP[id];if(!v)return;(Array.isArray(v[0][0])?v:[v]).forEach(pl=>{h+=`<polygon points='${pts(m,pl)}' class='lake'/>`})});
+  (L.lines||[]).forEach(id=>{h+=`<polyline points='${pts(m,LINEMAP[id])}' class='river' ${id==='CANAL'?"style='stroke-width:2.2'":''}/>`});
+  if(mode==='learn'||mode==='free')regs.forEach(g=>{const lp=g.lp||g.poly[0],p=proj(m,lp[0],lp[1]);h+=txt(p[0],p[1],g.n,'rl')});
+  // علامات
+  (L.pins||[]).forEach((pn,i)=>{
+    let [x,y]=proj(m,pn.lon,pn.lat);x+=pn.dx||0;y+=pn.dy||0;
+    const seen=(S.seen||{})[L.id+':'+i];
+    if(mode==='locate'&&pn.noloc)return;
+    h+=`<g class='pin${sel==='p:'+i?' on':''}${seen&&mode==='learn'?' seen':''}' data-p='${i}'><circle cx='${x.toFixed(1)}' cy='${y.toFixed(1)}' r='11' class='hit'/><circle cx='${x.toFixed(1)}' cy='${y.toFixed(1)}' r='6.5' class='dot'/>`;
+    if(mode!=='locate')h+=txt(x,y-11,pn.n,'pl');
+    h+='</g>';
+  });
+  return h+'</svg>';
+}
+/* ===== الشاشة الرئيسية ===== */
+LS.forEach(l=>{if(l.g===undefined){l.g='e3';l.tm=1;l.un=UNITS[l.u]}});
+LS.forEach(l=>{if(!l.x&&EX[l.id])l.x=EX[l.id]});
+const byId=id=>LS.find(l=>l.id===id);
+const GRS=[['p4','الابتدائية','الصف الرابع الابتدائي'],['p5','الابتدائية','الصف الخامس الابتدائي'],['p6','الابتدائية','الصف السادس الابتدائي'],['e1','الإعدادية','الصف الأول الإعدادي'],['e2','الإعدادية','الصف الثاني الإعدادي'],['e3','الإعدادية','الصف الثالث الإعدادي (أزهري)'],['s1','الثانوية','الصف الأول الثانوي'],['s2','الثانوية','الصف الثاني الثانوي'],['z2','الثانوية','الصف الثاني الثانوي (أزهري)'],['s3','الثانوية','الصف الثالث الثانوي']];
+const TN={1:'الترم الأول',2:'الترم الثاني'};
+function gOrder(g){
+  const out=[];
+  [1,2].forEach(tm=>{
+    const ls=LS.filter(l=>l.g===g&&l.tm===tm);if(!ls.length)return;
+    ls.forEach(l=>out.push(l));
+    if(ls.length>=2)out.push({id:'rv:'+g+':'+tm,g,tm,un:'مراجعة',t:'مراجعة شاملة – '+TN[tm],d:'كل دروس '+TN[tm],pool:ls.map(l=>l.id)});
+  });
+  const all=LS.filter(l=>l.g===g);
+  if(all.some(l=>l.tm===1)&&all.some(l=>l.tm===2))out.push({id:'rv:'+g+':all',g,tm:3,un:'مراجعة',t:'مراجعة نهاية العام',d:'الترمان معًا',pool:all.map(l=>l.id)});
+  return out;
+}
+function stars(id){return(S.d[id]||{}).stars||0}
+function home(){
+  $('#pts').textContent=S.pts;
+  ['quiz','lesson'].forEach(x=>$('#'+x).hidden=true);$('#home').hidden=false;window.scrollTo(0,0);
+  if(!S.g||!GRS.some(x=>x[0]===S.g)){
+    let h=`<p class="sub">اختر صفك الدراسي، وستجد الشرح الكامل والخرائط التفاعلية والأسئلة لكل ترم.</p>`;
+    let last='';GRS.forEach(x=>{if(x[1]!==last){last=x[1];h+=`<h2 class='un'>المرحلة ${last}</h2>`}
+      const n=LS.filter(l=>l.g===x[0]).length,done=LS.filter(l=>l.g===x[0]&&stars(l.id)>=1).length;
+      h+=`<button class='lv gr' data-g='${x[0]}'><span class='badge'>${n?'📚':'⏳'}</span><span><b>${x[2]}</b><small>${n?`${n} درسًا – أنجزت ${done}`:'قريبًا'}</small></span></button>`});
+    $('#home').innerHTML=h;document.querySelectorAll('.gr').forEach(b=>b.onclick=()=>{S.g=b.dataset.g;save();home()});return;
+  }
+  const g=S.g,ord=gOrder(g),gi=GRS.find(x=>x[0]===g);
+  const mis=Object.keys(S.mis||{}).length;let h=`<div class='lvbox'><b>${lvl(S.pts)}</b><span>🔥 ${S.days||1} يوم متتالي</span></div><button class='btn alt' id='chg'>🔁 ${gi[2]} – تغيير الصف</button><p class="sub">كل الدروس مفتوحة: اقرأ الشرح، اضغط على الخريطة، ثم أجب عن الأسئلة.</p>`;
+  let lastT=0,lastU='';
+  ord.forEach((l,i)=>{
+    if(l.tm!==lastT&&l.tm<3){lastT=l.tm;h+=`<h2 class='tm'>${TN[l.tm]}</h2>`}
+    if(l.tm===3&&lastT!==3){lastT=3;h+=`<h2 class='tm'>نهاية العام</h2>`}
+    if(l.un&&l.un!==lastU){lastU=l.un;h+=`<h2 class='un'>${l.un}</h2>`}
+    const open=true,st=stars(l.id);
+    h+=`<button class="lv" data-i="${i}" ${open?'':'disabled'}><span class="badge">${open?(l.pool?'↻':i+1):'🔒'}</span><span><b>${l.t}</b><small>${l.d}</small></span><span class="stars">${'★'.repeat(st)+'☆'.repeat(3-st)}</span></button>`;
+  });
+  if(mis)h+=`<button class='btn' id='mis'>🔁 راجع أخطائي (${mis})</button>`;h+=`<button class='btn alt' id='rep'>📊 تقرير نقاط الضعف</button><button class='btn alt' id='inst'>📲 ثبّت التطبيق على جهازك</button><div class='fb' id='instbox' hidden><b>آيفون وآيباد:</b> Safari ← المشاركة ← «إضافة إلى الشاشة الرئيسية».<br><b>أندرويد:</b> Chrome ← ⋮ ← «تثبيت التطبيق».<br><b>ويندوز:</b> Edge أو Chrome ← أيقونة التثبيت. بعد أول فتح يعمل بدون إنترنت.</div>`;
+  $('#home').innerHTML=h;
+  document.querySelectorAll('.lv').forEach(b=>b.onclick=()=>{const l=ord[+b.dataset.i];l.pool?startQuiz(l):openLesson(l)});
+  $('#chg').onclick=()=>{S.g=null;save();home()};
+  $('#inst').onclick=()=>{$('#instbox').hidden=!$('#instbox').hidden};
+  $('#rep').onclick=report;if($('#mis'))$('#mis').onclick=startMis;
+}
+/* ===== شرح الدرس + خريطة ===== */
+function openLesson(L){
+  $('#home').hidden=true;$('#quiz').hidden=true;$('#lesson').hidden=false;window.scrollTo(0,0);
+  let sel=null;
+  const seenCount=()=>L.pins.filter((_,i)=>(S.seen||{})[L.id+':'+i]).length;
+  const draw=()=>{
+    let h=`<div class='q'><h2 class='lt'>${L.t}</h2>${L.intro.map(p=>`<p class='ip'>${p}</p>`).join('')}</div>`;
+    const X=L.x;
+    if(X){h+=`<div class='q ex'><h3>📖 الشرح الكامل</h3>`+X.s.map((s,i)=>`<details ${i===0?'open':''}><summary>${s[0]}</summary><p>${s[1]}</p></details>`).join('')+`<h3>🔑 مصطلحات</h3><ul class='kt'>`+X.k.map(k=>`<li><b>${k[0]}:</b> ${k[1]}</li>`).join('')+`</ul><div class='rem'>✅ <b>تذكّر:</b> ${X.r}</div></div>`}
+    if(FUN[L.id])h+=`<div class='q fun'><h3>💡 هل تعلم؟</h3><p>${FUN[L.id]}</p></div>`;h+=`<div class='mapbox'>${mapSVG(L,'learn',sel)}</div>`;
+    if(L.pins.length)h+=`<p class='sub cnt'>🧭 اكتشفت ${seenCount()} من ${L.pins.length} علامات</p>`;
+    h+=`<div class='info' id='info'>${infoHTML(L,sel)}</div>`;
+    h+=`<button class='btn alt' id='cd'>🃏 بطاقات المراجعة</button><button class='btn' id='go'>ابدأ الأسئلة 🚀</button><button class='btn alt' id='bk'>رجوع للدروس</button>`;
+    $('#lesson').innerHTML=h;
+    $('#lesson').querySelectorAll('[data-p]').forEach(g=>g.onclick=()=>{const i=g.dataset.p;sel='p:'+i;S.seen=S.seen||{};S.seen[L.id+':'+i]=1;save();draw();$('#info').scrollIntoView({block:'nearest',behavior:'smooth'})});
+    $('#lesson').querySelectorAll('[data-r]').forEach(g=>g.onclick=()=>{sel='r:'+g.dataset.r;draw();$('#info').scrollIntoView({block:'nearest',behavior:'smooth'})});
+    $('#go').onclick=()=>startQuiz(L);$('#cd').onclick=()=>cards(L);$('#bk').onclick=home;
+  };
+  draw();
+}
+function infoHTML(L,sel){
+  if(!sel)return `<p class='sub'>👆 اضغط على أي علامة أو منطقة على الخريطة ليظهر شرحها هنا.</p>`;
+  if(sel[0]==='p'){const p=L.pins[+sel.slice(2)];return `<h3>📍 ${p.n}</h3><p>${p.t}</p>`}
+  const g=RG[sel.slice(2)];return `<h3>🗺️ ${g.n}</h3><p>${g.t}</p>`;
+}
+/* ===== الأسئلة ===== */
+let cur=null;
+function mcItem(L,q){return{t:'mc',lid:L.id,q:q[0],a:q[1],ch:shuf(q.slice(1,5)),why:q[5]}}
+function locItem(L){
+  const cand=[];L.pins.forEach((p,i)=>{if(!p.noloc)cand.push({k:'p',i,n:p.n,w:p.t})});(L.regs||[]).forEach(id=>cand.push({k:'r',id,n:RG[id].n,w:RG[id].t}));
+  if(!cand.length)return null;const c=cand[r(0,cand.length-1)];return{t:'loc',lid:L.id,c};
+}
+function startQuiz(L){
+  let items=[];
+  if(L.pool){
+    const lessons=L.pool.map(byId);
+    for(let i=0;i<10;i++){const l=lessons[r(0,lessons.length-1)];if(r(0,3)===0){const x=locItem(l);if(x){items.push(x);continue}}items.push(mcItem(l,l.qs[r(0,l.qs.length-1)]))}
+  }else{
+    items=shuf(L.qs).slice(0,6).map(q=>mcItem(L,q));
+    for(let i=0;i<2;i++){const x=locItem(L);if(x)items.push(x)}
+    items=shuf(items);
+  }
+  cur={L,items,k:0,score:0,streak:0};
+  $('#home').hidden=true;$('#lesson').hidden=true;$('#quiz').hidden=false;$('#lvname').textContent=L.t;
+  show();window.scrollTo(0,0);
+}
+function show(){
+  const it=cur.items[cur.k];
+  $('#prog').style.width=(cur.k/cur.items.length*100)+'%';$('#streak').textContent='🔥 '+cur.streak;
+  $('#fb').hidden=true;$('#next').hidden=true;
+  const A=byId(it.lid);
+  if(it.t==='mc'){
+    $('#ask').textContent=`سؤال ${cur.k+1} من ${cur.items.length}`;$('#eq').textContent=it.q;
+    $('#chs').hidden=false;$('#chs').innerHTML=it.ch.map(c=>`<button class='ch'>${esc(c)}</button>`).join('');
+    $('#qmap').hidden=true;
+    document.querySelectorAll('.ch').forEach(b=>b.onclick=()=>answer(b.textContent===it.a,b,it));
+  }else{
+    $('#ask').textContent=`سؤال ${cur.k+1} من ${cur.items.length} – اضغط على الخريطة`;$('#eq').textContent='اضغط على: '+it.c.n;
+    $('#chs').hidden=true;const qm=$('#qmap');qm.hidden=false;qm.innerHTML=mapSVG(A,'locate',null);
+    qm.querySelectorAll('[data-p]').forEach(g=>g.onclick=()=>answer(it.c.k==='p'&&+g.dataset.p===it.c.i,g,it));
+    qm.querySelectorAll('[data-r]').forEach(g=>g.onclick=()=>answer(it.c.k==='r'&&g.dataset.r===it.c.id,g,it));
+  }
+}
+function answer(good,el,it){
+  if(cur.done===cur.k)return;cur.done=cur.k;
+  const ss=S.st[it.lid]||(S.st[it.lid]={r:0,w:0,miss:{}});good?ss.r++:ss.w++;if(it.t==='mc'){S.mis=S.mis||{};const key=it.lid+'|'+it.q;if(good){if(it.rev)delete S.mis[key]}else S.mis[key]=1}
+  if(!good&&it.t==='loc')ss.miss[it.c.n]=(ss.miss[it.c.n]||0)+1;
+  document.querySelectorAll('.ch').forEach(b=>{b.disabled=true;if(it.t==='mc'&&b.textContent===it.a)b.classList.add('ok')});
+  if(it.t==='loc'){const qm=$('#qmap');const sel=it.c.k==='p'?`[data-p='${it.c.i}']`:`[data-r='${it.c.id}']`;const t=qm.querySelector(sel);if(t)t.classList.add('right');if(!good&&el.classList)el.classList.add('wrong');
+    qm.querySelectorAll('[data-p],[data-r]').forEach(g=>g.style.pointerEvents='none')}
+  else if(!good)el.classList.add('no');
+  const fb=$('#fb');fb.hidden=false;
+  const why=it.t==='mc'?it.why:`📍 ${it.c.n}: ${it.c.w}`;
+  if(good){clap();cur.score++;cur.streak++;const b=10+(cur.streak>=3?5:0);S.pts+=b;fb.className='fb ok';fb.innerHTML=`<h3>${['برافو! 🎉','ممتاز يا بطل! 💪','إجابة صح 👏','شاطر جدًا ⭐'][r(0,3)]} +${b} نقطة</h3><p>${why}</p>`}
+  else{buzz();cur.streak=0;fb.className='fb no';fb.innerHTML=`<h3>${['مش مشكلة، الغلط بيعلّمنا 👇','قريب! راجع المعلومة 👇','خلينا نفهمها سوا 👇'][r(0,2)]}</h3>${it.t==='mc'?`<p>الإجابة الصحيحة: <b>${esc(it.a)}</b></p>`:''}<p>${why}</p>`}
+  $('#pts').textContent=S.pts;$('#streak').textContent='🔥 '+cur.streak;save();
+  const nx=$('#next');nx.hidden=false;nx.textContent=cur.k===cur.items.length-1?'شوف نتيجتك':'السؤال التالي';
+  nx.onclick=()=>{cur.k++;cur.k>=cur.items.length?end():show()};nx.scrollIntoView({block:'nearest'});
+}
+function end(){
+  const n=cur.items.length,p=cur.score/n,st=p>=1?3:p>=.8?2:p>=.6?1:0,L=cur.L;
+  const d=S.d[L.id]||(S.d[L.id]={stars:0});if(st>d.stars)d.stars=st;save();if(st>=1)fanfare();if(st===3)confetti();bump();if(st>=1&&!S.d[L.id].done){S.d[L.id].done=1;S.pts+=20;toast('+20 نقطة لإتمام الدرس 🎉')}save();
+  $('#prog').style.width='100%';$('#fb').hidden=true;$('#chs').hidden=true;$('#qmap').hidden=true;$('#next').hidden=true;
+  $('#ask').textContent='النتيجة';
+  $('#eq').innerHTML=`<div class='end'><div class='big'>${'★'.repeat(st)+'☆'.repeat(3-st)}</div><div>${cur.score} من ${n}</div><p class='sub'>${st>=1?'ممتاز! فتح الدرس التالي 🔓':'محتاج تراجع الشرح وتحاول تاني 💪'}</p><button class='btn' id='again'>إعادة المحاولة</button><button class='btn alt' id='tolist'>رجوع للدروس</button></div>`;
+  $('#again').onclick=()=>L.id==='mis'?startMis():(L.pool?startQuiz(L):openLesson(L));$('#tolist').onclick=home;
+}
+function cards(L){
+  const items=[];(L.pins||[]).forEach(p=>items.push([p.n,p.t]));if(L.x&&L.x.k)L.x.k.forEach(k=>items.push([k[0],k[1]]));(L.regs||[]).forEach(id=>items.push([RG[id].n,RG[id].t]));
+  let i=0,flip=false;const order=shuf(items);
+  const draw=()=>{const c=order[i];$('#home').hidden=true;$('#quiz').hidden=true;$('#lesson').hidden=false;window.scrollTo(0,0);
+    $('#lesson').innerHTML=`<div class='q'><h2 class='lt'>🃏 ${L.t}</h2><p class='sub'>بطاقة ${i+1} من ${order.length} – اضغط على البطاقة لقلبها</p><button class='card' id='cb'>${flip?`<small>الشرح</small><span>${esc(c[1])}</span>`:`<small>المصطلح</small><b>${esc(c[0])}</b>`}</button></div><button class='btn' id='nx'>${i===order.length-1?'انتهت البطاقات ✓':'البطاقة التالية'}</button><button class='btn alt' id='bk2'>رجوع للدرس</button>`;
+    $('#cb').onclick=()=>{flip=!flip;draw()};$('#nx').onclick=()=>{if(i>=order.length-1){openLesson(L);return}i++;flip=false;draw()};$('#bk2').onclick=()=>openLesson(L)};
+  if(!order.length){toast('لا توجد بطاقات لهذا الدرس');return}draw();
+}
+function startMis(){
+  const keys=Object.keys(S.mis||{});const items=[];
+  shuf(keys).slice(0,10).forEach(k=>{const [lid,...q]=k.split('|');const L=byId(lid);if(!L)return;const qq=L.qs.find(x=>x[0]===q.join('|'));if(qq){const it=mcItem(L,qq);it.rev=1;items.push(it)}});
+  if(!items.length){S.mis={};save();home();return}
+  const L={id:'mis',t:'مراجعة أخطائي',pool:[],qs:[]};
+  cur={L,items,k:0,score:0,streak:0};
+  $('#home').hidden=true;$('#lesson').hidden=true;$('#quiz').hidden=false;$('#lvname').textContent=L.t;show();window.scrollTo(0,0);
+}
+function report(){
+  $('#home').hidden=true;$('#lesson').hidden=false;
+  let rows=LS.filter(l=>l.g===S.g).map(l=>{const s=S.st[l.id]||{r:0,w:0,miss:{}},t=s.r+s.w;return{l,t,acc:t?Math.round(100*s.r/t):null,miss:s.miss||{}}}).filter(x=>x.t>0).sort((a,b)=>a.acc-b.acc);
+  let h=`<div class='q'><h2 class='lt'>📊 تقرير نقاط الضعف</h2>`;
+  if(!rows.length)h+=`<p class='ip'>لسه مفيش إجابات. جرّب درسًا الأول.</p>`;
+  rows.forEach(x=>{const m=Object.entries(x.miss).sort((a,b)=>b[1]-a[1]).map(e=>e[0]).slice(0,3);h+=`<p class='ip'><b>${x.l.t}</b>: ${x.acc}% (${x.t} إجابة)<span class='bar'><i style='width:${x.acc}%'></i></span>${x.acc<70?'⚠️ يحتاج مراجعة':'✅ جيد'}${m.length?`<br><small>أماكن أخطأت فيها: ${m.join('، ')}</small>`:''}</p>`});
+  h+=`</div><button class='btn alt' id='hb'>رجوع</button>`;$('#lesson').innerHTML=h;$('#hb').onclick=home;
+}
+$('#snd').onclick=()=>{snd=!snd;$('#snd').textContent=snd?'🔊':'🔇'};
+$('#back').onclick=home;
+bump();home();
+
+</script>
+<script>/* iphone-web: home button in home-screen mode */(function(){try{var sa=navigator.standalone||(window.matchMedia&&matchMedia("(display-mode: standalone)").matches);if(!sa)return;var a=document.createElement("a");a.href="index.html";a.textContent="🏠";a.setAttribute("aria-label","الرئيسية");a.style.cssText="position:fixed;bottom:calc(14px + env(safe-area-inset-bottom));left:14px;z-index:99999;width:48px;height:48px;border-radius:50%;background:#2563eb;color:#fff;font-size:24px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;box-shadow:0 3px 10px rgba(0,0,0,.3)";document.body.appendChild(a)}catch(e){}})();</script></body>
+</html>
